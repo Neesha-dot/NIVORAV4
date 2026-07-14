@@ -7,12 +7,14 @@ const router = Router()
 let transporter = null
 function getTransporter() {
   if (transporter) return transporter
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_APP_SECRET) return null
+  const emailUser   = process.env.EMAIL_USER
+  const emailSecret = process.env.EMAIL_APP_SECRET || process.env.APP_SECRET
+  if (!emailUser || !emailSecret) return null
   transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_APP_SECRET,
+      user: emailUser,
+      pass: emailSecret,
     },
   })
   return transporter
