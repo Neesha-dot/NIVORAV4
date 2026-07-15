@@ -54,12 +54,12 @@ const transformations = [
 ]
 
 const DEFAULT_INSTAGRAM_POSTS = [
-  { image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80', url: 'https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==' },
-  { image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80', url: 'https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5' },
-  { image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80', url: 'https://www.instagram.com/p/DOa8T6oj4zn/?img_index=2&igsh=MTYwbWoxbnI5eW1ncg==' },
-  { image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80', url: 'https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==' },
-  { image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80', url: 'https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==' },
-  { image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80', url: 'https://www.instagram.com/reel/DOivw8LjZVS/?igsh=MTFnNGU0eTZ5bWR4YQ==' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-1-mandir.png',     url: 'https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-2-acetech.png',    url: 'https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-3-newchapter.png', url: 'https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-4-kitchen.png',   url: 'https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-5-balcony.png',   url: 'https://www.instagram.com/reel/DOqj3mTDPex/?igsh=MW14NnZrenB0OTVveA==' },
+  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-6-bedroom.png',   url: 'https://www.instagram.com/reel/DMlyCnWh6Ct/?igsh=eHd1ZHRuMHoyOGdo' },
 ]
 
 const stats: { value: string; label: string }[] = []
@@ -2453,7 +2453,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
   const words = ['Follow', 'Our', 'Journey']
 
   return (
-    <div ref={sectionRef} style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+    <div ref={sectionRef}>
       <style>{`
         @keyframes ig2-word-drop {
           from { transform: translateY(-110%); opacity: 0; }
@@ -2479,21 +2479,22 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
         .ig2-grid {
           display: grid;
           grid-template-columns: repeat(6, 1fr);
-          gap: 4px;
+          gap: 3px;
         }
         @media (max-width: 768px) {
-          .ig2-grid { grid-template-columns: repeat(3, 1fr); }
+          .ig2-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         .ig2-thumb {
           display: block;
           position: relative;
           overflow: hidden;
-          height: 320px;
+          height: 300px;
           cursor: pointer;
           opacity: 0;
           border: 2px solid transparent;
           box-sizing: border-box;
+          border-radius: 0;
           transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
         @media (max-width: 768px) {
@@ -2517,7 +2518,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
           animation-delay: var(--shimmer-delay, 0.5s);
         }
         .ig2-thumb:hover {
-          transform: scale(1.03);
+          transform: scale(1.02);
           border-color: rgba(200,165,106,0.75);
           box-shadow: 0 4px 24px rgba(0,0,0,0.18);
           z-index: 2;
@@ -2573,7 +2574,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
       `}</style>
 
       {/* Heading */}
-      <div className="text-center" style={{ marginBottom: 40 }}>
+      <div className="text-center" style={{ marginBottom: 40, maxWidth: 1200, margin: '0 auto 40px', padding: '0 24px' }}>
         <a
           href="https://www.instagram.com/nivora.interiors"
           target="_blank" rel="noopener noreferrer"
@@ -2640,7 +2641,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
       <div
         className={`ig2-cta-wrap${vis ? ' ig2-in' : ''}`}
         style={{
-          textAlign: 'center', marginTop: 32,
+          textAlign: 'center', marginTop: 32, maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', padding: '0 24px',
           '--cta-delay':    `${posts.length * 0.1 + 0.35}s`,
           '--cta-ul-delay': `${posts.length * 0.1 + 0.55}s`,
         } as React.CSSProperties}

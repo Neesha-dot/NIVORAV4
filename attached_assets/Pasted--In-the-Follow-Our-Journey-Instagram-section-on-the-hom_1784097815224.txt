@@ -1,0 +1,53 @@
+"In the 'Follow Our Journey' Instagram section on the home page, replace all 6 images with Nivora Interiors' actual post thumbnails and update their links. Here are the 6 posts in order:
+Post 1:
+
+Image: upload the '3 Must Have for Mandir' image (mandir cabinet with yellow lighting)
+Link: https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==
+
+Post 2:
+
+Image: upload the 'ACE TECH 2025' image (girl standing in front of pink blossom tree)
+Link: https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5
+
+Post 3:
+
+Image: upload the 'A NEW CHAPTER FOR BRAND' image (colour swatches and floor plan)
+Link: https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==
+
+Post 4:
+
+Image: upload the 'A dream kitchen starts with the right must-haves!' image (pink and grey kitchen)
+Link: https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==
+
+Post 5:
+
+Image: upload the 'A balcony so dreamy' image (wooden swing on balcony)
+Link: https://www.instagram.com/reel/DOqj3mTDPex/?igsh=MW14NnZrenB0OTVveA==
+
+Post 6:
+
+Image: upload the bedroom image (white textured wall, grey headboard, yellow ceiling light)
+Link: https://www.instagram.com/reel/DMlyCnWh6Ct/?igsh=eHd1ZHRuMHoyOGdo
+
+Desktop layout — restore to clean layout (like 2nd last image shared):
+
+Remove '@NIVORAINTERIORS' label from above the heading
+6 images in single row, equal width, height 300px, no border radius, minimal 3px gap between images
+Images start from left edge to right edge of the section (full width)
+On hover: dark overlay + white Instagram icon in center + scale 1.02
+Gold border appears on hovered image
+
+Mobile layout (below 768px):
+
+2x3 grid (2 columns, 3 rows)
+Square images, equal size
+On tap: Instagram icon briefly shows then opens link in new tab
+
+All existing animations keep intact:
+
+Heading word by word slide down
+Images cascade in left to right with stagger
+Shimmer sweep on each image
+'SEE MORE ON INSTAGRAM →' fade in last, opens https://www.instagram.com/nivora.interiors/ in new tab
+
+Keep all other sections unchanged."
