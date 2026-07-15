@@ -1,0 +1,44 @@
+"In the 'Follow Our Journey' Instagram section on the home page, replace the existing images with Nivora Interiors' actual Instagram posts. Update with these 6 links and make the section work as follows:
+Links to use (in order):
+
+https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==
+https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5
+https://www.instagram.com/p/DOa8T6oj4zn/?img_index=2&igsh=MTYwbWoxbnI5eW1ncg==
+https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==
+https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==
+https://www.instagram.com/reel/DOivw8LjZVS/?igsh=MTFnNGU0eTZ5bWR4YQ==
+
+Image display:
+
+Use the existing interior design placeholder images already in the section for now (since Instagram thumbnails need login to fetch)
+Each image on click should open its corresponding Instagram link in a new tab
+Show Instagram icon overlay on hover/tap on each image
+
+Desktop layout:
+
+6 images in a single row, equal width, equal height (320px)
+Slight gap (4px) between images
+On hover: image brightens slightly + Instagram icon appears in center + subtle scale up (1.03)
+
+Mobile layout (below 768px):
+
+2 rows of 3 images each in a grid
+Each image square shaped (equal width and height)
+On tap: same Instagram icon overlay briefly appears then opens link
+
+Animations (IntersectionObserver, replay every time):
+
+Section heading 'Follow Our Journey' — each word slides down from top with stagger 0.15s
+Subtext — fade in after heading
+Images — cascade in from left to right, each image fades in + scales from 0.85 to 1.0 with 0.1s stagger between each
+On scroll into view each image gets a subtle shimmer sweep once from left to right
+'SEE MORE ON INSTAGRAM →' link — fade in last with underline drawing animation, clicking it opens https://www.instagram.com/nivora.interiors/ in new tab
+All animations reset and replay every time section enters viewport
+
+Hover effects:
+
+Each image: smooth dark overlay appears (rgba(0,0,0,0.3)) + white Instagram icon (24px) fades in center
+Subtle gold border appears around hovered image
+Scale up 1.03 with smooth transition 0.3s
+
+Keep all other sections unchanged."

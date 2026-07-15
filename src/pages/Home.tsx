@@ -54,12 +54,12 @@ const transformations = [
 ]
 
 const DEFAULT_INSTAGRAM_POSTS = [
-  { image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
-  { image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
-  { image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
-  { image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
-  { image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
-  { image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80', url: 'https://www.instagram.com/nivora.interiors/' },
+  { image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80', url: 'https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==' },
+  { image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=600&q=80', url: 'https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5' },
+  { image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80', url: 'https://www.instagram.com/p/DOa8T6oj4zn/?img_index=2&igsh=MTYwbWoxbnI5eW1ncg==' },
+  { image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&q=80', url: 'https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==' },
+  { image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80', url: 'https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==' },
+  { image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80', url: 'https://www.instagram.com/reel/DOivw8LjZVS/?igsh=MTFnNGU0eTZ5bWR4YQ==' },
 ]
 
 const stats: { value: string; label: string }[] = []
@@ -2425,6 +2425,225 @@ const DEFAULT_SERVICE_CARDS = [
   { img: '/dining-entertainment.jpg', title: 'Dining & Entertainment', desc: 'Stylish dining areas and entertainment spaces designed to bring family and guests together.' },
 ]
 
+function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }> }) {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const [vis, setVis] = useState(false)
+
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => setVis(e.isIntersecting), { threshold: 0.1 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  const words = ['Follow', 'Our', 'Journey']
+
+  return (
+    <div ref={sectionRef} style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+      <style>{`
+        @keyframes ig2-word-drop {
+          from { transform: translateY(-110%); opacity: 0; }
+          to   { transform: translateY(0);     opacity: 1; }
+        }
+        @keyframes ig2-fade-up {
+          from { opacity: 0; transform: translateY(10px); }
+          to   { opacity: 1; transform: translateY(0);    }
+        }
+        @keyframes ig2-thumb-in {
+          from { opacity: 0; transform: scale(0.85); }
+          to   { opacity: 1; transform: scale(1);    }
+        }
+        @keyframes ig2-shimmer {
+          0%   { transform: translateX(-120%) skewX(-12deg); }
+          100% { transform: translateX(220%)  skewX(-12deg); }
+        }
+        @keyframes ig2-underline {
+          from { width: 0;    }
+          to   { width: 100%; }
+        }
+
+        .ig2-grid {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 4px;
+        }
+        @media (max-width: 768px) {
+          .ig2-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .ig2-thumb {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          height: 320px;
+          cursor: pointer;
+          opacity: 0;
+          border: 2px solid transparent;
+          box-sizing: border-box;
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        @media (max-width: 768px) {
+          .ig2-thumb { height: auto; aspect-ratio: 1 / 1; }
+        }
+        .ig2-thumb.ig2-in {
+          animation: ig2-thumb-in 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
+          animation-delay: var(--thumb-delay, 0s);
+        }
+        .ig2-thumb::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+          transform: translateX(-120%) skewX(-12deg);
+          pointer-events: none;
+          z-index: 3;
+        }
+        .ig2-thumb.ig2-shimmer::after {
+          animation: ig2-shimmer 0.75s ease forwards;
+          animation-delay: var(--shimmer-delay, 0.5s);
+        }
+        .ig2-thumb:hover {
+          transform: scale(1.03);
+          border-color: rgba(200,165,106,0.75);
+          box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+          z-index: 2;
+        }
+        .ig2-thumb img {
+          width: 100%; height: 100%;
+          object-fit: cover; display: block;
+          transition: filter 0.3s ease;
+          pointer-events: none;
+        }
+        .ig2-overlay {
+          position: absolute; inset: 0; z-index: 2;
+          background: rgba(0,0,0,0);
+          display: flex; align-items: center; justify-content: center;
+          transition: background 0.3s ease;
+        }
+        .ig2-overlay svg { opacity: 0; transition: opacity 0.3s ease; }
+        .ig2-thumb:hover .ig2-overlay { background: rgba(0,0,0,0.3); }
+        .ig2-thumb:hover .ig2-overlay svg { opacity: 1; }
+
+        .ig2-word-wrap { display: inline-block; overflow: hidden; vertical-align: bottom; }
+        .ig2-word { display: inline-block; transform: translateY(-110%); opacity: 0; }
+        .ig2-word.ig2-in {
+          animation: ig2-word-drop 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+          animation-delay: var(--word-delay, 0s);
+        }
+
+        .ig2-sub { opacity: 0; }
+        .ig2-sub.ig2-in { animation: ig2-fade-up 0.5s ease forwards; animation-delay: var(--sub-delay, 0s); }
+
+        .ig2-cta-wrap { opacity: 0; }
+        .ig2-cta-wrap.ig2-in { animation: ig2-fade-up 0.5s ease forwards; animation-delay: var(--cta-delay, 0s); }
+
+        .ig2-cta {
+          position: relative;
+          display: inline-flex; align-items: center; gap: 8px;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 400; font-size: 11px;
+          letter-spacing: 0.22em; text-transform: uppercase;
+          color: #a18661; text-decoration: none;
+        }
+        .ig2-cta::after {
+          content: '';
+          position: absolute; bottom: -2px; left: 0;
+          width: 0; height: 1px; background: #a18661;
+        }
+        .ig2-cta-wrap.ig2-in .ig2-cta::after {
+          animation: ig2-underline 0.5s ease forwards;
+          animation-delay: var(--cta-ul-delay, 0s);
+        }
+        .ig2-cta-arrow { display: inline-flex; align-items: center; transition: transform 0.25s ease; }
+        .ig2-cta:hover .ig2-cta-arrow { transform: translateX(4px); }
+      `}</style>
+
+      {/* Heading */}
+      <div className="text-center" style={{ marginBottom: 40 }}>
+        <a
+          href="https://www.instagram.com/nivora.interiors"
+          target="_blank" rel="noopener noreferrer"
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 400, fontSize: 11,
+            letterSpacing: '0.15em', textTransform: 'uppercase',
+            color: '#a18661', marginBottom: 14,
+            display: 'inline-block', textDecoration: 'none',
+          }}
+        >@NivoraInteriors</a>
+
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontWeight: 400,
+          fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+          color: '#262421', marginBottom: 10, lineHeight: 1.1,
+        }}>
+          {words.map((word, wi) => (
+            <span key={word} className="ig2-word-wrap" style={{ marginRight: wi < words.length - 1 ? '0.28em' : 0 }}>
+              <span
+                className={`ig2-word${vis ? ' ig2-in' : ''}`}
+                style={{ '--word-delay': `${wi * 0.15}s` } as React.CSSProperties}
+              >{word}</span>
+            </span>
+          ))}
+        </h2>
+
+        <p
+          className={`ig2-sub${vis ? ' ig2-in' : ''}`}
+          style={{
+            fontFamily: "'Lora', serif", fontWeight: 300, fontSize: 14,
+            color: 'rgba(38,36,33,0.5)', margin: 0,
+            '--sub-delay': `${words.length * 0.15 + 0.1}s`,
+          } as React.CSSProperties}
+        >Daily design inspiration and behind-the-scenes site visits</p>
+      </div>
+
+      {/* Grid */}
+      <div className="ig2-grid">
+        {posts.map((post, i) => (
+          <a
+            key={i}
+            href={post.url}
+            target="_blank" rel="noopener noreferrer"
+            className={`ig2-thumb${vis ? ' ig2-in ig2-shimmer' : ''}`}
+            style={{
+              '--thumb-delay':   `${i * 0.1}s`,
+              '--shimmer-delay': `${0.5 + i * 0.1}s`,
+            } as React.CSSProperties}
+          >
+            <img src={post.image} alt={`@NivoraInteriors post ${i + 1}`} loading="lazy" />
+            <div className="ig2-overlay">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24"
+                style={{ filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.4))' }}>
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div
+        className={`ig2-cta-wrap${vis ? ' ig2-in' : ''}`}
+        style={{
+          textAlign: 'center', marginTop: 32,
+          '--cta-delay':    `${posts.length * 0.1 + 0.35}s`,
+          '--cta-ul-delay': `${posts.length * 0.1 + 0.55}s`,
+        } as React.CSSProperties}
+      >
+        <a
+          href="https://www.instagram.com/nivora.interiors/"
+          target="_blank" rel="noopener noreferrer"
+          className="ig2-cta"
+        >
+          SEE MORE ON INSTAGRAM <span className="ig2-cta-arrow"><ArrowRight size={12} /></span>
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export default function Home({ splashDone }: { splashDone: boolean }) {
   const { settings } = useSiteSettings()
   const serviceCards = settings?.serviceCards?.length ? settings.serviceCards : DEFAULT_SERVICE_CARDS
@@ -3388,122 +3607,7 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
 
       {/* Instagram */}
       <section style={{ background: '#FAF8F4', padding: '5rem 0' }}>
-        <style>{`
-          .ig-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 3px;
-          }
-          @media (max-width: 768px) {
-            .ig-grid { grid-template-columns: repeat(3, 1fr); }
-          }
-          @media (max-width: 480px) {
-            .ig-grid { grid-template-columns: repeat(2, 1fr); }
-          }
-          .ig-thumb { display: block; position: relative; overflow: hidden; aspect-ratio: 1 / 1; cursor: pointer; }
-          .ig-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.22,1,0.36,1); display: block; }
-          .ig-thumb:hover img { transform: scale(1.07); }
-          .ig-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(201,169,110,0.18); opacity: 0; transition: opacity 0.3s ease; }
-          .ig-thumb:hover .ig-overlay { opacity: 1; }
-          .ig-cta {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #a18661;
-            text-decoration: none;
-          }
-          .ig-cta::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #a18661;
-            transition: width 0.3s ease;
-          }
-          .ig-cta:hover::after { width: 100%; }
-          .ig-cta-arrow { display: inline-flex; align-items: center; transition: transform 0.25s ease; }
-          .ig-cta:hover .ig-cta-arrow { transform: translateX(4px); }
-        `}</style>
-
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-
-          {/* Heading */}
-          <FadeIn className="text-center" style={{ marginBottom: 40 }}>
-            <a
-              href="https://www.instagram.com/nivora.interiors"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "'Montserrat', sans-serif",
-                fontWeight: 400,
-                fontSize: 11,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: '#a18661',
-                marginBottom: 14,
-                display: 'inline-block',
-                textDecoration: 'none',
-              }}
-            >@NivoraInteriors</a>
-            <h2 style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 400,
-              fontSize: 'clamp(1.8rem, 4vw, 3rem)',
-              color: '#262421',
-              marginBottom: 10,
-              lineHeight: 1.1,
-            }}>Follow Our Journey</h2>
-            <p style={{
-              fontFamily: "'Lora', serif",
-              fontWeight: 300,
-              fontSize: 14,
-              color: 'rgba(38,36,33,0.5)',
-              margin: 0,
-            }}>Daily design inspiration and behind-the-scenes site visits</p>
-          </FadeIn>
-
-          {/* Single-row 6-image grid */}
-          <div className="ig-grid">
-            {instagramPosts.map((post, i) => (
-              <a
-                key={i}
-                href={post.url || 'https://www.instagram.com/nivora.interiors/'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ig-thumb"
-              >
-                <img src={post.image} alt={`@NivoraInteriors post ${i + 1}`} loading="lazy" />
-                <div className="ig-overlay">
-                  <svg width="22" height="22" fill="white" viewBox="0 0 24 24" style={{ filter: 'drop-shadow(0 1px 4px rgba(0,0,0,0.4))' }}>
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                  </svg>
-                </div>
-              </a>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div style={{ textAlign: 'center', marginTop: 32 }}>
-            <a
-              href="https://www.instagram.com/nivora.interiors/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ig-cta"
-              style={{ cursor: 'pointer' }}
-            >
-              See More On Instagram <span className="ig-cta-arrow"><ArrowRight size={12} /></span>
-            </a>
-          </div>
-
-        </div>
+        <InstagramFeed posts={instagramPosts} />
       </section>
 
       {/* Final CTA */}
