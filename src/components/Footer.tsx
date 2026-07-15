@@ -227,7 +227,8 @@ export default function Footer() {
           }
           .footer-nav-col h4,
           .footer-services-col h4 {
-            font-size: 10px !important;
+            font-size: 13px !important;
+            letter-spacing: 0.18em !important;
             margin-bottom: 10px !important;
           }
           .footer-nav-col ul,
@@ -236,8 +237,9 @@ export default function Footer() {
           }
           .footer-nav-col li a,
           .footer-services-col li a {
-            font-size: 11px !important;
-            letter-spacing: 0.02em !important;
+            font-size: 14px !important;
+            letter-spacing: 0.03em !important;
+            line-height: 1.8 !important;
           }
 
           /* ── ROW 3 : Find Us (full width) ── */
@@ -248,7 +250,8 @@ export default function Footer() {
             border: none !important;
           }
           .footer-findus-col h4 {
-            font-size: 10px !important;
+            font-size: 13px !important;
+            letter-spacing: 0.18em !important;
             margin-bottom: 10px !important;
           }
           /* Split inner content: address left | email+phone+instagram right */
@@ -275,10 +278,11 @@ export default function Footer() {
             margin-top: 8px !important;
           }
           .footer-findus-col p {
-            font-size: 11px !important;
+            font-size: 13px !important;
+            line-height: 1.7 !important;
           }
           .footer-findus-col a {
-            font-size: 11px !important;
+            font-size: 13px !important;
           }
 
           /* ── Divider ── */
@@ -296,7 +300,7 @@ export default function Footer() {
             gap: 4px !important;
           }
           .footer-bottom-bar p {
-            font-size: 10px !important;
+            font-size: 12px !important;
           }
         }
       `}</style>
