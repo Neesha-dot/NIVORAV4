@@ -1,0 +1,53 @@
+Samajh gaya — teen fixes chahiye:
+
+Submit error fix — form submit nahi ho raha
+Type of Space — text input ki jagah dropdown (same as Contact page)
+Email field — Step 1 mein add karo (Name, Phone, Email)
+
+Yeh raha Replit prompt:
+
+Prompt for Replit (React):
+
+I need to fix 3 issues with the Home page popup consultation form:
+1. Fix the form submission error:
+
+Currently clicking "BOOK MY FREE CONSULTATION" shows an error "Full name, phone, email, and type of space are required" even when all fields are filled — the validation logic is incorrectly checking fields that may not exist or checking them in the wrong step.
+Debug the validation: in Step 2, only check that location pill is selected (required). Type of Space, Budget, and Brief Requirements should be optional in Step 2 — do NOT re-validate Step 1 fields (name, phone, email) in Step 2's submit handler since they were already validated in Step 1.
+Fix the submit handler to: (1) validate only Step 2 required fields, (2) combine Step 1 + Step 2 data, (3) call the same submission logic as the Contact page.
+Console.log the full form data object just before submission so we can verify all fields are being passed correctly.
+
+2. Move Email field to Step 1:
+
+Add an Email field to Step 1 (between Phone Number and the NEXT button):
+
+Label: "EMAIL ADDRESS *"
+Input type: email
+Placeholder: "your@email.com"
+Required: yes — validate it's a valid email format before allowing Next
+
+
+Step 1 now has 3 fields: Full Name, Phone Number, Email Address
+Update Step 1 validation to check all 3 fields (name min 2 chars, phone 10 digits, email valid format)
+
+3. Change "Type of Space" from text input to dropdown — same as Contact page:
+
+Replace the current free-text "Type of Space" input in Step 2 with a dropdown select, using the exact same options as the Contact page's "Type of Space" dropdown.
+Check the Contact page component for the exact option values and replicate them here identically (same labels, same values).
+Style the dropdown to match the Contact page's select styling (same border, same font, same gold accent on focus).
+"Type of Space" should remain optional (not required for submission).
+
+4. Updated Step structure after these changes:
+Step 1 fields: Full Name (*), Phone Number (*), Email Address (*)
+Step 2 fields: Type of Space (dropdown, optional), Estimated Budget (text input, optional), Project Location (pill selector, *required), Brief Requirements (textarea, optional)
+5. Submission data object should include all fields with source tag:
+js{
+  name: "...",
+  phone: "+91...",
+  email: "...",
+  typeOfSpace: "...",
+  budget: "...",
+  location: "...",
+  requirements: "...",
+  source: "Popup Form"
+}
+Submit this to the exact same endpoint/service used by the Contact page form (EmailJS/Formspree/Google Sheets — copy the logic exactly, do not create new endpoints).

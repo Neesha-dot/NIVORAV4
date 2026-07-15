@@ -28,6 +28,7 @@ export default function ConsultationPopup({ splashDone }: Props) {
   // Step 1
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
 
   // Step 2
   const [spaceType, setSpaceType] = useState('')
@@ -62,6 +63,7 @@ export default function ConsultationPopup({ splashDone }: Props) {
   }
 
   // ── Step 1 validation ──
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   const validateStep1 = () => {
     const e: Record<string, string> = {}
     if (!fullName.trim() || fullName.trim().length < 2)
@@ -69,6 +71,8 @@ export default function ConsultationPopup({ splashDone }: Props) {
     const digits = phone.replace(/\D/g, '')
     if (digits.length !== 10)
       e.phone = 'Please enter a valid 10-digit phone number.'
+    if (!email.trim() || !EMAIL_RE.test(email.trim()))
+      e.email = 'Please enter a valid email address.'
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -95,19 +99,21 @@ export default function ConsultationPopup({ splashDone }: Props) {
 
     setStatus('submitting')
     setErrorMsg('')
+    const payload = {
+      fullName: fullName.trim(),
+      phone: `+91 ${phone.trim()}`,
+      email: email.trim(),
+      spaceType,
+      location,
+      projectType: '',
+      budget,
+      referral: '',
+      requirements,
+      source: 'Popup Form',
+    }
+    console.log('[Popup] Submitting form data:', payload)
     try {
-      await submitEnquiry({
-        fullName: fullName.trim(),
-        phone: `+91 ${phone.trim()}`,
-        email: '',
-        spaceType,
-        location,
-        projectType: '',
-        budget,
-        referral: '',
-        requirements,
-        source: 'Popup Form',
-      })
+      await submitEnquiry(payload)
       setStatus('success')
     } catch (err) {
       setStatus('error')
@@ -262,6 +268,16 @@ export default function ConsultationPopup({ splashDone }: Props) {
         }
         .cpopup-btn-outline:hover { border-color: #21291a; background: rgba(33,41,26,0.05); }
 
+        /* ── Select dropdown ── */
+        .cpf-select {
+          appearance: none;
+          -webkit-appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23AAAAAA' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 2px center;
+          padding-right: 20px;
+        }
+
         /* ── Error text ── */
         .cpf-error { font-family: 'Jost',sans-serif; font-size: 11px; color: #b85a4a; margin-top: 4px; margin-bottom: 2px; }
 
@@ -381,6 +397,20 @@ export default function ConsultationPopup({ splashDone }: Props) {
                   {errors.phone && <p className="cpf-error">{errors.phone}</p>}
                 </div>
 
+                {/* Email */}
+                <div className="cpf-field-wrap">
+                  <label className="cpf-label">Email Address <span style={{ color: '#a18661' }}>*</span></label>
+                  <input
+                    className="cpf-input"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={e => { setEmail(e.target.value); setErrors(v => ({ ...v, email: '' })) }}
+                    autoComplete="email"
+                  />
+                  {errors.email && <p className="cpf-error">{errors.email}</p>}
+                </div>
+
                 <button className="cpopup-btn" onClick={handleNext}>
                   Next <ArrowRight size={13} />
                 </button>
@@ -401,16 +431,22 @@ export default function ConsultationPopup({ splashDone }: Props) {
                   ← Back
                 </button>
 
-                {/* Type of Space */}
-                <div className="cpf-field-wrap">
+                {/* Type of Space — dropdown matching Contact page */}
+                <div style={{ marginBottom: 18 }}>
                   <label className="cpf-label">Type of Space</label>
-                  <input
-                    className="cpf-input"
-                    type="text"
-                    placeholder="e.g. Living Room, Bedroom, Office..."
-                    value={spaceType}
-                    onChange={e => setSpaceType(e.target.value)}
-                  />
+                  <div className="cpf-field-wrap" style={{ marginBottom: 0 }}>
+                    <select
+                      className="cpf-input cpf-select"
+                      value={spaceType}
+                      onChange={e => setSpaceType(e.target.value)}
+                      style={{ color: spaceType === '' ? '#aaa' : '#21291a', cursor: 'pointer' }}
+                    >
+                      <option value="" disabled>Select a space type</option>
+                      {['Residential', 'Commercial', 'Office', 'Retail', 'Villa/Bungalow', 'Other'].map(opt => (
+                        <option key={opt} value={opt} style={{ color: '#21291a' }}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 {/* Estimated Budget */}
