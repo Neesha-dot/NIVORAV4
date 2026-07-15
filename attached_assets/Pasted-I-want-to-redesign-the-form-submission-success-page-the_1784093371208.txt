@@ -1,0 +1,58 @@
+I want to redesign the form submission success page (the page that appears after the Contact form is submitted — currently showing "Success! Your Vision Is in Good Hands.") to match the visual style of the rest of the website's light-themed pages (About, Testimonials, etc.).
+1. Background and color theme — match light pages:
+
+Change the page background from dark green to cream/off-white (#f5f2ed) — matching the About and Testimonials page content sections.
+Keep the navbar dark green (unchanged, site-wide).
+Update all text colors accordingly:
+
+"ENQUIRY RECEIVED" label: gold/tan (#a18661)
+"Success! Your Vision" heading: dark green (#21291a)
+"Is in Good Hands." italic accent line: gold/tan (#a18661)
+Description paragraph: warm gray (#5c5c5c)
+"WHAT HAPPENS NEXT" label: gold/tan (#a18661)
+Step numbers (01, 02, 03, 04): gold/tan (#a18661)
+Step text: dark gray (#2c2c2c)
+The checkmark icon circle: change border/icon color to match the gold/tan or dark green theme instead of current light outline on dark bg
+
+
+
+2. Remove the "FREE DOWNLOAD" section entirely:
+
+Remove the "2026 Interior Trend Guide", "While you wait, explore our curated guide..." text, and the "DOWNLOAD GUIDE →" button completely.
+Keep everything else (checkmark icon, heading, description, "WHAT HAPPENS NEXT" steps, "BACK TO HOME" and "EXPLORE OUR WORK" buttons).
+
+3. Match typography to site-wide font style:
+
+Ensure the heading font matches the serif font used on About/Testimonials/Services headings (same font-family, weight, and size pattern used throughout the site).
+"ENQUIRY RECEIVED" and "WHAT HAPPENS NEXT" labels should match the small uppercase letter-spaced label style used on other pages (same as "CLIENT STORIES", "OUR STORY", "WHO WE ARE" labels).
+Step text should match the body text style used on About page paragraphs.
+
+4. Update the "WHAT HAPPENS NEXT" section styling:
+
+The steps box currently has a dark background — change it to a white or very light card (#ffffff or #f0ece4) with a subtle border (#e0d9ce) and soft shadow, matching card style used elsewhere on the site (like Mission/Vision boxes on About page).
+Step numbers should be styled consistently with the "Our Values" numbered list on About page.
+
+5. Update buttons:
+
+"BACK TO HOME" button: outlined style with dark green border and text (#21291a), matching the "VIEW PROJECTS →" button style on the Home page hero.
+"EXPLORE OUR WORK →" button: filled gold/tan background (same as "ENQUIRE NOW" button or "BOOK FREE CONSULTATION" button style).
+
+6. Add animations:
+
+Checkmark icon: animate with a scale-up + fade-in on page load (scale 0.5 → 1, opacity 0 → 1, duration ~600ms, ease-out).
+"ENQUIRY RECEIVED" label: fade in after checkmark (~200ms delay).
+Heading lines: staggered fade-in + slide-up, same style as hero text animation (~300ms delay after label, ~200ms stagger between lines).
+Description paragraph: fade in after heading (~150ms delay).
+"WHAT HAPPENS NEXT" box: fade in + slide up (~200ms delay after description).
+Each step (01-04): stagger fade-in one by one (~100ms between each step) after the box appears.
+Buttons: fade in together last (~150ms after steps).
+Use Framer Motion whileInView or simple CSS animation with delays — whichever is already used in the project.
+
+7. Mobile responsiveness:
+
+Ensure the success page looks clean on mobile (375px-414px viewport):
+
+Heading font size scales down appropriately.
+"BACK TO HOME" and "EXPLORE OUR WORK" buttons stack vertically on mobile instead of side by side.
+"WHAT HAPPENS NEXT" box has proper padding on mobile so text doesn't touch the edges.
+All animations should work smoothly on mobile.
