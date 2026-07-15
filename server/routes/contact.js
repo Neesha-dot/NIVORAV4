@@ -49,18 +49,20 @@ router.post('/', async (req, res) => {
 
   const fullName = clean(body.fullName, MAX_LEN.short)
   const phone = clean(body.phone, MAX_LEN.short)
-  const email = clean(body.email, MAX_LEN.short)
-  const spaceType = clean(body.spaceType, MAX_LEN.short)
-  const location = clean(body.location, MAX_LEN.short)
-  const projectType = clean(body.projectType, MAX_LEN.short)
-  const budget = clean(body.budget, MAX_LEN.short)
-  const referral = clean(body.referral, MAX_LEN.short)
-  const requirements = clean(body.requirements, MAX_LEN.long)
+  const email = clean(body.email || '', MAX_LEN.short)
+  const spaceType = clean(body.spaceType || '', MAX_LEN.short)
+  const location = clean(body.location || '', MAX_LEN.short)
+  const projectType = clean(body.projectType || '', MAX_LEN.short)
+  const budget = clean(body.budget || '', MAX_LEN.short)
+  const referral = clean(body.referral || '', MAX_LEN.short)
+  const requirements = clean(body.requirements || '', MAX_LEN.long)
+  const source = clean(body.source || '', MAX_LEN.short)
 
-  if (!fullName || !phone || !email || !spaceType) {
-    return res.status(400).json({ error: 'Full name, phone, email, and type of space are required.' })
+  if (!fullName || !phone) {
+    return res.status(400).json({ error: 'Full name and phone number are required.' })
   }
-  if (!EMAIL_RE.test(email)) {
+  // Only validate email format when one is provided
+  if (email && !EMAIL_RE.test(email)) {
     return res.status(400).json({ error: 'Please provide a valid email address.' })
   }
   if (!PHONE_RE.test(phone)) {
@@ -73,7 +75,7 @@ router.post('/', async (req, res) => {
   try {
     enquiryDoc = await Enquiry.create({
       fullName, phone, email, spaceType, location,
-      projectType, budget, referral, requirements,
+      projectType, budget, referral, requirements, source,
     })
   } catch (err) {
     console.error('[Contact] Failed to save enquiry:', err)
@@ -99,6 +101,7 @@ router.post('/', async (req, res) => {
     ['Estimated Budget', budget],
     ['How Did You Hear About Us', referral],
     ['Brief Requirements', requirements],
+    ...(source ? [['Source', source]] : []),
   ]
 
   const html = `

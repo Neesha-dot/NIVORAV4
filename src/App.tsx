@@ -98,7 +98,7 @@ function AppInner() {
       {showSplash && (
         <IntroOverlay key={homeKey} onExitComplete={handleSplashComplete} />
       )}
-      <ConsultationPopup />
+      <ConsultationPopup splashDone={splashDone} />
       <motion.div
         animate={{ x: showSplash ? '100%' : 0 }}
         transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}

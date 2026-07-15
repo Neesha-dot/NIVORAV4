@@ -18,6 +18,9 @@ const enquirySchema = new mongoose.Schema(
     // Whether the notification email to the studio was sent successfully.
     emailSent: { type: Boolean, default: false },
 
+    // Where the submission came from (e.g. 'Contact Page', 'Popup Form').
+    source: { type: String, default: '', trim: true },
+
     // Free-text notes an admin can add while triaging enquiries.
     notes: { type: String, default: '', trim: true },
   },

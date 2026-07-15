@@ -1,0 +1,60 @@
+I want to update the consultation popup on the Home page to use a 2-step form. Here are the complete requirements:
+1. Replace popup content with a 2-step form:
+Step 1 — Basic Info (shown first):
+
+Field 1: Full Name (text input, placeholder: "Your full name")
+Field 2: Phone Number (tel input, with +91 prefix shown inside the field)
+Button: "NEXT →" (same gold/tan style as existing button, full-width)
+Progress indicator: "Step 1 of 2" shown subtly below the button
+
+Step 2 — Project Details (shown after clicking Next):
+
+Field 3: Type of Space (text input, placeholder: "e.g. Living Room, Bedroom, Office...")  — user types manually, no dropdown/pills
+Field 4: Estimated Budget (text input, placeholder: "e.g. ₹10L–₹20L or ₹50L+") — user types manually, NO pill/option selector
+Field 5: Location (pill-style selector buttons — same as Contact page: Ambernath, Kalyan, Pune, Mumbai, Other)
+Field 6: Brief Requirements (small textarea, placeholder: "Tell us about your project, style preferences, timeline...")
+Button: "BOOK MY FREE CONSULTATION" (same gold/tan full-width button)
+Back button: small "← Back" text link above the form to go back to Step 1
+Progress indicator: "Step 2 of 2" shown subtly below the button
+
+2. Form submission logic — use EXACTLY the same logic as the Contact page form:
+
+Open the Contact page form's submit handler and copy the exact same submission logic into the popup form's submit handler.
+On "BOOK MY FREE CONSULTATION" click, submit the combined Step 1 + Step 2 data using:
+
+The same email sending method (EmailJS/Formspree/whatever is used on the Contact page) — so the entry arrives in the same email inbox.
+The same Google Sheets/Excel panel logging URL/API call — so the entry also appears in the same spreadsheet dashboard where Contact page submissions are recorded.
+
+
+Add source: "Popup Form" as an extra field in the submitted data so Shweta can distinguish popup leads from Contact page leads in both the email and the spreadsheet.
+Do NOT create any new API endpoints, new email services, or new spreadsheet connections — reuse 100% of what already exists on the Contact page.
+
+3. Popup trigger timing:
+
+Remove the current scroll-triggered delay entirely.
+New trigger: show the popup 4 seconds after the splash animation completes and the Home page becomes visible — no scroll required, just a 4-second timer that starts when splashDone = true.
+Show only once per session using sessionStorage (key: popupShown). If already shown in this session, do not show again.
+
+4. Keep existing popup design/styling:
+
+Keep the cream background card, rounded corners, X close button, heading "Planning your dream home?", subheading "GET A FREE 30-MIN DESIGN CONSULTATION" exactly as they currently are.
+Replace only the middle content area with the 2-step form.
+Keep the same gold/tan button styling, font sizes, and card dimensions.
+Add a smooth fade or slide-left transition animation between Step 1 and Step 2.
+
+5. Validation:
+
+Step 1: Name (required, min 2 chars) and Phone (required, exactly 10 digits after the +91 prefix) must be filled before Next is allowed. Show inline red error messages below each field if invalid.
+Step 2: Location pill must be selected (required) before final submit is allowed. Type of Space, Budget (text), and Brief Requirements are optional. Show inline red error if Location not selected.
+
+6. Success state:
+
+After successful submission, replace the form content inside the popup card with:
+
+A checkmark icon (gold/tan color)
+Heading: "Thank you, [First Name]!" (use the name from Step 1)
+Subtext: "We'll reach out to you within 24 hours."
+Auto-close the popup after 3 seconds, OR show a "Close" button if they want to dismiss it manually.
+
+
+After popup closes, mark popupShown = true in sessionStorage so it doesn't reappear.
