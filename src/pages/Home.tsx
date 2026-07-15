@@ -2484,7 +2484,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
           margin: 0;
         }
         @media (max-width: 768px) {
-          .ig2-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+          .ig2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 0; }
         }
 
         .ig2-thumb {
