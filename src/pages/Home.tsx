@@ -700,6 +700,7 @@ function CompareSlider({
         overflow: 'hidden',
         cursor: 'ew-resize',
         userSelect: 'none',
+        WebkitUserSelect: 'none',
         touchAction: 'none',
       }}
       onMouseDown={onMouseDown}
@@ -746,20 +747,32 @@ function CompareSlider({
       }} />
 
       {/* Drag handle */}
-      <div style={{
-        position: 'absolute',
-        top: '50%', left: `${pos}%`,
-        transform: `translate(-50%, -50%) scale(${handleScale})`,
-        width: 46, height: 46,
-        borderRadius: '50%',
-        background: '#fff',
-        border: '2px solid rgba(200,165,106,0.85)',
-        boxShadow: '0 2px 18px rgba(0,0,0,0.22)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        pointerEvents: 'none',
-        zIndex: 5,
-        transition: dividerTransition ? `left ${transitionMs}ms ease-in-out, transform 120ms ease` : 'transform 120ms ease',
-      }}>
+      <style>{`
+        .cs-handle { width: 46px; height: 46px; }
+        @media (max-width: 768px) { .cs-handle { width: 48px; height: 48px; } }
+      `}</style>
+      <div
+        className="cs-handle"
+        onMouseDown={onMouseDown}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={endDrag}
+        style={{
+          position: 'absolute',
+          top: '50%', left: `${pos}%`,
+          transform: `translate(-50%, -50%) scale(${handleScale})`,
+          borderRadius: '50%',
+          background: '#fff',
+          border: '2px solid rgba(200,165,106,0.85)',
+          boxShadow: '0 2px 18px rgba(0,0,0,0.22)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          pointerEvents: 'auto',
+          cursor: 'ew-resize',
+          touchAction: 'none',
+          zIndex: 5,
+          transition: dividerTransition ? `left ${transitionMs}ms ease-in-out, transform 120ms ease` : 'transform 120ms ease',
+        }}
+      >
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C8A56A" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
           <path d="M8 5l-4 7 4 7M16 5l4 7-4 7" />
         </svg>
