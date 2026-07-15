@@ -1,0 +1,48 @@
+The Before & After comparison slider's drag handle works on desktop (mouse drag) but does NOT work on mobile (touch drag). Please fix touch support:
+1. Add touch event handlers to the drag handle:
+
+Currently the slider handle likely only has onMouseDown event listener for drag functionality.
+Add the equivalent touch events alongside every mouse event:
+
+onMouseDown → also add onTouchStart
+onMouseMove (on window/document) → also add onTouchMove
+onMouseUp (on window/document) → also add onTouchEnd
+
+
+
+2. Extract touch coordinates correctly:
+
+Mouse events use e.clientX to get the X position.
+Touch events use e.touches[0].clientX (during touchstart/touchmove) and e.changedTouches[0].clientX (during touchend).
+Update the position calculation function to handle both:
+
+jsconst getClientX = (e) => {
+  if (e.touches && e.touches.length > 0) {
+    return e.touches[0].clientX;
+  }
+  if (e.changedTouches && e.changedTouches.length > 0) {
+    return e.changedTouches[0].clientX;
+  }
+  return e.clientX;
+};
+3. Prevent page scroll while dragging the slider on mobile:
+
+Add e.preventDefault() inside the onTouchMove handler to stop the page from scrolling up/down while the user is dragging the slider horizontally.
+For this to work, the touch event listener must be added with { passive: false } option:
+
+jssliderRef.current.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+Make sure to remove this listener in the cleanup function to avoid memory leaks.
+
+4. If using a library (react-compare-slider or similar):
+
+Check if the installed version of the library has known touch issues.
+If using react-compare-slider: ensure you're on the latest version (npm install react-compare-slider@latest) as older versions had touch bugs.
+If using a custom implementation: apply the touch event fixes described above.
+
+5. Testing checklist:
+
+Test on mobile viewport (375px, 390px) — touch and drag the center handle left and right to reveal before/after images.
+Confirm the page does not scroll vertically while dragging the handle horizontally.
+Confirm desktop mouse drag still works correctly after the touch fix.
+Test on both iOS (Safari) and Android (Chrome) if possible.

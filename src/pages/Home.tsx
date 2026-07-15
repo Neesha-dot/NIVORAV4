@@ -700,7 +700,7 @@ function CompareSlider({
         overflow: 'hidden',
         cursor: 'ew-resize',
         userSelect: 'none',
-        touchAction: 'pan-y',
+        touchAction: 'none',
       }}
       onMouseDown={onMouseDown}
       onMouseMove={onMouseMove}
