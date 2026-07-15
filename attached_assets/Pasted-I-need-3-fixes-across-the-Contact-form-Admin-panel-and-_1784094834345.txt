@@ -1,0 +1,39 @@
+I need 3 fixes across the Contact form, Admin panel, and Popup form:
+1. Fix email sending so ALL contact form submissions reliably send email notifications:
+
+Currently the "Email Sent" status in the admin panel shows "No" for most entries, meaning email notifications are failing silently for most submissions.
+Find the email sending logic in the Contact form submit handler (EmailJS/Formspree/Nodemailer/whatever is used).
+Debug why it's failing: check for missing API keys, incorrect template IDs, wrong service IDs, or async errors being swallowed silently.
+Add proper error handling: wrap the email sending call in try/catch and console.log both success and failure responses so we can see exactly what's happening.
+After fixing, test by submitting the Contact form and verify: (a) email arrives in Shweta's inbox, AND (b) the admin panel entry shows "Yes" in the Email Sent column.
+The "Email Sent" column in the admin panel should automatically update to "Yes" when email is successfully sent — make sure the database/sheet update for this status field happens AFTER the email send resolves successfully, not before.
+
+2. Replace Budget field with a free-text input in the Contact page form:
+
+Currently the "ESTIMATED BUDGET" field uses pill/button selectors (₹5L–₹10L, ₹10L–₹20L, ₹20L+).
+Replace this entirely with a plain text input field:
+
+Label: "ESTIMATED BUDGET"
+Input type: text
+Placeholder: "e.g. ₹10–20 Lakhs, ₹50L+, Not decided yet"
+No required validation — keep it optional
+
+
+Remove the pill selector buttons completely for this field.
+Style the new text input to match the other text inputs on the Contact form (same underline border style, same font, same label styling).
+
+3. Update the admin panel Excel/spreadsheet to save the budget as free text:
+
+Since budget is now a free-text field instead of a fixed option, the admin panel's "BUDGET" column should save whatever the user typed, not a predefined category.
+Make sure the Google Sheets/database submission logic passes the budget text value directly as a string — no mapping or transformation needed.
+Check that the Excel download also correctly exports the budget as the user-entered text.
+
+4. Apply the same budget text input change to the Popup Form (Step 2):
+
+The popup form's "Estimated Budget" field is already a text input — confirm it's using the same free-text approach and submitting the value correctly to the same admin panel and email.
+
+5. Testing checklist after all fixes:
+
+Submit the Contact form with a manually typed budget → verify it appears correctly in admin panel AND in the downloaded Excel.
+Submit the Contact form → verify email notification arrives in Shweta's inbox within a few seconds → verify admin panel entry shows "Email Sent: Yes" automatically.
+Repeat the same test for the Popup form submission.

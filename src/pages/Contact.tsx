@@ -387,17 +387,17 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Estimated Budget chips */}
+                  {/* Estimated Budget — free text */}
                   <div className="form-field-full" style={fieldEl(680)}>
-                    <label className="form-label" style={{ marginBottom: 12 }}>Estimated Budget</label>
-                    <div className="chip-group">
-                      {BUDGETS.map((opt, idx) => (
-                        <span key={opt} style={chipEl(680 + idx * 70)}>
-                          <button type="button" className={`chip-btn${form.budget === opt ? ' selected' : ''}`} onClick={() => toggle('budget')(opt)}>
-                            {opt}
-                          </button>
-                        </span>
-                      ))}
+                    <label className="form-label">Estimated Budget</label>
+                    <div className="form-field-wrap">
+                      <input
+                        className="form-input"
+                        type="text"
+                        placeholder="e.g. ₹10–20 Lakhs, ₹50L+, Not decided yet"
+                        value={form.budget}
+                        onChange={set('budget')}
+                      />
                     </div>
                   </div>
 
