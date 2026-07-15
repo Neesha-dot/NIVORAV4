@@ -2477,15 +2477,18 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
         }
 
         .ig2-grid {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: 3px;
+          display: flex;
+          width: 100%;
+          gap: 0;
+          padding: 0;
+          margin: 0;
         }
         @media (max-width: 768px) {
-          .ig2-grid { grid-template-columns: repeat(2, 1fr); }
+          .ig2-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
         }
 
         .ig2-thumb {
+          flex: 1;
           display: block;
           position: relative;
           overflow: hidden;
@@ -2498,7 +2501,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
           transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
         @media (max-width: 768px) {
-          .ig2-thumb { height: auto; aspect-ratio: 1 / 1; }
+          .ig2-thumb { flex: none; height: auto; aspect-ratio: 1 / 1; }
         }
         .ig2-thumb.ig2-in {
           animation: ig2-thumb-in 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
@@ -2574,7 +2577,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
       `}</style>
 
       {/* Heading */}
-      <div className="text-center" style={{ marginBottom: 40, maxWidth: 1200, margin: '0 auto 40px', padding: '0 24px' }}>
+      <div className="text-center" style={{ maxWidth: 1200, margin: '0 auto 24px', padding: '0 24px' }}>
         <a
           href="https://www.instagram.com/nivora.interiors"
           target="_blank" rel="noopener noreferrer"
@@ -2641,7 +2644,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
       <div
         className={`ig2-cta-wrap${vis ? ' ig2-in' : ''}`}
         style={{
-          textAlign: 'center', marginTop: 32, maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', padding: '0 24px',
+          textAlign: 'center', maxWidth: 1200, marginTop: 24, marginLeft: 'auto', marginRight: 'auto', padding: '0 24px',
           '--cta-delay':    `${posts.length * 0.1 + 0.35}s`,
           '--cta-ul-delay': `${posts.length * 0.1 + 0.55}s`,
         } as React.CSSProperties}
