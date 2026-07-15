@@ -2478,38 +2478,30 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
 
         .ig2-grid {
           display: flex;
-          width: 100vw;
-          margin-left: calc(-50vw + 50%);
+          width: 100%;
           gap: 0;
           padding: 0;
+          margin: 0;
         }
         @media (max-width: 768px) {
-          .ig2-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3px;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-          }
+          .ig2-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
         }
 
         .ig2-thumb {
-          flex: 1 1 0;
-          min-width: 0;
+          flex: 1;
           display: block;
           position: relative;
           overflow: hidden;
-          height: 320px;
+          height: 300px;
           cursor: pointer;
           opacity: 0;
-          border: none;
-          outline: none;
-          border-radius: 0;
+          border: 2px solid transparent;
           box-sizing: border-box;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border-radius: 0;
+          transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
         @media (max-width: 768px) {
-          .ig2-thumb { flex: none; width: 100%; height: auto; aspect-ratio: 1 / 1; border-radius: 0; }
+          .ig2-thumb { flex: none; height: auto; aspect-ratio: 1 / 1; }
         }
         .ig2-thumb.ig2-in {
           animation: ig2-thumb-in 0.5s cubic-bezier(0.22,1,0.36,1) forwards;
@@ -2530,8 +2522,7 @@ function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }>
         }
         .ig2-thumb:hover {
           transform: scale(1.02);
-          outline: 2px solid rgba(200,165,106,0.75);
-          outline-offset: -2px;
+          border-color: rgba(200,165,106,0.75);
           box-shadow: 0 4px 24px rgba(0,0,0,0.18);
           z-index: 2;
         }
