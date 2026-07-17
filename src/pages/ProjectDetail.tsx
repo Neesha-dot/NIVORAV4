@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut } from 'lucide-react'
+import { motion } from 'framer-motion'
 import FadeIn from '../components/FadeIn'
 import { fetchProject } from '../lib/api'
 import type { Project } from '../lib/api'
@@ -328,36 +329,166 @@ export default function ProjectDetail() {
       {/* Concept & Intent */}
       <div style={{ background: '#FFFCF7' }}>
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-2 gap-20">
-            <FadeIn>
-              <p style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+          {isMobile ? (
+            /* ── Mobile: stacked in required order with larger fonts ── */
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+              {/* Project label */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0, ease: 'easeOut' }}
+                style={{ color: '#D4B483', fontSize: 11, letterSpacing: '0.4em', textTransform: 'uppercase', margin: 0 }}
+              >
                 {project.conceptLabel || 'The Concept'}
-              </p>
-              <h2 className="font-serif font-light mb-6 leading-snug" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: '1.875rem', color: '#262421', letterSpacing: '-0.01em' }}>
+              </motion.p>
+
+              {/* Project title */}
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                className="font-serif leading-snug"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: '1.5rem', color: '#262421', letterSpacing: '-0.01em', margin: 0 }}
+              >
                 {project.concept}
-              </h2>
-              <p style={{ color: '#2E2A26', opacity: 0.6, lineHeight: '1.9', fontWeight: 300 }}>{project.description}</p>
-            </FadeIn>
-            <FadeIn delay={0.2} direction="left">
-              <p style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              </motion.h2>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+                style={{ color: '#2E2A26', opacity: 0.6, lineHeight: 1.7, fontWeight: 300, fontSize: 15, margin: 0 }}
+              >
+                {project.description}
+              </motion.p>
+
+              {/* Design Intent label */}
+              <motion.p
+                initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
+                style={{ color: '#D4B483', fontSize: 11, letterSpacing: '0.4em', textTransform: 'uppercase', margin: 0 }}
+              >
                 {project.designIntentLabel || 'Design Intent'}
-              </p>
-              <p className="font-serif font-light italic mb-10" style={{ fontSize: '1.5rem', color: '#2E2A26', opacity: 0.75, lineHeight: '1.7' }}>
+              </motion.p>
+
+              {/* Design Intent quote */}
+              <motion.p
+                initial={{ opacity: 0, y: 20, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
+                className="font-serif font-light italic"
+                style={{ fontSize: 15, color: '#2E2A26', opacity: 0.75, lineHeight: 1.7, margin: 0 }}
+              >
                 "{project.designIntent}"
-              </p>
-              <p style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1rem' }}>
-                Materials Used
-              </p>
-              <ul className="space-y-2">
-                {project.materials.map(m => (
-                  <li key={m} className="flex items-center gap-3 text-sm font-light" style={{ color: '#2E2A26', opacity: 0.6 }}>
-                    <span className="rounded-full shrink-0" style={{ width: 4, height: 4, background: '#D4B483' }} />
+              </motion.p>
+
+              {/* Materials Used label + divider */}
+              {project.materials.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.65, ease: 'easeOut' }}
+                >
+                  <div style={{ borderTop: '1px solid #D4B483', marginBottom: '0.875rem' }} />
+                  <p style={{ color: '#D4B483', fontSize: 11, letterSpacing: '0.4em', textTransform: 'uppercase', margin: 0 }}>
+                    Materials Used
+                  </p>
+                </motion.div>
+              )}
+
+              {/* Materials list — single column on mobile */}
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                {project.materials.map((m, i) => (
+                  <motion.li
+                    key={m}
+                    initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.75 + i * 0.08, ease: 'easeOut' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#2E2A26', opacity: 0.6, fontSize: 14, fontWeight: 300, lineHeight: 1.8 }}
+                  >
+                    <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#D4B483', flexShrink: 0 }} />
                     {m}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </FadeIn>
-          </div>
+            </div>
+          ) : (
+            /* ── Desktop: 2-column grid ── */
+            <div className="grid lg:grid-cols-2 gap-20">
+
+              {/* LEFT: label + title + description + Materials Used */}
+              <div>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0, ease: 'easeOut' }}
+                  style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1.5rem' }}
+                >
+                  {project.conceptLabel || 'The Concept'}
+                </motion.p>
+
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
+                  className="font-serif font-light mb-6 leading-snug"
+                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: '1.875rem', color: '#262421', letterSpacing: '-0.01em' }}
+                >
+                  {project.concept}
+                </motion.h2>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
+                  style={{ color: '#2E2A26', opacity: 0.6, lineHeight: '1.9', fontWeight: 300 }}
+                >
+                  {project.description}
+                </motion.p>
+
+                {/* Materials Used — 2-column grid below description */}
+                {project.materials.length > 0 && (
+                  <div style={{ marginTop: '2.5rem' }}>
+                    <motion.div
+                      initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.65, ease: 'easeOut' }}
+                    >
+                      <div style={{ borderTop: '1px solid #D4B483', marginBottom: '0.875rem' }} />
+                      <p style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+                        Materials Used
+                      </p>
+                    </motion.div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.4rem 2rem' }}>
+                      {project.materials.map((m, i) => (
+                        <motion.div
+                          key={m}
+                          initial={{ opacity: 0, x: -16 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.75 + i * 0.08, ease: 'easeOut' }}
+                          style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#2E2A26', opacity: 0.6, fontSize: '0.875rem', fontWeight: 300, lineHeight: 1.8 }}
+                        >
+                          <span style={{ width: 4, height: 4, borderRadius: '50%', background: '#D4B483', flexShrink: 0 }} />
+                          {m}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* RIGHT: Design Intent only */}
+              <div>
+                <motion.p
+                  initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
+                  style={{ color: '#D4B483', fontSize: 10, letterSpacing: '0.4em', textTransform: 'uppercase', marginBottom: '1.5rem' }}
+                >
+                  {project.designIntentLabel || 'Design Intent'}
+                </motion.p>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 20, scale: 0.97 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.55, ease: 'easeOut' }}
+                  className="font-serif font-light italic"
+                  style={{ fontSize: '1.5rem', color: '#2E2A26', opacity: 0.75, lineHeight: '1.7' }}
+                >
+                  "{project.designIntent}"
+                </motion.p>
+              </div>
+
+            </div>
+          )}
         </div>
       </div>
 

@@ -1,0 +1,76 @@
+Dekha maine — mobile view mein sab kuch stack ho gaya hai jo theek hai, but font bahut chhota hai aur koi animation nahi hai. Yeh raha updated complete Replit prompt:
+
+Prompt for Replit (React):
+
+I want to restructure the individual project detail page layout AND fix mobile view with larger fonts and animations. Here are all the requirements:
+1. Desktop layout restructure (Option A):
+LEFT SIDE:
+
+Project label (e.g., "ROYAL LIVING REDEFINED (ARVIND MOHITE)") — unchanged
+Project title — unchanged
+Project description paragraph — unchanged
+"MATERIALS USED" section below description on left side:
+
+"MATERIALS USED" label in same small uppercase gold style
+Thin gold divider line above the label
+Materials displayed in a 2-column grid (split items evenly between columns)
+Small bullet dots, same font style as current
+
+
+
+RIGHT SIDE:
+
+"DESIGN INTENT" label — unchanged
+Only the Design Intent quote text — nothing else on right side
+Remove Materials Used from right side completely
+
+2. Admin panel → Frontend connection:
+
+Both "Design Intent" and "Materials Used" must be editable from admin panel
+When updated in admin panel, frontend updates automatically without code changes
+Materials Used stored as array of strings in database (one item per entry)
+If currently hardcoded, move to database/API fetch
+
+3. Mobile view fixes (max-width: 768px):
+Stacking order on mobile (top to bottom):
+
+Project label
+Project title
+Project description
+Design Intent
+Materials Used
+
+Font size increases on mobile:
+
+Project label ("ROYAL LIVING REDEFINED..."): increase to 11px (from current tiny size), keep uppercase gold style
+Project title: increase to 24px minimum, bold serif — currently too small on mobile
+Project description paragraph: increase to 15px, line-height 1.7 — currently hard to read
+"DESIGN INTENT" label: increase to 11px uppercase gold
+Design Intent quote text: increase to 15px italic, line-height 1.7
+"MATERIALS USED" label: increase to 11px uppercase gold
+Materials list items: increase to 14px, line-height 1.8
+On mobile, Materials Used shows as single column list (not 2-column grid)
+
+4. Add animations for content section on mobile AND desktop:
+
+Project label: fade in + slide up, delay 0ms, duration 600ms
+Project title: fade in + slide up, delay 150ms, duration 700ms
+Project description: fade in + slide up, delay 300ms, duration 700ms
+"DESIGN INTENT" label: fade in, delay 450ms, duration 500ms
+Design Intent quote: fade in + slide up, delay 550ms, duration 700ms — give this a slightly more pronounced animation (scale from 0.97 to 1 as well) since it's the highlight content
+"MATERIALS USED" label + divider: fade in, delay 650ms, duration 500ms
+Each material item: stagger fade in + slide in from left, 80ms delay between each item, starting at delay 750ms — so items appear one by one
+Use Framer Motion whileInView with once: true so animations trigger when content scrolls into view (important since gallery images are above this section, user scrolls down to see content)
+Easing: smooth ease-out for all animations
+
+5. Keep everything else unchanged:
+
+Gallery images section above — unchanged
+All existing styling colors, font families — unchanged
+Only font sizes (mobile), layout restructure, and animations are new
+
+6. Testing checklist:
+
+Desktop: verify 2-column materials grid on left, design intent alone on right
+Mobile (375px, 390px): verify all text is clearly readable without zooming, stacking order is correct, animations play smoothly on scroll
+Admin panel: update Design Intent and Materials → verify frontend updates automatically
