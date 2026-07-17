@@ -1,0 +1,92 @@
+I want to update the testimonials data with new client reviews. Please update the testimonials array/database with all the following entries, keeping existing ones too:
+Update the testimonials data source (wherever testimonials are currently stored — could be a testimonials.ts data file, MongoDB collection, or hardcoded array) with these entries. Keep ALL existing testimonials already in the system AND add these 9 new ones:
+1. {
+  name: "Arvind Mohite",
+  location: "Ambernath, Mumbai",
+  project: "RESIDENTIAL — 4BHK RESIDENCE",
+  rating: 5,
+  review: "NIVORA transformed our vision into a home that perfectly reflects our family's lifestyle. The balance of warm wooden finishes, elegant detailing, and functional planning exceeded every expectation. Their professionalism, transparency, and craftsmanship made the entire journey enjoyable. Every guest who visits appreciates the timeless beauty of our home."
+}
+
+2. {
+  name: "Tushar Shah",
+  location: "Mumbai",
+  project: "RESIDENTIAL — 4BHK RESIDENCE",
+  rating: 5,
+  review: "From the very first design discussion to the final handover, the NIVORA team understood exactly what we wanted. They created a home that is modern, practical, and incredibly welcoming. Their attention to detail and execution quality are simply outstanding."
+}
+
+3. {
+  name: "Mayur Patil",
+  location: "Casa Élan Bungalow",
+  project: "RESIDENTIAL — BUNGALOW",
+  rating: 5,
+  review: "Designing a bungalow requires thoughtful planning, and NIVORA delivered beyond our expectations. Every room flows beautifully into the next, with a perfect blend of luxury and functionality. The quality of materials and finishing reflects true craftsmanship."
+}
+
+4. {
+  name: "Parag Bari",
+  location: "Mumbai",
+  project: "COMMERCIAL — OFFICE",
+  rating: 5,
+  review: "Our office now represents our brand perfectly. The layout has improved productivity, while the elegant interiors leave a lasting impression on every client who visits. NIVORA managed the entire project professionally and delivered exactly as promised."
+}
+
+5. {
+  name: "Tarun Raisinghania",
+  location: "Shivganga",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "We wanted a peaceful home that felt warm and timeless, and NIVORA achieved exactly that. The soft curves, lighting, and neutral palette create a calming atmosphere that our family enjoys every day. It truly feels like home."
+}
+
+6. {
+  name: "Samiksha Shetty",
+  location: "Mumbai",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "NIVORA has an incredible ability to create elegance through simplicity. Every texture, finish, and lighting detail has been carefully planned. The final result is sophisticated, functional, and far more beautiful than we imagined."
+}
+
+7. {
+  name: "Kapil Arora",
+  location: "Mumbai",
+  project: "RESIDENTIAL — DUPLEX",
+  rating: 5,
+  review: "The team designed every space with precision and purpose. The duplex feels spacious, luxurious, and incredibly comfortable. Their communication, project management, and commitment to quality made the entire experience completely stress-free."
+}
+
+8. {
+  name: "Rahul Patil",
+  location: "Mumbai",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "NIVORA beautifully balanced warmth, luxury, and functionality in our home. The custom furniture, lighting, and thoughtful detailing have completely transformed our everyday living experience. We highly recommend NIVORA to anyone looking for premium interiors."
+}
+
+9. {
+  name: "Aditi R.",
+  location: "Ambernath",
+  project: "RESIDENTIAL — HOME INTERIOR",
+  rating: 5,
+  review: "Nivora took my vision and refined it into something I never thought possible. Their material selection is impeccable."
+}
+Home page testimonials carousel:
+
+Update the carousel to include all testimonials (existing + 9 new).
+Update the dots indicator count to match the new total number of testimonials.
+Auto-scroll and dots/arrow navigation should work across all testimonials correctly.
+Keep the same split-panel carousel design (dark green left panel + white right panel) unchanged.
+
+Testimonials page (full page):
+
+Display ALL testimonials (existing + new 9) in the same 3-column grid layout.
+Each card shows: 5 stars, review text, client avatar (initials auto-generated from name — e.g., "Aditi R." → "AR", "Arvind Mohite" → "AM"), name, location, project type tag at bottom.
+Keep exact same card styling as existing cards (image 1 reference).
+
+Important:
+
+Do NOT remove or overwrite any existing testimonials already in the system.
+If stored in MongoDB: insert 9 new documents.
+If stored in a data file: append 9 new entries to the existing array.
+Verify total testimonial count displays correctly in both home page carousel dots and testimonials page grid after the update.
