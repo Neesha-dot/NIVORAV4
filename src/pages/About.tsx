@@ -48,7 +48,7 @@ const offerings = [
 ]
 
 const founderImg = founderPhoto
-const studioImg  = 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=900&q=80'
+const studioImg  = '/images/about/about-who-we-are.png'
 
 /* ─── TYPOGRAPHY — matches Services page ────────────────── */
 const LABEL: React.CSSProperties = {

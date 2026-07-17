@@ -1,0 +1,32 @@
+I am uploading a new image directly into the Replit project. Please replace the existing "Who We Are" section image on the About page with this newly uploaded image.
+1. Find the uploaded image:
+
+Check recently added files in the project root, attached_assets/, uploads/, or public/ folder.
+Run find . -newer src/App.tsx -name "*.jpg" -o -newer src/App.tsx -name "*.png" -o -newer src/App.tsx -name "*.jpeg" 2>/dev/null to locate the most recently uploaded file.
+
+2. Save the image in the correct folder:
+
+Copy/move the uploaded image to public/images/about/ (create this folder if it doesn't exist).
+Rename it to a clean name: about-who-we-are.jpg (or .png depending on file type).
+Final path should be: public/images/about/about-who-we-are.jpg
+
+3. If Cloudinary is being used in this project:
+
+Check if other images (portfolio, hero, etc.) are being served from Cloudinary URLs.
+If yes, upload this image to Cloudinary as well using the same Cloudinary account/folder structure already configured in the project.
+Store it in a folder like nivora/about/ on Cloudinary.
+Use the Cloudinary URL as the image src instead of the local path.
+If Cloudinary is NOT used anywhere in the project, ignore this step and use the local public/images/about/about-who-we-are.jpg path directly.
+
+4. Update the About page component:
+
+Find the "Who We Are" section in the About page component (the section with "WHO WE ARE" label, "A Boutique Studio Built on Listening" heading, and the image on the left side).
+Replace the current image src with the new path: /images/about/about-who-we-are.jpg (or Cloudinary URL if applicable).
+Keep alt="Nivora Interiors - Who We Are" for accessibility.
+Keep all existing image styling (dimensions, object-fit, border-radius, etc.) exactly unchanged — only the src changes.
+
+5. Verify:
+
+Confirm the new image displays correctly on both desktop and mobile in the "Who We Are" section.
+Confirm the image fits properly within the existing left-side image container without any distortion or cropping issues.
+If there is any aspect ratio mismatch, adjust object-fit: cover and object-position: center to ensure the image looks good.
