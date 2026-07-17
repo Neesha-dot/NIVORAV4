@@ -30,7 +30,7 @@ const values = [
 
 const DEFAULT_ABOUT_STATS = [
   { value: 25,  suffix: '+', label: 'Clients Served',         duration: 1800 },
-  { value: 2,   suffix: '',  label: 'Years of Experience',    duration: 1200 },
+  { value: 5,   suffix: '+', label: 'Years of Experience',    duration: 1200 },
   { value: 2,   suffix: '',  label: 'Cities — Mumbai & Pune', duration: 1200 },
   { value: 100, suffix: '%', label: 'End-to-End Solutions',   duration: 1600 },
 ]
@@ -604,7 +604,7 @@ export default function About() {
             <p style={LABEL}>Who We Are</p>
             <h2 style={H2}>A Boutique Studio Built on Listening</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <p style={BODY}>Over the last two years, we've completed 25+ residential and commercial interior projects across Mumbai and Pune — designing homes and workspaces that feel personal, practical, and built to last.</p>
+              <p style={BODY}>Over the last five years, we've completed 25+ residential and commercial interior projects across Mumbai and Pune — designing homes and workspaces that feel personal, practical, and built to last.</p>
               <p style={BODY}>Every project begins with listening. We understand how clients live, work, and use their space before designing anything. We provide complete interior design and turnkey solutions with clear timelines and transparent communication.</p>
               <p style={BODY}>We currently design and execute projects across Mumbai and Pune, partnering with homeowners and businesses who value quality, clarity, and a seamless process.</p>
             </div>

@@ -409,7 +409,7 @@ function HomeStatsPanel({ settings, onChange }: { settings: SiteSettings; onChan
   const stats: StatItem[] = settings.homeStats?.length
     ? settings.homeStats
     : [
-        { value: '2+',  label: 'Years Experience'    },
+        { value: '5+',  label: 'Years Experience'    },
         { value: '25+', label: 'Projects Completed'  },
         { value: '50+', label: 'Clients Served'      },
         { value: '90%', label: 'Client Satisfaction' },
@@ -454,7 +454,7 @@ function AboutStatsPanel({ settings, onChange }: { settings: SiteSettings; onCha
     ? settings.aboutStats
     : [
         { value: '25+',  label: 'Clients Served'        },
-        { value: '2',    label: 'Years of Experience'    },
+        { value: '5+',   label: 'Years of Experience'    },
         { value: '2',    label: 'Cities — Mumbai & Pune' },
         { value: '100%', label: 'End-to-End Solutions'   },
       ]
@@ -562,14 +562,14 @@ const EMPTY_SETTINGS: SiteSettings = {
   servicePageHero: { backgroundImage: '', headline: '', subheadline: '' },
   servicesList: [],
   homeStats: [
-    { value: '2+',  label: 'Years Experience'    },
+    { value: '5+',  label: 'Years Experience'    },
     { value: '25+', label: 'Projects Completed'  },
     { value: '50+', label: 'Clients Served'      },
     { value: '90%', label: 'Client Satisfaction' },
   ],
   aboutStats: [
     { value: '25+',  label: 'Clients Served'        },
-    { value: '2',    label: 'Years of Experience'    },
+    { value: '5+',   label: 'Years of Experience'    },
     { value: '2',    label: 'Cities — Mumbai & Pune' },
     { value: '100%', label: 'End-to-End Solutions'   },
   ],

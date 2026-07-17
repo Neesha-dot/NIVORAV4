@@ -1,0 +1,99 @@
+I want to completely replace all existing testimonials with only the 9 new ones I provided, AND update the years of experience stat site-wide.
+1. Delete ALL existing testimonials:
+
+If stored in MongoDB: run db.testimonials.deleteMany({}) to clear the entire collection first.
+If stored in a data file (testimonials.ts or similar): delete all existing entries from the array, leaving it empty first.
+Do NOT keep any previous testimonials — remove all of them including Priya & Rohan Khanna, Ananya & Siddharth Mehta, Nikhil Desai, Aditya Shinde, Swati & Arjun Kulkarni, and any others.
+
+2. Insert ONLY these 9 testimonials (no more, no less):
+1. {
+  name: "Arvind Mohite",
+  location: "Ambernath, Mumbai",
+  project: "RESIDENTIAL — 4BHK RESIDENCE",
+  rating: 5,
+  review: "NIVORA transformed our vision into a home that perfectly reflects our family's lifestyle. The balance of warm wooden finishes, elegant detailing, and functional planning exceeded every expectation. Their professionalism, transparency, and craftsmanship made the entire journey enjoyable. Every guest who visits appreciates the timeless beauty of our home."
+}
+
+2. {
+  name: "Tushar Shah",
+  location: "Mumbai",
+  project: "RESIDENTIAL — 4BHK RESIDENCE",
+  rating: 5,
+  review: "From the very first design discussion to the final handover, the NIVORA team understood exactly what we wanted. They created a home that is modern, practical, and incredibly welcoming. Their attention to detail and execution quality are simply outstanding."
+}
+
+3. {
+  name: "Mayur Patil",
+  location: "Casa Élan Bungalow",
+  project: "RESIDENTIAL — BUNGALOW",
+  rating: 5,
+  review: "Designing a bungalow requires thoughtful planning, and NIVORA delivered beyond our expectations. Every room flows beautifully into the next, with a perfect blend of luxury and functionality. The quality of materials and finishing reflects true craftsmanship."
+}
+
+4. {
+  name: "Parag Bari",
+  location: "Mumbai",
+  project: "COMMERCIAL — OFFICE",
+  rating: 5,
+  review: "Our office now represents our brand perfectly. The layout has improved productivity, while the elegant interiors leave a lasting impression on every client who visits. NIVORA managed the entire project professionally and delivered exactly as promised."
+}
+
+5. {
+  name: "Tarun Raisinghania",
+  location: "Shivganga",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "We wanted a peaceful home that felt warm and timeless, and NIVORA achieved exactly that. The soft curves, lighting, and neutral palette create a calming atmosphere that our family enjoys every day. It truly feels like home."
+}
+
+6. {
+  name: "Samiksha Shetty",
+  location: "Mumbai",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "NIVORA has an incredible ability to create elegance through simplicity. Every texture, finish, and lighting detail has been carefully planned. The final result is sophisticated, functional, and far more beautiful than we imagined."
+}
+
+7. {
+  name: "Kapil Arora",
+  location: "Mumbai",
+  project: "RESIDENTIAL — DUPLEX",
+  rating: 5,
+  review: "The team designed every space with precision and purpose. The duplex feels spacious, luxurious, and incredibly comfortable. Their communication, project management, and commitment to quality made the entire experience completely stress-free."
+}
+
+8. {
+  name: "Rahul Patil",
+  location: "Mumbai",
+  project: "RESIDENTIAL — APARTMENT",
+  rating: 5,
+  review: "NIVORA beautifully balanced warmth, luxury, and functionality in our home. The custom furniture, lighting, and thoughtful detailing have completely transformed our everyday living experience. We highly recommend NIVORA to anyone looking for premium interiors."
+}
+
+9. {
+  name: "Aditi R.",
+  location: "Ambernath",
+  project: "RESIDENTIAL — HOME INTERIOR",
+  rating: 5,
+  review: "Nivora took my vision and refined it into something I never thought possible. Their material selection is impeccable."
+}
+3. Update "Years of Experience" stat across the ENTIRE project:
+
+Search the entire codebase for any instance of years of experience stat — this may appear in multiple places:
+
+Home page stats section (e.g., "2+ Years Experience" or "8+ Years Experience")
+About page stats section (e.g., "2 Years of Experience")
+Popup form stats (e.g., "2+ Years Experience")
+Any other component, data file, or hardcoded string mentioning years of experience
+
+
+Replace ALL instances with "5+ Years Experience" (or "5+ Years of Experience" — match the existing label format in each location)
+Search using: grep -r "years" src/ --include="*.tsx" --include="*.ts" -i and grep -r "experience" src/ --include="*.tsx" --include="*.ts" -i to find every occurrence
+Update every single one — no instance of "2+", "8+", or any other number for years of experience should remain anywhere in the project
+
+4. Verify after all updates:
+
+Total testimonials count = exactly 9 (console.log to confirm)
+Home page carousel shows 9 dots
+Testimonials page grid shows exactly 9 cards (3 rows of 3)
+All years of experience stats show "5+" everywhere on the site — home page, about page, popup, and anywhere else it appears
