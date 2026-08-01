@@ -1281,7 +1281,7 @@ function HeroSection({ splashDone }: { splashDone: boolean }) {
         variants={heroContainerVariants}
         initial="hidden"
         animate={splashDone && heroInView ? 'visible' : 'hidden'}
-        style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: 860, margin: '0 auto', width: '100%' }}
+        style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: 1040, margin: '0 auto', width: '100%' }}
         className="hero-content-wrap"
       >
 
@@ -1321,11 +1321,11 @@ function HeroSection({ splashDone }: { splashDone: boolean }) {
           style={{
             fontFamily: "'Playfair Display', serif",
             fontWeight: 400,
-            fontSize: 'clamp(36px, 5vw, 68px)',
+            fontSize: 'clamp(48px, 6.2vw, 88px)',
             lineHeight: 1.05,
             color: '#f5f0e8',
             letterSpacing: '-0.01em',
-            marginBottom: 6,
+            marginBottom: 8,
           }}
         >
           Thoughtfully Designed
@@ -1338,7 +1338,7 @@ function HeroSection({ splashDone }: { splashDone: boolean }) {
           style={{
             fontFamily: "'Playfair Display', serif",
             fontWeight: 400,
-            fontSize: 'clamp(36px, 5vw, 68px)',
+            fontSize: 'clamp(48px, 6.2vw, 88px)',
             lineHeight: 1.05,
             color: '#f5f0e8',
             letterSpacing: '-0.01em',
@@ -1355,10 +1355,10 @@ function HeroSection({ splashDone }: { splashDone: boolean }) {
           style={{
             fontFamily: "'Playfair Display', serif",
             fontWeight: 400,
-            fontSize: 'clamp(36px, 5vw, 68px)',
+            fontSize: 'clamp(48px, 6.2vw, 88px)',
             lineHeight: 1.05,
             letterSpacing: '-0.01em',
-            marginBottom: 28,
+            marginBottom: 32,
           }}
         >
           <em style={{ color: '#b8966a', fontStyle: 'italic' }}>That Feel Effortless</em>
@@ -1374,8 +1374,8 @@ function HeroSection({ splashDone }: { splashDone: boolean }) {
             fontSize: 'clamp(15px, 1.6vw, 18px)',
             color: 'rgba(245,240,232,0.58)',
             lineHeight: 1.8,
-            maxWidth: 520,
-            margin: '0 auto 48px',
+            maxWidth: 620,
+            margin: '0 auto 56px',
           }}
         >
           {heroSubheadline}
