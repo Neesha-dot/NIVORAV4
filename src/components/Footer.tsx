@@ -64,7 +64,7 @@ function FooterLink({ to, label }: { to: string; label: string }) {
           fontFamily: "'Jost', sans-serif",
           fontSize: 13,
           fontWeight: 300,
-          color: '#f5f2ed',
+          color: '#ede8e0',
           textDecoration: 'none',
           letterSpacing: '0.04em',
           display: 'inline-block',
@@ -82,7 +82,7 @@ function FooterLink({ to, label }: { to: string; label: string }) {
         }}
         onMouseLeave={e => {
           const el = e.currentTarget as HTMLElement
-          el.style.color = '#f5f2ed'
+          el.style.color = '#ede8e0'
           const bar = el.querySelector('.link-bar') as HTMLElement | null
           if (bar) bar.style.width = '0%'
         }}
@@ -356,7 +356,7 @@ export default function Footer() {
 
             <p style={{
               fontFamily: "'Cormorant Garamond', serif",
-              color: 'rgba(245,242,237,0.45)',
+              color: 'rgba(245,242,237,0.72)',
               fontSize: 13,
               lineHeight: 1.8,
               fontWeight: 300,
@@ -381,7 +381,7 @@ export default function Footer() {
               fontSize: 10,
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              color: '#a18661',
+              color: '#c4a87a',
               marginBottom: 24,
               fontWeight: 400,
             }}>Navigate</h4>
@@ -403,7 +403,7 @@ export default function Footer() {
               fontSize: 10,
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              color: '#a18661',
+              color: '#c4a87a',
               marginBottom: 24,
               fontWeight: 400,
             }}>What We Do</h4>
@@ -424,18 +424,18 @@ export default function Footer() {
               fontSize: 10,
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              color: '#a18661',
+              color: '#c4a87a',
               marginBottom: 24,
               fontWeight: 400,
             }}>Find Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
-                <MapPin size={16} color="#a18661" style={{ flexShrink: 0, marginTop: 2 }} />
+                <MapPin size={16} color="#c4a87a" style={{ flexShrink: 0, marginTop: 2 }} />
                 <p style={{
                   fontFamily: "'Jost', sans-serif",
                   fontSize: 13,
                   fontWeight: 300,
-                  color: 'rgba(245,242,237,0.5)',
+                  color: 'rgba(245,242,237,0.78)',
                   lineHeight: 1.7,
                   margin: 0,
                 }}>
@@ -451,14 +451,14 @@ export default function Footer() {
                     fontFamily: "'Jost', sans-serif",
                     fontSize: 13,
                     fontWeight: 300,
-                    color: '#a18661',
+                    color: '#c4a87a',
                     textDecoration: 'none',
                     transition: 'opacity 0.25s ease',
                   }}
                   onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '0.75' }}
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
                 >
-                  <Mail size={16} color="#a18661" style={{ flexShrink: 0 }} />
+                  <Mail size={16} color="#c4a87a" style={{ flexShrink: 0 }} />
                   nivora.inbox@gmail.com
                 </a>
                 <a
@@ -468,14 +468,14 @@ export default function Footer() {
                     fontFamily: "'Jost', sans-serif",
                     fontSize: 13,
                     fontWeight: 300,
-                    color: 'rgba(245,242,237,0.5)',
+                    color: 'rgba(245,242,237,0.78)',
                     textDecoration: 'none',
                     transition: 'color 0.25s ease',
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#a18661' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(245,242,237,0.5)' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#c4a87a' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'rgba(245,242,237,0.78)' }}
                 >
-                  <Phone size={16} color="#a18661" style={{ flexShrink: 0 }} />
+                  <Phone size={16} color="#c4a87a" style={{ flexShrink: 0 }} />
                   +91 72766 87805
                 </a>
               </div>
@@ -494,23 +494,23 @@ export default function Footer() {
                   fontFamily: "'Jost', sans-serif",
                   fontSize: 13,
                   fontWeight: 300,
-                  color: 'rgba(245,242,237,0.5)',
+                  color: 'rgba(245,242,237,0.78)',
                   textDecoration: 'none',
-                  opacity: 0.7,
+                  opacity: 1,
                   transition: 'opacity 0.3s ease, color 0.25s ease',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.opacity = '1'
+                  el.style.color = '#c4a87a'
                   el.style.textDecoration = 'underline'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.opacity = '0.7'
+                  el.style.color = 'rgba(245,242,237,0.78)'
                   el.style.textDecoration = 'none'
                 }}
               >
-                <Instagram size={16} color="#a18661" style={{ flexShrink: 0 }} />
+                <Instagram size={16} color="#c4a87a" style={{ flexShrink: 0 }} />
                 <span>nivora.interiors</span>
               </a>
             </div>
@@ -526,7 +526,7 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           style={{
             height: 1,
-            background: 'rgba(161,134,97,0.3)',
+            background: 'rgba(161,134,97,0.55)',
             margin: '48px 0 0',
             transformOrigin: 'left center',
           }}
@@ -553,7 +553,7 @@ export default function Footer() {
             fontFamily: "'Jost', sans-serif",
             fontSize: 12,
             fontWeight: 300,
-            color: '#6d5a41',
+            color: 'rgba(245,242,237,0.48)',
             margin: 0,
           }}>
             © 2025 Nivora Interiors. All rights reserved.
@@ -562,7 +562,7 @@ export default function Footer() {
             fontFamily: "'Jost', sans-serif",
             fontSize: 12,
             fontWeight: 300,
-            color: '#6d5a41',
+            color: 'rgba(245,242,237,0.48)',
             margin: 0,
           }}>
             Designed with intention.
