@@ -559,7 +559,7 @@ function CtaButton() {
       <Link
         to="/contact"
         className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase px-12 py-5 hover:bg-[#d4b896] transition-all duration-300 font-medium"
-        style={{ background: '#C9A96E', color: '#21291a', position: 'relative', overflow: 'hidden' }}
+        style={{ background: 'linear-gradient(135deg, #D8B67A 0%, #C9A063 50%, #B98B4E 100%)', color: '#21291a', position: 'relative', overflow: 'hidden', transition: 'background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease' }}
       >
         Book Free Consultation <ArrowRight size={13} />
         {isMobile && (

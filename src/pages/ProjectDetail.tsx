@@ -572,20 +572,21 @@ export default function ProjectDetail() {
               to="/contact"
               className="inline-flex items-center gap-2 transition-all duration-300 font-medium text-xs tracking-[0.2em] uppercase px-10 py-4"
               style={{
-                background: '#D4B483',
+                background: 'linear-gradient(135deg, #D8B67A 0%, #C9A063 50%, #B98B4E 100%)',
                 color: '#2E2A26',
                 borderRadius: 4,
                 textDecoration: 'none',
+                transition: 'background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease',
               }}
               onMouseEnter={e => {
                 const el = e.currentTarget as HTMLAnchorElement
-                el.style.background = '#c9a470'
+                el.style.background = 'linear-gradient(135deg, #E5C68A 0%, #D4AA73 50%, #C49B5E 100%)'
                 el.style.transform = 'translateY(-2px)'
-                el.style.boxShadow = '0 8px 24px rgba(212,180,131,0.35)'
+                el.style.boxShadow = '0 10px 25px rgba(185,139,78,0.25)'
               }}
               onMouseLeave={e => {
                 const el = e.currentTarget as HTMLAnchorElement
-                el.style.background = '#D4B483'
+                el.style.background = 'linear-gradient(135deg, #D8B67A 0%, #C9A063 50%, #B98B4E 100%)'
                 el.style.transform = 'translateY(0)'
                 el.style.boxShadow = 'none'
               }}
