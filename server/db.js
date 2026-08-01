@@ -8,7 +8,7 @@ export function connectDB() {
   if (connectionPromise) return connectionPromise
 
   let uri = process.env.MONGODB_URI || process.env.MONGODB_URL
-  if (!uri) throw new Error('MONGODB_URI environment variable is not set')
+  if (!uri) return Promise.reject(new Error('MONGODB_URI environment variable is not set'))
   // Strip any accidental label prefix (e.g. "uri:mongodb+srv://...")
   if (uri.startsWith('uri:')) uri = uri.slice(4)
 
