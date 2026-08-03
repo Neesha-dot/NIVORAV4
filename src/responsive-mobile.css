@@ -145,6 +145,14 @@
     justify-content: center !important;
   }
 
+  /* Location tag (pin + city name) — always a tight inline row */
+  .hero-location-tag {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 5px !important;
+  }
+
   /* CTA buttons — side by side in one row */
   .hero-cta-group {
     flex-direction: row !important;
