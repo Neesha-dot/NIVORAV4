@@ -184,10 +184,10 @@ function StepContent({
   side?: 'left' | 'right'
 }) {
   const titleInitial = mobile
-    ? { opacity: 0, x: side === 'left' ? -36 : 36 }
+    ? { opacity: 0, y: 18 }
     : { opacity: 0, y: 14 }
   const titleAnimate = active
-    ? (mobile ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 })
+    ? { opacity: 1, y: 0 }
     : titleInitial
   const titleTransition = mobile
     ? { duration: 0.6, ease: 'easeOut' as const, delay: 0.2 }
@@ -274,10 +274,11 @@ function StepRow({
 
   const isLeft = step.side === 'left'
 
-  // Mobile: bigger slide distance (60px), snappier ease-out. Desktop: original 32px curve, unchanged.
+  // Mobile: fade up from below (avoids overflow-x:hidden clipping the horizontal slide).
+  // Desktop: original left/right 32px slide, unchanged.
   const slideVariants = (dir: 'left' | 'right') => ({
-    hidden: { opacity: 0, x: dir === 'left' ? (isMobile ? -60 : -32) : (isMobile ? 60 : 32) },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: isMobile ? 0 : (dir === 'left' ? -32 : 32), y: isMobile ? 24 : 0 },
+    visible: { opacity: 1, x: 0, y: 0 },
   })
   const contentTransition = isMobile
     ? { duration: 0.5, ease: 'easeOut' as const }
@@ -445,7 +446,9 @@ function ProcessHeader({ isMobile }: { isMobile: boolean }) {
 
 export default function ProcessSection() {
   const [visibleSet, setVisibleSet] = useState<Set<number>>(new Set())
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 768px)').matches : false
+  )
   const timelineRef = useRef<HTMLDivElement>(null)
   // Mobile-only: continuous gold line, section-triggered scaleY draw (threshold 0.2), replays on re-entry.
   const timelineInView = useInView(timelineRef, { once: false, amount: 0.2 })
