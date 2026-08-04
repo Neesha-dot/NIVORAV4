@@ -54,11 +54,11 @@ const transformations = [
 ]
 
 const DEFAULT_INSTAGRAM_POSTS = [
-  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-1-mandir.png',     url: 'https://www.instagram.com/reel/DOn3js3jRMW/?igsh=MTI2a3QxMzduc2x5ZQ==' },
+  { image: '/instagram/ig-post-1-bedroom-marble.png',                                                                        url: 'https://www.instagram.com/reel/DNWtK0ht1DO/' },
   { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-2-acetech.png',    url: 'https://www.instagram.com/p/DRAbqc_DSIC/?igsh=cG1kZGN0dGl6dGg5' },
-  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-3-newchapter.png', url: 'https://www.instagram.com/p/DWeKntdAYYc/?img_index=4&igsh=MWRrYzI3Zm05ZnZzYg==' },
-  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-4-kitchen.png',   url: 'https://www.instagram.com/reel/DPWBNVBjVWe/?igsh=MWxhcTUwbXNyc3dleQ==' },
-  { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-5-balcony.png',   url: 'https://www.instagram.com/reel/DOqj3mTDPex/?igsh=MW14NnZrenB0OTVveA==' },
+  { image: '/instagram/ig-post-3-sandstone-wall.png',                                                                       url: 'https://www.instagram.com/reel/DPECwNBge6u/' },
+  { image: '/instagram/ig-post-4-reception-lounge.png',                                                                     url: 'https://www.instagram.com/reel/DOivw8LjZVS/' },
+  { image: '/instagram/ig-post-5-tv-unit.png',                                                                              url: 'https://www.instagram.com/reel/DO3Q44njbsU/' },
   { image: 'https://res.cloudinary.com/tgmyheme/image/upload/q_auto:best,f_auto/nivora-instagram/ig-post-6-bedroom.png',   url: 'https://www.instagram.com/reel/DMlyCnWh6Ct/?igsh=eHd1ZHRuMHoyOGdo' },
 ]
 
