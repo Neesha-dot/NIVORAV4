@@ -244,7 +244,7 @@ export default function Services() {
   const pageSubheading = settings?.servicePageHero?.subheadline || 'Complete interior design and architecture services — from first conversation to final reveal.'
 
   return (
-    <div style={{ backgroundColor: '#F7F4EF', minHeight: '100vh' }}>
+    <div style={{ backgroundColor: '#f5f2ed', minHeight: '100vh' }}>
       <style>{`
         :root {
           --card-h: 460px;
@@ -422,7 +422,7 @@ export default function Services() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: 10,
-              backgroundColor: '#C9A96E',
+              backgroundColor: '#a18661',
               color: '#1C2818',
               fontFamily: "'Inter', sans-serif",
               fontWeight: 500,
@@ -441,7 +441,7 @@ export default function Services() {
             }}
             onMouseLeave={e => {
               const el = e.currentTarget as HTMLElement
-              el.style.backgroundColor = '#C9A96E'
+              el.style.backgroundColor = '#a18661'
               el.style.transform = 'translateY(0)'
             }}
           >

@@ -162,7 +162,7 @@ function ProjectCard({ project, index, delay }: {
               marginTop: 14,
               fontFamily: "'Inter', sans-serif",
               fontWeight: 400, fontSize: 9,
-              color: '#C9A96E',
+              color: '#a18661',
               letterSpacing: '0.25em', textTransform: 'uppercase',
             }}>
               View Project <ArrowRight size={10} strokeWidth={1.5} />
@@ -208,7 +208,7 @@ export default function Portfolio() {
   const DISPLAY = projects
 
   return (
-    <div style={{ background: '#FFFCF7', minHeight: '100vh', paddingTop: 80 }}>
+    <div style={{ background: '#f5f2ed', minHeight: '100vh', paddingTop: 80 }}>
       <style>{`
         @keyframes shimmer {
           0% { background-position: 200% 0 }

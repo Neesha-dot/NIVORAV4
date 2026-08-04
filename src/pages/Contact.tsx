@@ -73,7 +73,7 @@ export default function Contact() {
   })
 
   return (
-    <div style={{ background: '#F5F0E8' }}>
+    <div style={{ background: '#f5f2ed' }}>
       <style>{`
         /* ── cards ── */
         .contact-form-card {
@@ -142,7 +142,7 @@ export default function Contact() {
           position: absolute;
           bottom: 0; left: 50%;
           width: 0; height: 1.5px;
-          background: #C9A96E;
+          background: #a18661;
           transition: width 0.28s ease, left 0.28s ease;
         }
         .form-field-wrap:focus-within::after { left: 0; width: 100%; }
@@ -163,7 +163,7 @@ export default function Contact() {
           transition: border-color 0.28s ease;
           box-sizing: border-box;
         }
-        .form-textarea:focus { border-color: #C9A96E; }
+        .form-textarea:focus { border-color: #a18661; }
         .form-textarea::placeholder { color: #AAAAAA; }
 
         /* ── form grid ── */
@@ -188,10 +188,10 @@ export default function Contact() {
           cursor: pointer;
           transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
         }
-        .chip-btn:hover { border-color: #C9A96E; color: #2C2C2A; }
+        .chip-btn:hover { border-color: #a18661; color: #2C2C2A; }
         .chip-btn.selected {
-          background: #C9A96E;
-          border-color: #C9A96E;
+          background: #a18661;
+          border-color: #a18661;
           color: #FFFFFF;
           transform: translateY(-1px);
         }
@@ -280,7 +280,7 @@ export default function Contact() {
           transform: headingInView ? 'translateY(0)' : 'translateY(-28px)',
           transition: 'opacity 700ms ease-out, transform 700ms ease-out',
         }}>
-          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#C9A96E', marginBottom: 16 }}>
+          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 11, letterSpacing: '0.4em', textTransform: 'uppercase', color: '#a18661', marginBottom: 16 }}>
             Reach Out
           </p>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 'clamp(1.9rem, 4vw, 3.2rem)', color: '#262421', margin: '0 0 16px', lineHeight: 1.1, letterSpacing: '-0.01em' }}>
@@ -331,7 +331,7 @@ export default function Contact() {
 
                   {/* Full Name */}
                   <div style={fieldEl(80)}>
-                    <label className="form-label">Full Name <span style={{ color: '#C9A96E' }}>*</span></label>
+                    <label className="form-label">Full Name <span style={{ color: '#a18661' }}>*</span></label>
                     <div className="form-field-wrap">
                       <input className="form-input" type="text" required placeholder="Jane Doe" value={form.fullName} onChange={set('fullName')} />
                     </div>
@@ -339,7 +339,7 @@ export default function Contact() {
 
                   {/* Phone */}
                   <div style={fieldEl(180)}>
-                    <label className="form-label">Phone Number <span style={{ color: '#C9A96E' }}>*</span></label>
+                    <label className="form-label">Phone Number <span style={{ color: '#a18661' }}>*</span></label>
                     <div className="form-field-wrap">
                       <input className="form-input" type="tel" required placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} />
                     </div>
@@ -347,7 +347,7 @@ export default function Contact() {
 
                   {/* Email */}
                   <div style={fieldEl(280)}>
-                    <label className="form-label">Email Address <span style={{ color: '#C9A96E' }}>*</span></label>
+                    <label className="form-label">Email Address <span style={{ color: '#a18661' }}>*</span></label>
                     <div className="form-field-wrap">
                       <input className="form-input" type="email" required placeholder="jane@example.com" value={form.email} onChange={set('email')} />
                     </div>
@@ -355,7 +355,7 @@ export default function Contact() {
 
                   {/* Type of Space */}
                   <div style={fieldEl(380)}>
-                    <label className="form-label">Type of Space <span style={{ color: '#C9A96E' }}>*</span></label>
+                    <label className="form-label">Type of Space <span style={{ color: '#a18661' }}>*</span></label>
                     <div className="form-field-wrap">
                       <select className="form-select" required value={form.spaceType} onChange={set('spaceType')} style={{ color: form.spaceType === '' ? '#AAAAAA' : '#2C2C2A' }}>
                         <option value="" disabled>Select a space type</option>
@@ -395,7 +395,7 @@ export default function Contact() {
                   {/* Estimated Budget — chip pills */}
                   <div className="form-field-full" style={fieldEl(680)}>
                     <label className="form-label" style={{ marginBottom: 12 }}>
-                      Estimated Budget <span style={{ color: '#C9A96E' }}>*</span>
+                      Estimated Budget <span style={{ color: '#a18661' }}>*</span>
                     </label>
                     <div className="chip-group">
                       {BUDGETS.map((opt, idx) => (
@@ -444,7 +444,7 @@ export default function Contact() {
                     style={{
                       width: '100%',
                       background: '#21291a',
-                      color: '#C9A96E',
+                      color: '#a18661',
                       fontFamily: "'Jost', sans-serif",
                       fontSize: 13,
                       letterSpacing: '0.12em',
@@ -500,7 +500,7 @@ export default function Contact() {
                 <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 26, color: '#262421', margin: '0 0 4px', letterSpacing: '-0.01em' }}>
                   Nivora Interiors
                 </h2>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 14, color: '#C9A96E', margin: '0 0 32px' }}>
+                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: 14, color: '#a18661', margin: '0 0 32px' }}>
                   From Vision to Execution
                 </p>
 
@@ -532,7 +532,7 @@ export default function Contact() {
               <div>
                 <div style={{ borderTop: '1px solid #E8E0D0', paddingTop: 28 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-                    <Clock size={13} style={{ color: '#C9A96E', flexShrink: 0 }} />
+                    <Clock size={13} style={{ color: '#a18661', flexShrink: 0 }} />
                     <p style={{ fontFamily: "'Jost', sans-serif", fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888880', margin: 0 }}>
                       Studio Hours
                     </p>
@@ -593,7 +593,7 @@ function ContactRow({ icon, children, iconStyle }: { icon: React.ReactNode; chil
           justifyContent: 'center',
           flexShrink: 0,
           borderRadius: 8,
-          color: '#C9A96E',
+          color: '#a18661',
           cursor: 'default',
           ...iconStyle,
         }}
