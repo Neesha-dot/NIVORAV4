@@ -6,8 +6,8 @@ import { submitEnquiry } from '../lib/api'
 const SPACE_TYPES = ['Residential', 'Commercial', 'Office', 'Retail', 'Villa/Bungalow', 'Other']
 const REFERRAL_OPTIONS = ['Instagram', 'Google', 'Word of Mouth', 'Facebook', 'Other']
 const LOCATIONS = ['Ambernath', 'Kalyan', 'Pune', 'Mumbai', 'Other']
-const PROJECT_TYPES = ['1BHK/2BHK', '3BHK+', 'Villa/Bungalow', 'Office', 'Retail/Commercial']
-const BUDGETS = ['₹5L–₹10L', '₹10L–₹20L', '₹20L+']
+const PROJECT_TYPES = ['2BHK', '3BHK+', 'Villa/Bungalow', 'Office', 'Retail/Commercial']
+const BUDGETS = ['₹10 Lakhs', '₹20 Lakhs', '₹30 Lakhs', '₹30 Lakhs+']
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -310,6 +310,11 @@ export default function Contact() {
                 onSubmit={async e => {
                   e.preventDefault()
                   if (status === 'submitting') return
+                  if (!form.budget) {
+                    setErrorMsg('Please select an estimated budget.')
+                    setStatus('error')
+                    return
+                  }
                   setStatus('submitting')
                   setErrorMsg('')
                   try {
@@ -387,17 +392,19 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Estimated Budget — free text */}
+                  {/* Estimated Budget — chip pills */}
                   <div className="form-field-full" style={fieldEl(680)}>
-                    <label className="form-label">Estimated Budget</label>
-                    <div className="form-field-wrap">
-                      <input
-                        className="form-input"
-                        type="text"
-                        placeholder="e.g. ₹10–20 Lakhs, ₹50L+, Not decided yet"
-                        value={form.budget}
-                        onChange={set('budget')}
-                      />
+                    <label className="form-label" style={{ marginBottom: 12 }}>
+                      Estimated Budget <span style={{ color: '#C9A96E' }}>*</span>
+                    </label>
+                    <div className="chip-group">
+                      {BUDGETS.map((opt, idx) => (
+                        <span key={opt} style={chipEl(680 + idx * 70)}>
+                          <button type="button" className={`chip-btn${form.budget === opt ? ' selected' : ''}`} onClick={() => toggle('budget')(opt)}>
+                            {opt}
+                          </button>
+                        </span>
+                      ))}
                     </div>
                   </div>
 

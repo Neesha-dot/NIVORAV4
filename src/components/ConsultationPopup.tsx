@@ -93,6 +93,7 @@ export default function ConsultationPopup({ splashDone }: Props) {
   // ── Step 2 submission ──
   const handleSubmit = async () => {
     const e: Record<string, string> = {}
+    if (!budget) e.budget = 'Please select an estimated budget.'
     if (!location) e.location = 'Please select your project location.'
     setErrors(e)
     if (Object.keys(e).length > 0) return
@@ -449,16 +450,25 @@ export default function ConsultationPopup({ splashDone }: Props) {
                   </div>
                 </div>
 
-                {/* Estimated Budget */}
-                <div className="cpf-field-wrap">
-                  <label className="cpf-label">Estimated Budget</label>
-                  <input
-                    className="cpf-input"
-                    type="text"
-                    placeholder="e.g. ₹10L–₹20L or ₹50L+"
-                    value={budget}
-                    onChange={e => setBudget(e.target.value)}
-                  />
+                {/* Estimated Budget — dropdown */}
+                <div style={{ marginBottom: 18 }}>
+                  <label className="cpf-label">
+                    Estimated Budget <span style={{ color: '#a18661' }}>*</span>
+                  </label>
+                  <div className="cpf-field-wrap" style={{ marginBottom: 0 }}>
+                    <select
+                      className="cpf-input cpf-select"
+                      value={budget}
+                      onChange={e => { setBudget(e.target.value); setErrors(v => ({ ...v, budget: '' })) }}
+                      style={{ color: budget === '' ? '#aaa' : '#21291a', cursor: 'pointer' }}
+                    >
+                      <option value="" disabled>Select a budget range</option>
+                      {['₹10 Lakhs', '₹20 Lakhs', '₹30 Lakhs', '₹30 Lakhs+'].map(opt => (
+                        <option key={opt} value={opt} style={{ color: '#21291a' }}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
+                  {errors.budget && <p className="cpf-error">{errors.budget}</p>}
                 </div>
 
                 {/* Location pills */}

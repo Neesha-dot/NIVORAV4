@@ -1,0 +1,52 @@
+I want to update the Estimated Budget field and Project Type field in ALL forms across the entire website — this includes the Contact page form, the Home page popup consultation form (2-step form), and anywhere else an enquiry form exists.
+
+1. Find ALL forms in the project:
+
+Search for every form/enquiry component: grep -r "budget\|Budget\|BUDGET\|project.*type\|PROJECT.*TYPE\|1BHK\|1 BHK" src/ --include="*.tsx" --include="*.ts" -l
+This will likely find: Contact page form, Home page popup form (ConsultationPopup or similar), and possibly any admin panel form
+Apply the following changes to EVERY form found
+
+2. Replace the Estimated Budget field in ALL forms:
+
+Remove the current budget field (whether it's a free-text input, pill selectors, or dropdown)
+Replace with a popup/dropdown selector with exactly these 4 options:
+₹10 Lakhs
+₹20 Lakhs
+₹30 Lakhs
+₹30 Lakhs+
+Style it as a styled select dropdown OR pill-style buttons (whichever matches the existing form design better — check what style other selector fields like "Project Location" use and match that)
+Label: "ESTIMATED BUDGET *" (or match existing label style)
+Required: make it required before form submission
+
+3. Update Project Type field in ALL forms:
+
+Find the Project Type field (currently has options like 1BHK/2BHK, 3BHK+, Villa/Bungalow, Office, Retail/Commercial or similar)
+Remove the "1BHK" option completely — whether it appears as "1BHK", "1 BHK", "1BHK/2BHK" or similar
+If it was "1BHK/2BHK" as a combined option, rename it to just "2BHK" to keep the remaining value
+Keep all other Project Type options exactly as they are
+
+4. Apply changes to these specific locations:
+
+Contact page form:
+
+Update Estimated Budget field → popup/dropdown with 4 options above
+Update Project Type → remove 1BHK option
+
+Home page popup consultation form (Step 2 of the 2-step popup):
+
+Update Estimated Budget field → same popup/dropdown with same 4 options
+Update Project Type dropdown → remove 1BHK option
+
+Any other form found in the search → apply same changes
+
+5. Update admin panel and database:
+
+The budget field in the database/MongoDB should now store one of these 4 exact string values: "₹10 Lakhs", "₹20 Lakhs", "₹30 Lakhs", "₹30 Lakhs+"
+Update any admin panel display/filter for budget to reflect these new options
+The project type field should no longer include "1BHK" as a valid value
+
+6. Verify after changes:
+
+Open Contact page form → confirm Budget shows dropdown/pills with exactly 4 options (₹10 Lakhs, ₹20 Lakhs, ₹30 Lakhs, ₹30 Lakhs+) and Project Type no longer has 1BHK
+Open Home page → wait for popup → go to Step 2 → confirm same Budget options and updated Project Type
+Submit a test form with budget selected → confirm correct value appears in admin panel

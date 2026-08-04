@@ -4,8 +4,8 @@ import FadeIn from '../components/FadeIn'
 import { ArrowRight } from 'lucide-react'
 
 const locations = ['Ambernath', 'Kalyan', 'Pune', 'Mumbai', 'Other']
-const projectTypes = ['1BHK / 2BHK', '3BHK+', 'Villa / Bungalow', 'Office', 'Retail / Commercial']
-const budgets = ['₹5L – ₹10L', '₹10L – ₹20L', '₹20L+']
+const projectTypes = ['2BHK', '3BHK+', 'Villa / Bungalow', 'Office', 'Retail / Commercial']
+const budgets = ['₹10 Lakhs', '₹20 Lakhs', '₹30 Lakhs', '₹30 Lakhs+']
 
 export default function Quote() {
   const navigate = useNavigate()
