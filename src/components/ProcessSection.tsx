@@ -57,8 +57,8 @@ function DiamondNode({ active, mobile }: { active: boolean; mobile?: boolean }) 
   return (
     <motion.div
       className="process-diamond-outer"
-      initial={{ scale: mobile ? 0 : 0.8, opacity: 0 }}
-      animate={active ? { scale: 1, opacity: 1 } : { scale: mobile ? 0 : 0.8, opacity: 0 }}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={active ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
       transition={mobile
         ? { duration: 0.5, ease: 'easeOut' }
         : { duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
@@ -265,8 +265,8 @@ function StepRow({
   onVisible: (i: number, visible: boolean) => void
 }) {
   const ref = useRef<HTMLDivElement>(null)
-  // Desktop: animate once. Mobile: higher threshold + late rootMargin so step is well visible before triggering.
-  const inView = useInView(ref, { once: !isMobile, margin: isMobile ? '0px 0px -80px 0px' : '-60px 0px', amount: isMobile ? 0.4 : 0.25 })
+  // Both mobile and desktop: always re-trigger on scroll in/out (once: false).
+  const inView = useInView(ref, { once: false, margin: '0px 0px -80px 0px', amount: 0.4 })
 
   useEffect(() => {
     onVisible(index, inView)
@@ -274,11 +274,11 @@ function StepRow({
 
   const isLeft = step.side === 'left'
 
-  // Mobile: fade up from below (avoids overflow-x:hidden clipping the horizontal slide).
-  // Desktop: original left/right 32px slide, unchanged.
-  const slideVariants = (dir: 'left' | 'right') => ({
-    hidden: { opacity: 0, x: isMobile ? 0 : (dir === 'left' ? -32 : 32), y: isMobile ? 24 : 0 },
-    visible: { opacity: 1, x: 0, y: 0 },
+  // Both mobile and desktop: fade up from below (y: 24). Avoids overflow-x:hidden
+  // clipping on mobile, and matches the same animation quality on desktop.
+  const slideVariants = (_dir: 'left' | 'right') => ({
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   })
   const contentTransition = isMobile
     ? { duration: 0.5, ease: 'easeOut' as const }
@@ -466,7 +466,7 @@ export default function ProcessSection() {
       const has = prev.has(i)
       if (visible && !has) return new Set([...prev, i])
       // Only allow un-marking (for replay) on mobile — desktop stays "once visible, stays visible".
-      if (!visible && has && isMobile) {
+      if (!visible && has) {
         const next = new Set(prev)
         next.delete(i)
         return next
