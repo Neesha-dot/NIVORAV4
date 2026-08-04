@@ -2962,9 +2962,10 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
                   backdropFilter: 'blur(6px)',
                   WebkitBackdropFilter: 'blur(6px)',
                   border: '1.5px solid #C9A96E',
-                  borderRadius: 10,
+                  outline: '1px solid rgba(201,169,110,0.45)',
+                  outlineOffset: '6px',
                   padding: '16px 18px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.28)',
+                  boxShadow: '0 18px 40px rgba(0,0,0,0.28)',
                   opacity: philosophyInView ? 1 : 0,
                   transform: philosophyInView ? 'translateY(0)' : 'translateY(14px)',
                   transition: 'opacity 500ms ease-out 300ms, transform 500ms ease-out 300ms',
@@ -3126,14 +3127,16 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
               flex-shrink: 1 !important;
               max-width: 100% !important;
               margin: 16px 0 0 0 !important;
-              background-color: rgba(14,24,14,0.92) !important;
-              background: rgba(14,24,14,0.92) !important;
-              backdrop-filter: blur(8px) !important;
-              -webkit-backdrop-filter: blur(8px) !important;
-              border: 1px solid rgba(201,169,110,0.55) !important;
-              border-radius: 10px !important;
+              background-color: rgba(0,0,0,0.45) !important;
+              background: rgba(0,0,0,0.45) !important;
+              backdrop-filter: blur(6px) !important;
+              -webkit-backdrop-filter: blur(6px) !important;
+              border: 1.5px solid #C9A96E !important;
+              outline: 1px solid rgba(201,169,110,0.45) !important;
+              outline-offset: 6px !important;
+              border-radius: 0px !important;
               padding: 16px 18px !important;
-              box-shadow: 0 8px 24px rgba(0,0,0,0.28) !important;
+              box-shadow: 0 18px 40px rgba(0,0,0,0.28) !important;
               display: block !important;
               justify-content: unset !important;
               z-index: auto !important;
