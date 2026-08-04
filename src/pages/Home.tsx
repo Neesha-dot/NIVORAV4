@@ -2958,7 +2958,7 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
                   position: 'static',
                   marginTop: 16,
                   width: '100%',
-                  backgroundColor: 'rgba(0,0,0,0.45)',
+                  backgroundColor: 'rgba(10,14,8,0.88)',
                   backdropFilter: 'blur(6px)',
                   WebkitBackdropFilter: 'blur(6px)',
                   border: '1.5px solid #C9A96E',
@@ -3127,8 +3127,8 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
               flex-shrink: 1 !important;
               max-width: 100% !important;
               margin: 16px 0 0 0 !important;
-              background-color: rgba(0,0,0,0.45) !important;
-              background: rgba(0,0,0,0.45) !important;
+              background-color: rgba(10,14,8,0.88) !important;
+              background: rgba(10,14,8,0.88) !important;
               backdrop-filter: blur(6px) !important;
               -webkit-backdrop-filter: blur(6px) !important;
               border: 1.5px solid #C9A96E !important;
