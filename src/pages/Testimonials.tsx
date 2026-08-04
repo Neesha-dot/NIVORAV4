@@ -101,7 +101,6 @@ const fadeDown = (delay = 0) => ({
 })
 
 function ProjectBadge({ project }: { project: string }) {
-  const isResidential = project.startsWith('RESIDENTIAL')
   return (
     <span style={{
       display: 'inline-block',
@@ -112,9 +111,9 @@ function ProjectBadge({ project }: { project: string }) {
       padding: '3px 8px',
       borderRadius: 6,
       lineHeight: 1.6,
-      background: isResidential ? 'rgba(161,134,97,0.12)' : 'rgba(95,116,94,0.12)',
-      color: isResidential ? '#a18661' : '#5f745e',
-      border: `1px solid ${isResidential ? 'rgba(161,134,97,0.35)' : 'rgba(95,116,94,0.35)'}`,
+      background: 'rgba(161,134,97,0.12)',
+      color: '#a18661',
+      border: '1px solid rgba(161,134,97,0.35)',
     }}>
       {project}
     </span>
