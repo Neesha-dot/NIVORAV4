@@ -450,23 +450,22 @@ export default function ConsultationPopup({ splashDone }: Props) {
                   </div>
                 </div>
 
-                {/* Estimated Budget — dropdown */}
+                {/* Estimated Budget — pills */}
                 <div style={{ marginBottom: 18 }}>
                   <label className="cpf-label">
                     Estimated Budget <span style={{ color: '#a18661' }}>*</span>
                   </label>
-                  <div className="cpf-field-wrap" style={{ marginBottom: 0 }}>
-                    <select
-                      className="cpf-input cpf-select"
-                      value={budget}
-                      onChange={e => { setBudget(e.target.value); setErrors(v => ({ ...v, budget: '' })) }}
-                      style={{ color: budget === '' ? '#aaa' : '#21291a', cursor: 'pointer' }}
-                    >
-                      <option value="" disabled>Select a budget range</option>
-                      {['₹10 Lakhs', '₹20 Lakhs', '₹30 Lakhs', '₹30 Lakhs+'].map(opt => (
-                        <option key={opt} value={opt} style={{ color: '#21291a' }}>{opt}</option>
-                      ))}
-                    </select>
+                  <div className="cpf-chips">
+                    {['₹10 Lakhs', '₹20 Lakhs', '₹30 Lakhs', '₹30 Lakhs+'].map(opt => (
+                      <button
+                        key={opt}
+                        type="button"
+                        className={`cpf-chip${budget === opt ? ' selected' : ''}`}
+                        onClick={() => { setBudget(b => b === opt ? '' : opt); setErrors(v => ({ ...v, budget: '' })) }}
+                      >
+                        {opt}
+                      </button>
+                    ))}
                   </div>
                   {errors.budget && <p className="cpf-error">{errors.budget}</p>}
                 </div>
