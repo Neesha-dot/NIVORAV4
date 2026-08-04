@@ -381,7 +381,7 @@ export default function Services() {
       <section
         ref={ctaRef}
         style={{
-          backgroundColor: '#2A3926',
+          backgroundColor: '#21291a',
           padding: '88px 1.5rem',
           textAlign: 'center',
         }}

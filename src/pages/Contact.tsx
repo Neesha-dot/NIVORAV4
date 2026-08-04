@@ -443,7 +443,7 @@ export default function Contact() {
                     transition={{ duration: 0.2, ease: 'easeOut' }}
                     style={{
                       width: '100%',
-                      background: '#2D3B2D',
+                      background: '#21291a',
                       color: '#C9A96E',
                       fontFamily: "'Jost', sans-serif",
                       fontSize: 13,

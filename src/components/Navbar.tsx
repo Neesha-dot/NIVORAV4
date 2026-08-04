@@ -14,8 +14,8 @@ const links = [
   { to: '/contact', label: 'Contact' },
 ]
 
-const OLIVE = '#132818'
-const DEEP_OLIVE = '#132818'
+const OLIVE = '#21291a'
+const DEEP_OLIVE = '#21291a'
 const GOLD = '#C8A46A'
 const GOLD_LIGHT = '#D4C0A1'
 

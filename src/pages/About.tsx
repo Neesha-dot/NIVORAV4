@@ -706,7 +706,7 @@ export default function About() {
       <FounderSection founderImg={founderImg} />
 
       {/* CTA */}
-      <section className="py-20 px-6 text-center about-section-pad" style={{ background: '#2A3926' }}>
+      <section className="py-20 px-6 text-center about-section-pad" style={{ background: '#21291a' }}>
         <FadeIn>
           <h2 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', color: '#f5f0e8', marginBottom: 20, letterSpacing: '-0.01em', lineHeight: 1.2 }}>
             Let's design something<br />
