@@ -4,19 +4,21 @@ import { ArrowRight } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import ProcessSection from '../components/ProcessSection'
 import { useSiteSettings } from '../hooks/useSiteSettings'
+import residentialCover from '../assets/services/residential-interiors-cover.jpg'
+import commercialCover from '../assets/services/commercial-interiors-cover.jpg'
 
 const FALLBACK_SERVICE_CARDS = [
   {
     num: '01',
     title: 'Residential Interiors',
     desc: 'Designing elegant homes and living spaces that blend comfort, functionality, and timeless beauty.',
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80',
+    img: residentialCover,
   },
   {
     num: '02',
     title: 'Commercial Interiors',
     desc: 'Creating productive offices, clinics, retail stores, and professional workspaces.',
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80',
+    img: commercialCover,
   },
   {
     num: '03',

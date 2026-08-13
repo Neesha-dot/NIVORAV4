@@ -6,6 +6,8 @@ import FadeIn from '../components/FadeIn'
 import { ExpertiseCarousel } from '../components/ExpertiseCarousel'
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { projects } from '../data/projects'
+import residentialCover from '../assets/services/residential-interiors-cover.jpg'
+import commercialCover from '../assets/services/commercial-interiors-cover.jpg'
 
 const heroImg = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85'
 
@@ -70,7 +72,7 @@ const services = [
     title: 'Residential Interiors',
     desc: 'Thoughtfully designed homes that reflect personality, lifestyle and everyday comfort.',
     href: '/services/residential',
-    img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=85',
+    img: residentialCover,
     icon: HomeIcon,
   },
   {
@@ -78,7 +80,7 @@ const services = [
     title: 'Commercial Interiors',
     desc: 'Functional workspaces, offices and retail environments designed for performance.',
     href: '/services/commercial',
-    img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85',
+    img: commercialCover,
     icon: Building2,
   },
   {
