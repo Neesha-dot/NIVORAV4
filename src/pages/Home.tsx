@@ -8,6 +8,11 @@ import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { projects } from '../data/projects'
 import residentialCover from '../assets/services/residential-interiors-cover.jpg'
 import commercialCover from '../assets/services/commercial-interiors-cover.jpg'
+import hospitalityCover from '../assets/services/hospitality-interiors-cover.jpg'
+import architectureCover from '../assets/services/architecture-space-planning-cover.jpg'
+import visualizationCover from '../assets/services/2d-3d-visualization-cover.jpg'
+import developerCover from '../assets/services/developer-solutions-cover.jpg'
+import renovationCover from '../assets/services/renovation-makeovers-cover.jpg'
 
 const heroImg = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85'
 
@@ -88,7 +93,7 @@ const services = [
     title: 'Hospitality Interiors',
     desc: 'Hotels, cafés and guest experiences crafted to feel memorable and welcoming.',
     href: '/services/hospitality',
-    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=85',
+    img: hospitalityCover,
     icon: Coffee,
   },
   {
@@ -96,7 +101,7 @@ const services = [
     title: 'Architecture & Space Planning',
     desc: 'Layouts, planning and built forms that connect aesthetics with purpose.',
     href: '/services/architecture',
-    img: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=85',
+    img: architectureCover,
     icon: Layers,
   },
   {
@@ -104,7 +109,7 @@ const services = [
     title: '2D & 3D Visualization',
     desc: 'Concept drawings, renders and visual development before execution begins.',
     href: '/services/visualization',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85',
+    img: visualizationCover,
     icon: Monitor,
   },
   {
@@ -112,7 +117,7 @@ const services = [
     title: 'Developer Solutions',
     desc: 'Sample flats, amenities and curated experiences that enhance property value.',
     href: '/services/developer',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=85',
+    img: developerCover,
     icon: Gem,
   },
   {
@@ -120,7 +125,7 @@ const services = [
     title: 'Renovation & Makeovers',
     desc: 'Transform existing spaces through upgrades, modernization and thoughtful redesign.',
     href: '/services/renovation',
-    img: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=900&q=85',
+    img: renovationCover,
     icon: Wrench,
   },
 ]

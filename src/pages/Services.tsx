@@ -6,6 +6,11 @@ import ProcessSection from '../components/ProcessSection'
 import { useSiteSettings } from '../hooks/useSiteSettings'
 import residentialCover from '../assets/services/residential-interiors-cover.jpg'
 import commercialCover from '../assets/services/commercial-interiors-cover.jpg'
+import hospitalityCover from '../assets/services/hospitality-interiors-cover.jpg'
+import architectureCover from '../assets/services/architecture-space-planning-cover.jpg'
+import visualizationCover from '../assets/services/2d-3d-visualization-cover.jpg'
+import developerCover from '../assets/services/developer-solutions-cover.jpg'
+import renovationCover from '../assets/services/renovation-makeovers-cover.jpg'
 
 const FALLBACK_SERVICE_CARDS = [
   {
@@ -24,31 +29,31 @@ const FALLBACK_SERVICE_CARDS = [
     num: '03',
     title: 'Hospitality Interiors',
     desc: 'Crafting memorable guest experiences through hotels, cafés, restaurants, and hospitality environments.',
-    img: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=900&q=80',
+    img: hospitalityCover,
   },
   {
     num: '04',
     title: 'Architecture & Space Planning',
     desc: 'Planning layouts, elevations, facades, and architectural concepts for optimized spaces.',
-    img: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80',
+    img: architectureCover,
   },
   {
     num: '05',
     title: '2D & 3D Visualization',
     desc: 'Concept drawings, renders and visual development before execution begins.',
-    img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80',
+    img: visualizationCover,
   },
   {
     num: '06',
     title: 'Developer Solutions',
     desc: 'Sample flats, amenities and curated experiences that enhance property value.',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=80',
+    img: developerCover,
   },
   {
     num: '07',
     title: 'Renovation & Makeovers',
     desc: 'Transform existing spaces through upgrades, modernization and thoughtful redesign.',
-    img: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=900&q=80',
+    img: renovationCover,
   },
 ]
 
