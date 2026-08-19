@@ -535,6 +535,15 @@ export default function Services() {
             grid-template-columns: 1fr;
           }
         }
+        .svc-readable-detail .svc-residential-description {
+          font-size: 17px;
+        }
+        .svc-readable-detail .svc-residential-label {
+          font-size: 12px;
+        }
+        .svc-readable-detail .svc-residential-expertise li {
+          font-size: 17px;
+        }
       `}</style>
 
       {/* Page header */}
@@ -597,7 +606,7 @@ export default function Services() {
         <div className="svc-grid-pm">
           {serviceCards.map((card, i) => (
             i === 0 ? (
-              <article key={card.num} className="svc-residential-detail">
+              <article key={card.num} className="svc-residential-detail svc-readable-detail">
                 <FadeIn>
                   <div className="svc-residential-image-wrap">
                     <img
@@ -609,7 +618,6 @@ export default function Services() {
                 </FadeIn>
                 <FadeIn>
                   <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">01 — Residential Interiors</p>
                     <h2>Residential Interiors</h2>
                     <h3>Designing Homes That Feel Like You</h3>
                     <p className="svc-residential-description">
@@ -623,10 +631,9 @@ export default function Services() {
                 </FadeIn>
               </article>
             ) : i === 1 ? (
-              <article key={card.num} className="svc-residential-detail svc-commercial-detail">
+              <article key={card.num} className="svc-residential-detail svc-commercial-detail svc-readable-detail">
                 <FadeIn>
                   <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">02 — Commercial Interiors</p>
                     <h2>Commercial Interiors</h2>
                     <h3>Spaces Designed for Productivity &amp; Impact</h3>
                     <p className="svc-residential-description">
@@ -649,7 +656,7 @@ export default function Services() {
                 </FadeIn>
               </article>
             ) : i === 2 ? (
-              <article key={card.num} className="svc-residential-detail">
+              <article key={card.num} className="svc-residential-detail svc-readable-detail">
                 <FadeIn>
                   <div className="svc-residential-image-wrap">
                     <img
@@ -661,7 +668,6 @@ export default function Services() {
                 </FadeIn>
                 <FadeIn>
                   <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">03 — Hospitality Interiors</p>
                     <h2>Hospitality Interiors</h2>
                     <h3>Creating Experiences Through Design</h3>
                     <p className="svc-residential-description">
