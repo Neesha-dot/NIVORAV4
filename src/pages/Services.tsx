@@ -419,6 +419,119 @@ export default function Services() {
             transform: translateY(0) !important;
           }
         }
+
+        /* Residential service editorial layout — intentionally local to this page. */
+        .svc-residential-detail {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          align-items: center;
+          gap: clamp(2.5rem, 6vw, 7rem);
+          padding: 2rem 0 3.5rem;
+        }
+        .svc-residential-detail .svc-residential-image-wrap {
+          overflow: hidden;
+          border-radius: 18px;
+          box-shadow: 0 14px 40px rgba(20,18,14,0.12);
+        }
+        .svc-residential-detail .svc-residential-image {
+          display: block;
+          width: 100%;
+          aspect-ratio: 1 / 1.08;
+          object-fit: cover;
+        }
+        .svc-residential-detail .svc-residential-content {
+          padding: 1rem 0;
+        }
+        .svc-residential-detail .svc-residential-eyebrow,
+        .svc-residential-detail .svc-residential-label {
+          color: #C9A96E;
+          font-family: 'Jost', sans-serif;
+          font-size: 10px;
+          font-weight: 400;
+          letter-spacing: 0.26em;
+          line-height: 1.5;
+          text-transform: uppercase;
+        }
+        .svc-residential-detail .svc-residential-eyebrow {
+          margin-bottom: 1.2rem;
+        }
+        .svc-residential-detail h2 {
+          color: #1C2818;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(2.15rem, 4vw, 3.5rem);
+          font-weight: 400;
+          line-height: 1.05;
+          margin-bottom: 1.35rem;
+        }
+        .svc-residential-detail h3 {
+          color: #33452F;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+          font-style: italic;
+          font-weight: 400;
+          line-height: 1.15;
+          margin-bottom: 1.25rem;
+        }
+        .svc-residential-detail .svc-residential-description {
+          color: rgba(28,40,24,0.62);
+          font-family: 'Jost', sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 1.85;
+          margin-bottom: 2rem;
+          max-width: 520px;
+        }
+        .svc-residential-detail .svc-residential-label {
+          margin-bottom: 1rem;
+        }
+        .svc-residential-detail .svc-residential-expertise {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.8rem 1.5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .svc-residential-detail .svc-residential-expertise li {
+          color: rgba(28,40,24,0.7);
+          font-family: 'Jost', sans-serif;
+          font-size: 13px;
+          font-weight: 300;
+          line-height: 1.45;
+          padding-left: 1rem;
+          position: relative;
+        }
+        .svc-residential-detail .svc-residential-expertise li::before {
+          background: #C9A96E;
+          border-radius: 50%;
+          content: '';
+          height: 4px;
+          left: 0;
+          position: absolute;
+          top: 0.55em;
+          width: 4px;
+        }
+        @media (max-width: 640px) {
+          .svc-residential-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 2rem;
+            padding: 0 0 2rem;
+          }
+          .svc-residential-detail .svc-residential-content {
+            padding: 0 0.25rem;
+          }
+          .svc-residential-detail .svc-residential-image {
+            aspect-ratio: 1.18 / 1;
+          }
+        }
+        @media (max-width: 460px) {
+          .svc-residential-detail .svc-residential-expertise {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
 
       {/* Page header */}
@@ -480,7 +593,35 @@ export default function Services() {
       }}>
         <div className="svc-grid-pm">
           {serviceCards.map((card, i) => (
-            <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
+            i === 0 ? (
+              <article key={card.num} className="svc-residential-detail">
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[0].img}
+                      alt="Residential Interiors"
+                      className="svc-residential-image"
+                    />
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">01 — Residential Interiors</p>
+                    <h2>Residential Interiors</h2>
+                    <h3>Designing Homes That Feel Like You</h3>
+                    <p className="svc-residential-description">
+                      Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[0].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+              </article>
+            ) : (
+              <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
+            )
           ))}
         </div>
       </section>

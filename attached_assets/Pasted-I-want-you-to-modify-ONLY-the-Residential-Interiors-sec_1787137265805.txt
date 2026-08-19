@@ -1,0 +1,205 @@
+I want you to modify **ONLY the Residential Interiors section on the Services page**.
+
+Do not touch any other service, section, navbar, footer, background, colors, or page structure.
+
+### 1. Remove the current Residential card layout
+
+Find the existing **Residential Interiors** service/card on the Services page and transform ONLY this service into a full-width two-column section.
+
+Do not create a new duplicate Residential section.
+
+### 2. Required layout
+
+On desktop, the Residential section must look like this:
+
+**LEFT: Existing Residential image**
+
+**RIGHT: Residential content**
+
+The image and content should sit side-by-side in one wide row.
+
+Use approximately:
+
+* Image: 50% width
+* Content: 50% width
+* Equal vertical alignment
+* Generous spacing between image and content
+* Comfortable padding around the entire row
+
+Do NOT use a card/grid layout.
+
+Do NOT change the page background color. **Keep the existing Services page background exactly as it currently is.**
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Residential Interiors cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate an image
+* replace the image
+* change the image
+* add a different image
+
+Only reposition the existing Residential image into the LEFT side of the new layout.
+
+Keep the image visually large and prominent.
+
+Use the existing image styling/radius from the website where appropriate.
+
+### 4. Residential content
+
+The RIGHT side must contain the following:
+
+Small eyebrow:
+
+**01 — RESIDENTIAL INTERIORS**
+
+Main heading:
+
+**Residential Interiors**
+
+Tagline:
+
+**Designing Homes That Feel Like You**
+
+Description:
+
+**Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.**
+
+Then:
+
+**Our Expertise**
+
+Display these six items as a clean list:
+
+* Apartments & Flats
+* Villas & Bungalows
+* Luxury Residences
+* Modular Kitchens
+* Bedrooms & Living Spaces
+* Custom Storage Solutions
+
+### 5. Typography
+
+Do NOT introduce new fonts.
+
+Use the site's existing typography.
+
+* Main heading → existing serif font
+* Tagline → existing heading/serif styling
+* Description → existing sans-serif body font
+* Eyebrow → existing small uppercase styling
+* "Our Expertise" → existing typography style
+
+### 6. Colors
+
+Do NOT change the page background.
+
+Keep the existing background exactly as it is.
+
+Use the site's existing:
+
+* gold/tan accent color for the eyebrow
+* gold/tan accent color for bullet markers
+* existing text color for headings
+* existing text color for body copy
+
+Do not introduce new colors.
+
+### 7. Expertise layout
+
+On desktop, display the six expertise items in **two columns**:
+
+Apartments & Flats          Villas & Bungalows
+Luxury Residences           Modular Kitchens
+Bedrooms & Living Spaces    Custom Storage Solutions
+
+Use small gold/tan bullet markers.
+
+Do not put each item inside a separate card.
+
+### 8. Mobile
+
+On mobile, change the layout to:
+
+IMAGE
+↓
+01 — RESIDENTIAL INTERIORS
+↓
+Residential Interiors
+↓
+Designing Homes That Feel Like You
+↓
+Description
+↓
+Our Expertise
+↓
+Expertise list
+
+The image must be on top and the content below.
+
+Do not keep the image and content side-by-side on mobile.
+
+### 9. Very important — do not modify anything else
+
+ONLY modify the Residential Interiors service.
+
+Do NOT change:
+
+* Services page background
+* Services page heading
+* Commercial Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Renovation & Makeovers
+* Navbar
+* Footer
+* Other page sections
+* Existing images for other services
+* Global fonts
+* Global colors
+* Global CSS unnecessarily
+
+Avoid changing global styles if a local/component-level style can accomplish this.
+
+### 10. Visual target
+
+The final Residential section should visually resemble this structure:
+
+┌──────────────────────────────┬────────────────────────────────────┐
+│                              │  01 — RESIDENTIAL INTERIORS        │
+│                              │                                    │
+│                              │  Residential Interiors             │
+│     EXISTING RESIDENTIAL     │                                    │
+│          IMAGE               │  Designing Homes That Feel Like You │
+│                              │                                    │
+│                              │  Your home should be more than...  │
+│                              │                                    │
+│                              │  Our Expertise                     │
+│                              │  • Apartments & Flats              │
+│                              │  • Villas & Bungalows              │
+│                              │  • Luxury Residences               │
+│                              │  • Modular Kitchens                │
+│                              │  • Bedrooms & Living Spaces        │
+│                              │  • Custom Storage Solutions        │
+└──────────────────────────────┴────────────────────────────────────┘
+
+The result should feel like a **premium interior-design portfolio section**, not a card.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact Residential Interiors markup and the image currently being used.
+
+Then modify that existing Residential markup directly.
+
+Do not create duplicate content.
+
+After making the change, make sure the development preview visibly shows the new **image-left / content-right Residential layout**.
+
+Do not make any changes to the other six services yet.
