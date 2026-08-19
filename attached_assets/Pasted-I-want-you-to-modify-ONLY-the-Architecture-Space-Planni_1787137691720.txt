@@ -1,0 +1,214 @@
+I want you to modify **ONLY the Architecture & Space Planning section on the Services page**.
+
+Do not touch Residential Interiors, Commercial Interiors, Hospitality Interiors, or any other service, section, navbar, footer, background, colors, or page structure.
+
+### 1. Find the existing Architecture & Space Planning section
+
+Locate the existing **Architecture & Space Planning** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column design already used for the previous three services.
+
+Do NOT create a duplicate Architecture section.
+
+### 2. Required layout
+
+Architecture & Space Planning is the **4th service**, so continue the alternating zigzag pattern:
+
+**LEFT: Architecture & Space Planning content**
+
+**RIGHT: Existing Architecture & Space Planning image**
+
+Desktop layout:
+
+`CONTENT LEFT | EXISTING ARCHITECTURE IMAGE RIGHT`
+
+Use approximately:
+
+* Content: 50% width
+* Image: 50% width
+* Same row width as the previous service sections
+* Consistent padding and spacing
+* Proper vertical alignment
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Architecture & Space Planning cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* modify the image
+* use an image from another service
+
+Only reposition the existing Architecture & Space Planning image to the **RIGHT side**.
+
+Keep the image quality, aspect ratio, border radius, and styling consistent with the first three redesigned services.
+
+### 4. Architecture content
+
+The LEFT side must contain exactly:
+
+Small eyebrow:
+
+**04 — ARCHITECTURE & SPACE PLANNING**
+
+Main heading:
+
+**Architecture & Space Planning**
+
+Tagline:
+
+**Building Strong Foundations for Exceptional Spaces**
+
+Description:
+
+**Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Architectural Planning
+* Floor Plans & Layouts
+* Elevation Design
+* Facade Design
+* Space Optimization
+* Design Development
+
+### 5. Expertise layout
+
+On desktop, display the six items in two columns:
+
+Architectural Planning             Floor Plans & Layouts
+Elevation Design                   Facade Design
+Space Optimization                 Design Development
+
+Use the site's existing gold/tan accent color for the bullet markers.
+
+Do NOT put each expertise item inside a separate card.
+
+### 6. Typography
+
+Match the exact typography treatment already used in the Residential, Commercial, and Hospitality sections.
+
+* Eyebrow → existing small uppercase styling
+* Main heading → site's existing serif font
+* Tagline → existing serif/heading styling
+* Description → existing sans-serif body font
+* Our Expertise → existing heading style
+
+Do not introduce new fonts.
+
+Do not change global typography.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the current Services page background exactly as it is.
+
+Use only the existing site styling:
+
+* existing gold/tan accent for eyebrow
+* existing gold/tan bullet markers
+* existing heading color
+* existing body text color
+
+Do not introduce a dark green background or any new color.
+
+### 8. Mobile layout
+
+On mobile, stack the section as:
+
+**EXISTING ARCHITECTURE IMAGE**
+↓
+**04 — ARCHITECTURE & SPACE PLANNING**
+↓
+**Architecture & Space Planning**
+↓
+**Building Strong Foundations for Exceptional Spaces**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+Even though the image is on the RIGHT on desktop, it must appear **on top on mobile**.
+
+The expertise list should become a single column on small screens.
+
+### 9. Maintain consistency
+
+Make this section visually consistent with the three sections already completed.
+
+Keep the same:
+
+* image size behavior
+* border radius
+* heading hierarchy
+* eyebrow styling
+* tagline styling
+* body text styling
+* expertise list styling
+* spacing
+* padding
+* section height
+* responsive behavior
+
+The overall zigzag pattern should now be:
+
+**01 Residential:** IMAGE LEFT | CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT | IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT | CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT | IMAGE RIGHT
+
+### 10. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Renovation & Makeovers
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other service images
+* Global CSS unnecessarily
+
+Keep the first three completed service sections exactly as they currently look.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact **Architecture & Space Planning** markup and the existing image path associated with it.
+
+Modify the existing Architecture section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview visibly shows:
+
+**01 Residential:** IMAGE LEFT → CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT → IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT → CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT → IMAGE RIGHT
+
+Do not modify the remaining three services yet.

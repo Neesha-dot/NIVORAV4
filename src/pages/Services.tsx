@@ -648,6 +648,32 @@ export default function Services() {
                   </div>
                 </FadeIn>
               </article>
+            ) : i === 2 ? (
+              <article key={card.num} className="svc-residential-detail">
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[2].img}
+                      alt="Hospitality Interiors"
+                      className="svc-residential-image"
+                    />
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">03 — Hospitality Interiors</p>
+                    <h2>Hospitality Interiors</h2>
+                    <h3>Creating Experiences Through Design</h3>
+                    <p className="svc-residential-description">
+                      In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[2].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+              </article>
             ) : (
               <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
             )
