@@ -1,0 +1,546 @@
+Update the **Services page** of the existing Nivora Interiors website.
+
+I want to redesign the current Services section into **7 detailed service sections**, following the same premium two-column design as the Residential Interiors reference layout.
+
+## IMPORTANT — DO NOT BREAK THE EXISTING WEBSITE
+
+* Do NOT redesign the entire website.
+* Do NOT change the navbar, header, footer, hero, testimonials, contact section, or other pages.
+* Keep the existing Nivora Interiors branding, colors, typography, animations, and overall visual identity.
+* **Reuse ONLY the existing images already present in the project.**
+* Do NOT download new images.
+* Do NOT generate new images.
+* Each service must use the **existing image that currently belongs to that service/card**.
+* Do not remove or rename existing image assets unnecessarily.
+* Preserve existing routes and functionality.
+* Only redesign the Services page/service sections.
+
+---
+
+# NEW SERVICES PAGE STRUCTURE
+
+Instead of displaying the services primarily as small cards/grid items, display each service as a **large, spacious two-column section**.
+
+Each service section should contain:
+
+**Image + Content**
+
+The content should contain:
+
+1. Small uppercase eyebrow text
+2. Service name
+3. Intro heading
+4. Description
+5. "Our Expertise"
+6. Six expertise items
+
+## Desktop Layout
+
+Use approximately:
+
+**50% image | 50% content**
+
+with generous spacing and a premium interior-design aesthetic.
+
+### Alternate the image position:
+
+**Service 1 — Residential Interiors**
+
+* Image LEFT
+* Content RIGHT
+
+**Service 2 — Commercial Interiors**
+
+* Image RIGHT
+* Content LEFT
+
+**Service 3 — Hospitality Interiors**
+
+* Image LEFT
+* Content RIGHT
+
+**Service 4 — Architecture & Space Planning**
+
+* Image RIGHT
+* Content LEFT
+
+**Service 5 — Interior Design & 3D Visualization**
+
+* Image LEFT
+* Content RIGHT
+
+**Service 6 — Developer & Builder Solutions**
+
+* Image RIGHT
+* Content LEFT
+
+**Service 7 — Renovation & Makeovers**
+
+* Image LEFT
+* Content RIGHT
+
+This alternating layout should create a sophisticated editorial/architectural feel.
+
+---
+
+# SERVICE 1 — RESIDENTIAL INTERIORS
+
+### Eyebrow
+
+FOR HOW YOU LIVE
+
+### Title
+
+Residential Interiors
+
+### Intro Heading
+
+Designing Homes That Feel Like You
+
+### Description
+
+Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.
+
+### Our Expertise
+
+* Apartments & Flats
+* Villas & Bungalows
+* Luxury Residences
+* Modular Kitchens
+* Bedrooms & Living Spaces
+* Custom Storage Solutions
+
+### Image
+
+Use the **existing Residential Interiors image** already present in the project.
+
+---
+
+# SERVICE 2 — COMMERCIAL INTERIORS
+
+### Eyebrow
+
+BUILT FOR BUSINESS
+
+### Title
+
+Commercial Interiors
+
+### Intro Heading
+
+Spaces Designed for Productivity & Impact
+
+### Description
+
+A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.
+
+### Our Expertise
+
+* Corporate Offices
+* Co-working Spaces
+* Retail Stores
+* Clinics & Healthcare Facilities
+* Fitness Studios & Gyms
+* Reception & Waiting Areas
+
+### Image
+
+Use the **existing Commercial Interiors image** currently used for this service.
+
+### Layout
+
+Image RIGHT, content LEFT.
+
+---
+
+# SERVICE 3 — HOSPITALITY INTERIORS
+
+### Eyebrow
+
+DESIGNED FOR EXPERIENCES
+
+### Title
+
+Hospitality Interiors
+
+### Intro Heading
+
+Creating Experiences Through Design
+
+### Description
+
+In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.
+
+### Our Expertise
+
+* Cafés & Restaurants
+* Hotels & Resorts
+* Lounges & Clubhouses
+* Spas & Wellness Centres
+* Banquet & Event Spaces
+* Guest Experience Design
+
+### Image
+
+Use the **existing Hospitality Interiors image** already present in the project.
+
+### Layout
+
+Image LEFT, content RIGHT.
+
+---
+
+# SERVICE 4 — ARCHITECTURE & SPACE PLANNING
+
+### Eyebrow
+
+PLANNED WITH PURPOSE
+
+### Title
+
+Architecture & Space Planning
+
+### Intro Heading
+
+Building Strong Foundations for Exceptional Spaces
+
+### Description
+
+Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.
+
+### Our Expertise
+
+* Architectural Planning
+* Floor Plans & Layouts
+* Elevation Design
+* Facade Design
+* Space Optimization
+* Design Development
+
+### Image
+
+Use the **existing Architecture & Space Planning image** already present in the project.
+
+### Layout
+
+Image RIGHT, content LEFT.
+
+---
+
+# SERVICE 5 — INTERIOR DESIGN & 3D VISUALIZATION
+
+### Eyebrow
+
+VISUALIZE BEFORE EXECUTION
+
+### Title
+
+Interior Design & 3D Visualization
+
+### Intro Heading
+
+Bringing Ideas to Life Before Execution
+
+### Description
+
+Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.
+
+### Our Expertise
+
+* Space Planning
+* Concept Development
+* 2D Drawings
+* 3D Visualizations
+* Material Selection
+* Design Presentations
+
+### Image
+
+Use the **existing Interior Design & 3D Visualization image** already present in the project.
+
+### Layout
+
+Image LEFT, content RIGHT.
+
+---
+
+# SERVICE 6 — DEVELOPER & BUILDER SOLUTIONS
+
+### Eyebrow
+
+DESIGNED TO ADD VALUE
+
+### Title
+
+Developer & Builder Solutions
+
+### Intro Heading
+
+Enhancing Properties to Maximize Market Appeal
+
+### Description
+
+We collaborate with developers and builders to create thoughtfully designed spaces that elevate property value and attract potential buyers. From show apartments to common amenities, every space is crafted to leave a lasting impression.
+
+### Our Expertise
+
+* Sample Flats
+* Sales Offices
+* Clubhouses
+* Entrance Lobbies
+* Amenity Spaces
+* Common Area Design
+
+### Image
+
+Use the **existing Developer & Builder Solutions image** already present in the project.
+
+### Layout
+
+Image RIGHT, content LEFT.
+
+---
+
+# SERVICE 7 — RENOVATION & MAKEOVERS
+
+### Eyebrow
+
+REIMAGINE YOUR SPACE
+
+### Title
+
+Renovation & Makeovers
+
+### Intro Heading
+
+Transforming Existing Spaces with Purpose
+
+### Description
+
+Whether you're updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.
+
+### Our Expertise
+
+* Home Renovations
+* Office Refurbishments
+* Kitchen Upgrades
+* Space Reconfiguration
+* Interior Refreshes
+* Styling & Décor Enhancements
+
+### Image
+
+Use the **existing Renovation & Makeovers image** already present in the project.
+
+### Layout
+
+Image LEFT, content RIGHT.
+
+---
+
+# DESIGN REQUIREMENTS
+
+## Background
+
+Keep the existing dark green Services section background.
+
+Use the existing cream/off-white and muted gold color palette.
+
+Do not introduce a completely new color scheme.
+
+## Image Styling
+
+Each existing service image should:
+
+* Have a large rectangular presentation.
+* Maintain its original aspect ratio as much as possible.
+* Use `object-fit: cover` only where necessary.
+* Have subtle rounded corners matching the current website.
+* Have a premium, soft visual treatment.
+* Be vertically aligned with the corresponding content.
+* Avoid excessive cropping.
+
+## Content Styling
+
+Use the existing elegant serif typography for the service headings.
+
+Example hierarchy:
+
+**Small eyebrow**
+`FOR HOW YOU LIVE`
+
+↓
+
+**Large service title**
+`Residential Interiors`
+
+↓
+
+**Medium/larger intro heading**
+`Designing Homes That Feel Like You`
+
+↓
+
+**Description paragraph**
+
+↓
+
+**Our Expertise**
+
+↓
+
+**Two-column expertise list**
+
+The main service title should be visually prominent but not excessively large.
+
+Keep line lengths comfortable for readability.
+
+---
+
+# EXPERTISE LIST
+
+On desktop, display the six expertise items in **two columns**.
+
+For example:
+
+| Apartments & Flats | Villas & Bungalows |
+| Luxury Residences | Modular Kitchens |
+| Bedrooms & Living Spaces | Custom Storage Solutions |
+
+Do the same two-column structure for all seven services.
+
+Use subtle bullet points or small elegant gold markers.
+
+Do NOT use large cards around every expertise item.
+
+---
+
+# SPACING
+
+Each service section should have generous vertical padding.
+
+There should be enough whitespace between:
+
+* Image
+* Eyebrow
+* Title
+* Intro heading
+* Description
+* Our Expertise
+* Expertise list
+
+The sections should feel like premium architectural editorial layouts rather than ordinary website cards.
+
+---
+
+# MOBILE RESPONSIVENESS
+
+On mobile:
+
+* Stack the image and content vertically.
+* Keep the image first.
+* Put the content underneath.
+* Do NOT alternate the mobile order.
+* All mobile sections should follow:
+
+IMAGE
+↓
+EYEBROW
+↓
+TITLE
+↓
+INTRO HEADING
+↓
+DESCRIPTION
+↓
+OUR EXPERTISE
+↓
+EXPERTISE LIST
+
+The expertise list should become a single column on small screens.
+
+Ensure:
+
+* No horizontal scrolling.
+* No text overlapping.
+* Images remain properly sized.
+* Headings remain readable.
+* Padding is comfortable.
+* Sections don't become unnecessarily tall.
+
+---
+
+# EXISTING SERVICE CARDS
+
+The current Services page has service cards such as:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Renovation & Makeovers
+
+Do not simply duplicate those cards above the new sections.
+
+Replace the current card-based presentation with the new **7 detailed alternating sections**, unless the existing design requires retaining the service cards for navigation.
+
+If the cards are needed for navigation, keep them only as a compact service-navigation element and make the new detailed sections the primary content.
+
+---
+
+# IMPORTANT IMAGE MAPPING
+
+Before modifying the UI, inspect the existing project files and determine which image is currently associated with each service.
+
+Do NOT guess or substitute images.
+
+Map:
+
+1. Residential Interiors → existing Residential image
+2. Commercial Interiors → existing Commercial image
+3. Hospitality Interiors → existing Hospitality image
+4. Architecture & Space Planning → existing Architecture image
+5. Interior Design & 3D Visualization → existing Interior Design/3D image
+6. Developer & Builder Solutions → existing Developer/Builder image
+7. Renovation & Makeovers → existing Renovation image
+
+Keep all existing image paths/assets intact.
+
+---
+
+# FINAL VISUAL GOAL
+
+The Services page should feel similar to a **premium interior architecture/design studio website**.
+
+Think:
+
+* sophisticated
+* spacious
+* editorial
+* luxurious
+* minimal
+* architectural
+* elegant
+
+The seven sections should visually flow together while the alternating image placement creates variety.
+
+Do not make the design flashy or overly animated.
+
+Use subtle existing animations/transitions only where they already exist.
+
+After implementation, test:
+
+1. Desktop Services page
+2. Tablet layout
+3. Mobile layout
+4. Image loading
+5. Section spacing
+6. Typography
+7. Existing navigation
+8. Existing links/buttons
+9. No horizontal overflow
+10. No console errors
+
+Most importantly, **do not modify unrelated parts of the Nivora Interiors website.**

@@ -57,6 +57,72 @@ const FALLBACK_SERVICE_CARDS = [
   },
 ]
 
+const SERVICE_DETAILS = [
+  {
+    num: '01',
+    eyebrow: 'FOR HOW YOU LIVE',
+    title: 'Residential Interiors',
+    intro: 'Designing Homes That Feel Like You',
+    desc: 'Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you’re moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.',
+    expertise: ['Apartments & Flats', 'Villas & Bungalows', 'Luxury Residences', 'Modular Kitchens', 'Bedrooms & Living Spaces', 'Custom Storage Solutions'],
+    img: residentialCover,
+  },
+  {
+    num: '02',
+    eyebrow: 'BUILT FOR BUSINESS',
+    title: 'Commercial Interiors',
+    intro: 'Spaces Designed for Productivity & Impact',
+    desc: 'A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.',
+    expertise: ['Corporate Offices', 'Co-working Spaces', 'Retail Stores', 'Clinics & Healthcare Facilities', 'Fitness Studios & Gyms', 'Reception & Waiting Areas'],
+    img: commercialCover,
+  },
+  {
+    num: '03',
+    eyebrow: 'DESIGNED FOR EXPERIENCES',
+    title: 'Hospitality Interiors',
+    intro: 'Creating Experiences Through Design',
+    desc: 'In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.',
+    expertise: ['Cafés & Restaurants', 'Hotels & Resorts', 'Lounges & Clubhouses', 'Spas & Wellness Centres', 'Banquet & Event Spaces', 'Guest Experience Design'],
+    img: hospitalityCover,
+  },
+  {
+    num: '04',
+    eyebrow: 'PLANNED WITH PURPOSE',
+    title: 'Architecture & Space Planning',
+    intro: 'Building Strong Foundations for Exceptional Spaces',
+    desc: 'Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.',
+    expertise: ['Architectural Planning', 'Floor Plans & Layouts', 'Elevation Design', 'Facade Design', 'Space Optimization', 'Design Development'],
+    img: architectureCover,
+  },
+  {
+    num: '05',
+    eyebrow: 'VISUALIZE BEFORE EXECUTION',
+    title: 'Interior Design & 3D Visualization',
+    intro: 'Bringing Ideas to Life Before Execution',
+    desc: 'Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.',
+    expertise: ['Space Planning', 'Concept Development', '2D Drawings', '3D Visualizations', 'Material Selection', 'Design Presentations'],
+    img: visualizationCover,
+  },
+  {
+    num: '06',
+    eyebrow: 'DESIGNED TO ADD VALUE',
+    title: 'Developer & Builder Solutions',
+    intro: 'Enhancing Properties to Maximize Market Appeal',
+    desc: 'We collaborate with developers and builders to create thoughtfully designed spaces that elevate property value and attract potential buyers. From show apartments to common amenities, every space is crafted to leave a lasting impression.',
+    expertise: ['Sample Flats', 'Sales Offices', 'Clubhouses', 'Entrance Lobbies', 'Amenity Spaces', 'Common Area Design'],
+    img: developerCover,
+  },
+  {
+    num: '07',
+    eyebrow: 'REIMAGINE YOUR SPACE',
+    title: 'Renovation & Makeovers',
+    intro: 'Transforming Existing Spaces with Purpose',
+    desc: 'Whether you’re updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.',
+    expertise: ['Home Renovations', 'Office Refurbishments', 'Kitchen Upgrades', 'Space Reconfiguration', 'Interior Refreshes', 'Styling & Décor Enhancements'],
+    img: renovationCover,
+  },
+]
+
 const STAGGER = [100, 200, 300, 400]
 
 interface ServiceCardData { num: string; title: string; desc: string; img: string }
@@ -226,6 +292,44 @@ function ServiceCard({ card, index, onCardClick }: { card: ServiceCardData; inde
         </div>
       </div>
     </div>
+  )
+}
+
+function ServiceDetailSection({
+  service,
+  index,
+  image,
+}: {
+  service: typeof SERVICE_DETAILS[number]
+  index: number
+  image: string
+}) {
+  return (
+    <article className={`svc-detail ${index % 2 ? 'svc-detail-reverse' : ''}`}>
+      <FadeIn>
+        <div className="svc-detail-image-wrap">
+          <img
+            src={image}
+            alt={service.title}
+            className="svc-detail-image"
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      </FadeIn>
+      <FadeIn>
+        <div className="svc-detail-content">
+          <p className="svc-detail-eyebrow">{service.eyebrow}</p>
+          <h2>{service.title}</h2>
+          <h3>{service.intro}</h3>
+          <p className="svc-detail-description">{service.desc}</p>
+          <p className="svc-detail-expertise-label">Our Expertise</p>
+          <ul className="svc-detail-expertise">
+            {service.expertise.map(item => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
+      </FadeIn>
+      <span className="svc-detail-number">{service.num}</span>
+    </article>
   )
 }
 
