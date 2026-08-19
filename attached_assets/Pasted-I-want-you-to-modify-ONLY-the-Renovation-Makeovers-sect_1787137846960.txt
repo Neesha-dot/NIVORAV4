@@ -1,0 +1,222 @@
+I want you to modify **ONLY the Renovation & Makeovers section on the Services page**.
+
+Do not touch Residential Interiors, Commercial Interiors, Hospitality Interiors, Architecture & Space Planning, Interior Design & 3D Visualization, Developer & Builder Solutions, or any other section.
+
+### 1. Find the existing section
+
+Locate the existing **Renovation & Makeovers** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column layout already used for the previous six services.
+
+Do NOT create a duplicate section.
+
+### 2. Required layout
+
+This is the **7th and final service**, so continue the alternating zigzag pattern.
+
+**LEFT: Existing Renovation & Makeovers image**
+
+**RIGHT: Content**
+
+Desktop layout:
+
+`EXISTING RENOVATION IMAGE LEFT | CONTENT RIGHT`
+
+Use approximately:
+
+* Image: 50% width
+* Content: 50% width
+* Same spacing and padding as the previous six service sections
+* Proper vertical alignment
+* Full-width service row
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Renovation & Makeovers cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* modify the image
+* use an image from another service
+
+Only reposition the existing Renovation & Makeovers image to the **LEFT side**.
+
+Keep its existing quality, aspect ratio, border radius, and visual treatment consistent with the previous sections.
+
+### 4. Exact content
+
+The RIGHT side must contain exactly:
+
+Small eyebrow:
+
+**07 — RENOVATION & MAKEOVERS**
+
+Main heading:
+
+**Renovation & Makeovers**
+
+Tagline:
+
+**Transforming Existing Spaces with Purpose**
+
+Description:
+
+**Whether you're updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Home Renovations
+* Office Refurbishments
+* Kitchen Upgrades
+* Space Reconfiguration
+* Interior Refreshes
+* Styling & Décor Enhancements
+
+### 5. Expertise layout
+
+On desktop, display the six expertise items in two columns:
+
+Home Renovations                 Office Refurbishments
+Kitchen Upgrades                 Space Reconfiguration
+Interior Refreshes               Styling & Décor Enhancements
+
+Use the site's existing gold/tan accent color for the bullet markers.
+
+Do NOT put each expertise item inside a separate card.
+
+### 6. Typography
+
+Match the exact typography treatment already used for the previous six service sections.
+
+* Eyebrow → existing small uppercase styling
+* Main heading → site's existing serif font
+* Tagline → existing serif/heading styling
+* Description → existing sans-serif body font
+* Our Expertise → existing heading styling
+
+Do not introduce new fonts.
+
+Do not change global typography.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the existing Services page background exactly as it currently is.
+
+Use:
+
+* Existing gold/tan accent for eyebrow
+* Existing gold/tan accent for bullet markers
+* Existing heading color
+* Existing body-text color
+
+Do not introduce a new background or color palette.
+
+### 8. Mobile layout
+
+On mobile, stack the section as:
+
+**EXISTING RENOVATION & MAKEOVERS IMAGE**
+↓
+**07 — RENOVATION & MAKEOVERS**
+↓
+**Renovation & Makeovers**
+↓
+**Transforming Existing Spaces with Purpose**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+The image must appear **on top on mobile**.
+
+The expertise list should become a single column on small screens.
+
+### 9. Maintain the complete zigzag pattern
+
+After this change, the Services page should follow this exact sequence:
+
+**01 Residential:** IMAGE LEFT | CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT | IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT | CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT | IMAGE RIGHT
+
+**05 Interior Design & 3D Visualization:** IMAGE LEFT | CONTENT RIGHT
+
+**06 Developer & Builder Solutions:** CONTENT LEFT | IMAGE RIGHT
+
+**07 Renovation & Makeovers:** IMAGE LEFT | CONTENT RIGHT
+
+This creates the final alternating zigzag layout.
+
+### 10. Keep spacing consistent
+
+Use the **same row height, image sizing, content spacing, padding, typography hierarchy, and responsive behavior** as the six service sections already implemented.
+
+Do not create a different design specifically for Renovation & Makeovers.
+
+### 11. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other service images
+* Global CSS unnecessarily
+
+Keep all six previously completed service sections exactly as they currently look.
+
+### 12. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact **Renovation & Makeovers** markup and its existing image path.
+
+Modify the existing section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview visibly shows all seven services in the following order:
+
+01 — Residential Interiors → IMAGE LEFT
+
+02 — Commercial Interiors → IMAGE RIGHT
+
+03 — Hospitality Interiors → IMAGE LEFT
+
+04 — Architecture & Space Planning → IMAGE RIGHT
+
+05 — Interior Design & 3D Visualization → IMAGE LEFT
+
+06 — Developer & Builder Solutions → IMAGE RIGHT
+
+07 — Renovation & Makeovers → IMAGE LEFT
+
+On mobile, all seven should stack as:
+
+IMAGE → CONTENT
+
+Do not make any other changes to the website.
