@@ -700,6 +700,32 @@ export default function Services() {
                   </div>
                 </FadeIn>
               </article>
+            ) : i === 4 ? (
+              <article key={card.num} className="svc-residential-detail">
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[4].img}
+                      alt="Interior Design & 3D Visualization"
+                      className="svc-residential-image"
+                    />
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">05 — Interior Design &amp; 3D Visualization</p>
+                    <h2>Interior Design &amp; 3D Visualization</h2>
+                    <h3>Bringing Ideas to Life Before Execution</h3>
+                    <p className="svc-residential-description">
+                      Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[4].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+              </article>
             ) : (
               <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
             )

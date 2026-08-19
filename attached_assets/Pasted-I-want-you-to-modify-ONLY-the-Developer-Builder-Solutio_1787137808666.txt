@@ -1,0 +1,208 @@
+I want you to modify **ONLY the Developer & Builder Solutions section on the Services page**.
+
+Do not touch Residential Interiors, Commercial Interiors, Hospitality Interiors, Architecture & Space Planning, Interior Design & 3D Visualization, Renovation & Makeovers, or any other section.
+
+### 1. Find the existing section
+
+Locate the existing **Developer & Builder Solutions** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column layout already used for the previous five services.
+
+Do NOT create a duplicate section.
+
+### 2. Required layout
+
+This is the **6th service**, so continue the alternating zigzag pattern.
+
+**LEFT: Content**
+
+**RIGHT: Existing Developer & Builder Solutions image**
+
+Desktop layout:
+
+`CONTENT LEFT | EXISTING DEVELOPER & BUILDER IMAGE RIGHT`
+
+Use approximately:
+
+* Content: 50% width
+* Image: 50% width
+* Same spacing and padding as the previous service sections
+* Proper vertical alignment
+* Full-width service row
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Developer & Builder Solutions cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* modify the image
+* use an image from another service
+
+Only reposition the existing Developer & Builder Solutions image to the **RIGHT side**.
+
+Keep its existing quality, aspect ratio, border radius, and visual treatment consistent with the previous sections.
+
+### 4. Exact content
+
+The LEFT side must contain exactly:
+
+Small eyebrow:
+
+**06 — DEVELOPER & BUILDER SOLUTIONS**
+
+Main heading:
+
+**Developer & Builder Solutions**
+
+Tagline:
+
+**Enhancing Properties to Maximize Market Appeal**
+
+Description:
+
+**We collaborate with developers and builders to create thoughtfully designed spaces that elevate property value and attract potential buyers. From show apartments to common amenities, every space is crafted to leave a lasting impression.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Sample Flats
+* Sales Offices
+* Clubhouses
+* Entrance Lobbies
+* Amenity Spaces
+* Common Area Design
+
+### 5. Expertise layout
+
+On desktop, display the six expertise items in two columns:
+
+Sample Flats                    Sales Offices
+Clubhouses                      Entrance Lobbies
+Amenity Spaces                  Common Area Design
+
+Use the site's existing gold/tan accent color for the bullet markers.
+
+Do NOT put each item inside a separate card.
+
+### 6. Typography
+
+Match the exact typography treatment already used for the previous five service sections.
+
+* Eyebrow → existing small uppercase styling
+* Main heading → site's existing serif font
+* Tagline → existing serif/heading styling
+* Description → existing sans-serif body font
+* Our Expertise → existing heading styling
+
+Do not introduce new fonts.
+
+Do not change global typography.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the existing Services page background exactly as it currently is.
+
+Use:
+
+* Existing gold/tan accent for eyebrow
+* Existing gold/tan accent for bullet markers
+* Existing heading color
+* Existing body-text color
+
+Do not introduce a new background or color palette.
+
+### 8. Mobile layout
+
+On mobile, stack the section as:
+
+**EXISTING DEVELOPER & BUILDER SOLUTIONS IMAGE**
+↓
+**06 — DEVELOPER & BUILDER SOLUTIONS**
+↓
+**Developer & Builder Solutions**
+↓
+**Enhancing Properties to Maximize Market Appeal**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+Even though the image is on the RIGHT on desktop, it must appear **on top on mobile**.
+
+The expertise list should become a single column on small screens.
+
+### 9. Maintain the zigzag pattern
+
+The page should now follow:
+
+**01 Residential:** IMAGE LEFT | CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT | IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT | CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT | IMAGE RIGHT
+
+**05 Interior Design & 3D Visualization:** IMAGE LEFT | CONTENT RIGHT
+
+**06 Developer & Builder Solutions:** CONTENT LEFT | IMAGE RIGHT
+
+Make the sixth section visually identical in styling to the previous five, with only the content and image position changing.
+
+### 10. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Renovation & Makeovers
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other service images
+* Global CSS unnecessarily
+
+Keep the first five completed service sections exactly as they currently look.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact **Developer & Builder Solutions** markup and its existing image path.
+
+Modify the existing section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview visibly shows:
+
+**01 Residential:** IMAGE LEFT → CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT → IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT → CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT → IMAGE RIGHT
+
+**05 Interior Design & 3D Visualization:** IMAGE LEFT → CONTENT RIGHT
+
+**06 Developer & Builder Solutions:** CONTENT LEFT → IMAGE RIGHT
+
+Do not modify Renovation & Makeovers yet.

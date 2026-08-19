@@ -1,0 +1,202 @@
+I want you to modify **ONLY the Interior Design & 3D Visualization section on the Services page**.
+
+Do not touch Residential Interiors, Commercial Interiors, Hospitality Interiors, Architecture & Space Planning, or any other service, section, navbar, footer, background, colors, or page structure.
+
+### 1. Find the existing section
+
+Locate the existing **Interior Design & 3D Visualization** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column design already used for the previous four services.
+
+Do NOT create a duplicate section.
+
+### 2. Required layout
+
+This is the **5th service**, so continue the alternating zigzag pattern.
+
+**LEFT: Existing Interior Design & 3D Visualization image**
+
+**RIGHT: Content**
+
+Desktop layout:
+
+`EXISTING IMAGE LEFT | CONTENT RIGHT`
+
+Use approximately:
+
+* Image: 50% width
+* Content: 50% width
+* Same spacing and padding as the previous service sections
+* Proper vertical alignment
+* Full-width service row
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Interior Design & 3D Visualization cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* modify the image
+* use an image from another service
+
+Only reposition the existing image to the **LEFT side**.
+
+Keep its existing quality, aspect ratio, border radius, and visual treatment consistent with the previous sections.
+
+### 4. Exact content
+
+The RIGHT side must contain:
+
+Small eyebrow:
+
+**05 — INTERIOR DESIGN & 3D VISUALIZATION**
+
+Main heading:
+
+**Interior Design & 3D Visualization**
+
+Tagline:
+
+**Bringing Ideas to Life Before Execution**
+
+Description:
+
+**Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Space Planning
+* Concept Development
+* 2D Drawings
+* 3D Visualizations
+* Material Selection
+* Design Presentations
+
+### 5. Expertise layout
+
+On desktop, display the six expertise items in two columns:
+
+Space Planning                    Concept Development
+2D Drawings                       3D Visualizations
+Material Selection                Design Presentations
+
+Use the site's existing gold/tan accent color for the bullet markers.
+
+Do NOT put the items inside separate cards.
+
+### 6. Typography
+
+Match the exact typography treatment already used for Residential, Commercial, Hospitality, and Architecture.
+
+* Eyebrow → existing small uppercase styling
+* Main heading → site's existing serif font
+* Tagline → existing serif/heading styling
+* Description → existing sans-serif body font
+* Our Expertise → existing heading styling
+
+Do not introduce new fonts or change global typography.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the existing Services page background exactly as it currently is.
+
+Use:
+
+* Existing gold/tan accent for eyebrow
+* Existing gold/tan accent for bullet markers
+* Existing heading color
+* Existing body-text color
+
+Do not introduce a new background or color palette.
+
+### 8. Mobile layout
+
+On mobile, stack the section as:
+
+**EXISTING INTERIOR DESIGN & 3D VISUALIZATION IMAGE**
+↓
+**05 — INTERIOR DESIGN & 3D VISUALIZATION**
+↓
+**Interior Design & 3D Visualization**
+↓
+**Bringing Ideas to Life Before Execution**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+Even though the image is on the LEFT on desktop, it must appear **on top on mobile**.
+
+The expertise list should become a single column on small screens.
+
+### 9. Maintain the existing zigzag pattern
+
+The page should now follow:
+
+**01 Residential:** IMAGE LEFT | CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT | IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT | CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT | IMAGE RIGHT
+
+**05 Interior Design & 3D Visualization:** IMAGE LEFT | CONTENT RIGHT
+
+Make the fifth section visually consistent with the previous four.
+
+### 10. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Developer & Builder Solutions
+* Renovation & Makeovers
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other service images
+* Global CSS unnecessarily
+
+Keep the first four completed service sections exactly as they currently look.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact **Interior Design & 3D Visualization** markup and its existing image path.
+
+Modify the existing section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview visibly shows:
+
+**01 Residential:** IMAGE LEFT → CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT → IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT → CONTENT RIGHT
+
+**04 Architecture:** CONTENT LEFT → IMAGE RIGHT
+
+**05 Interior Design & 3D Visualization:** IMAGE LEFT → CONTENT RIGHT
+
+Do not modify the remaining two services yet.
