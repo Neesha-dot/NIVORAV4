@@ -1,0 +1,207 @@
+I want you to modify **ONLY the Hospitality Interiors section on the Services page**.
+
+Do not touch Residential Interiors, Commercial Interiors, or any other service, section, navbar, footer, background, colors, or page structure.
+
+### 1. Find the existing Hospitality Interiors section
+
+Locate the existing **Hospitality Interiors** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column design used for the Residential and Commercial sections.
+
+Do NOT create a duplicate Hospitality section.
+
+### 2. Required layout
+
+Hospitality is the **3rd service**, so follow the alternating zigzag pattern:
+
+**LEFT: Existing Hospitality image**
+
+**RIGHT: Hospitality content**
+
+The desktop layout must be:
+
+`EXISTING HOSPITALITY IMAGE LEFT | CONTENT RIGHT`
+
+Use approximately:
+
+* Image: 50% width
+* Content: 50% width
+* Consistent padding and spacing with the Residential and Commercial sections
+* Full-width service row
+* Proper vertical alignment
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Hospitality Interiors cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* change the image
+* use an image from another service
+
+Only reposition the existing Hospitality image to the **LEFT side**.
+
+Keep the existing image quality, aspect ratio, and styling consistent with the previous two sections.
+
+### 4. Hospitality content
+
+The RIGHT side must contain exactly:
+
+Small eyebrow:
+
+**03 — HOSPITALITY INTERIORS**
+
+Main heading:
+
+**Hospitality Interiors**
+
+Tagline:
+
+**Creating Experiences Through Design**
+
+Description:
+
+**In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Cafés & Restaurants
+* Hotels & Resorts
+* Lounges & Clubhouses
+* Spas & Wellness Centres
+* Banquet & Event Spaces
+* Guest Experience Design
+
+### 5. Expertise layout
+
+On desktop, use two columns:
+
+Cafés & Restaurants              Hotels & Resorts
+Lounges & Clubhouses              Spas & Wellness Centres
+Banquet & Event Spaces             Guest Experience Design
+
+Use the site's existing gold/tan accent color for small bullet markers.
+
+Do NOT put the expertise items into individual cards.
+
+### 6. Typography
+
+Use the **same typography treatment and sizing as the Residential and Commercial sections**.
+
+* Eyebrow → existing small uppercase style
+* Main heading → site's existing serif font
+* Tagline → existing serif/heading style
+* Description → existing sans-serif body font
+* Our Expertise → existing heading style
+
+Do not introduce new fonts.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the existing Services page background exactly as it is.
+
+Use only the site's existing colors:
+
+* existing gold/tan for eyebrow
+* existing gold/tan for bullet markers
+* existing heading color
+* existing body-text color
+
+Do not introduce a new background or color palette.
+
+### 8. Mobile layout
+
+On mobile, stack the section as:
+
+**EXISTING HOSPITALITY IMAGE**
+↓
+**03 — HOSPITALITY INTERIORS**
+↓
+**Hospitality Interiors**
+↓
+**Creating Experiences Through Design**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+The image must always appear **on top on mobile**, regardless of its desktop position.
+
+The expertise list should become one column on small screens.
+
+### 9. Maintain consistency
+
+The Hospitality section must have the same:
+
+* image dimensions
+* border radius
+* typography hierarchy
+* spacing
+* padding
+* bullet styling
+* section height behavior
+* responsive behavior
+
+as the Residential and Commercial sections already implemented.
+
+The only difference should be its content and its position in the zigzag sequence.
+
+The overall pattern should now be:
+
+**01 Residential:** IMAGE LEFT | CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT | IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT | CONTENT RIGHT
+
+### 10. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Commercial Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Renovation & Makeovers
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other service images
+* Global CSS unnecessarily
+
+Keep the first two completed sections exactly as they currently look.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact Hospitality Interiors markup and the **existing Hospitality image path**.
+
+Modify the existing Hospitality section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview shows:
+
+**01 Residential:** IMAGE LEFT → CONTENT RIGHT
+
+**02 Commercial:** CONTENT LEFT → IMAGE RIGHT
+
+**03 Hospitality:** IMAGE LEFT → CONTENT RIGHT
+
+Do not modify the remaining four services yet.

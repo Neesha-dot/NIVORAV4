@@ -526,6 +526,9 @@ export default function Services() {
           .svc-residential-detail .svc-residential-image {
             aspect-ratio: 1.18 / 1;
           }
+          .svc-commercial-detail {
+            flex-direction: column-reverse;
+          }
         }
         @media (max-width: 460px) {
           .svc-residential-detail .svc-residential-expertise {
@@ -616,6 +619,32 @@ export default function Services() {
                     <ul className="svc-residential-expertise">
                       {SERVICE_DETAILS[0].expertise.map(item => <li key={item}>{item}</li>)}
                     </ul>
+                  </div>
+                </FadeIn>
+              </article>
+            ) : i === 1 ? (
+              <article key={card.num} className="svc-residential-detail svc-commercial-detail">
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">02 — Commercial Interiors</p>
+                    <h2>Commercial Interiors</h2>
+                    <h3>Spaces Designed for Productivity &amp; Impact</h3>
+                    <p className="svc-residential-description">
+                      A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[1].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[1].img}
+                      alt="Commercial Interiors"
+                      className="svc-residential-image"
+                    />
                   </div>
                 </FadeIn>
               </article>

@@ -1,0 +1,194 @@
+I want you to modify **ONLY the Commercial Interiors section on the Services page**.
+
+Do not touch Residential Interiors or any other service, section, navbar, footer, background, colors, or page structure.
+
+### 1. Find the existing Commercial Interiors section
+
+Locate the existing **Commercial Interiors** service/card on the Services page.
+
+Transform ONLY this service into the same full-width two-column design that was just created for Residential Interiors.
+
+Do NOT create a duplicate Commercial section.
+
+### 2. Required layout
+
+For Commercial Interiors, the layout must be the **opposite direction from Residential**:
+
+**LEFT: Commercial Interiors content**
+
+**RIGHT: Existing Commercial image**
+
+The final desktop layout should be:
+
+`CONTENT LEFT  |  EXISTING COMMERCIAL IMAGE RIGHT`
+
+Use approximately:
+
+* Content: 50% width
+* Image: 50% width
+* Generous spacing and padding
+* Proper vertical alignment
+* Full-width service row
+
+Do NOT use the old card/grid layout.
+
+### 3. Image
+
+IMPORTANT:
+
+Use the **existing Commercial Interiors cover image already used in the current Services section**.
+
+Do not:
+
+* download a new image
+* generate a new image
+* replace the image
+* change the image
+* use the Residential image
+
+Only reposition the existing Commercial image to the **RIGHT side**.
+
+Keep the existing image quality, aspect ratio, and styling.
+
+### 4. Commercial content
+
+The LEFT side must contain exactly:
+
+Small eyebrow:
+
+**02 — COMMERCIAL INTERIORS**
+
+Main heading:
+
+**Commercial Interiors**
+
+Tagline:
+
+**Spaces Designed for Productivity & Impact**
+
+Description:
+
+**A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.**
+
+Then:
+
+**Our Expertise**
+
+Display:
+
+* Corporate Offices
+* Co-working Spaces
+* Retail Stores
+* Clinics & Healthcare Facilities
+* Fitness Studios & Gyms
+* Reception & Waiting Areas
+
+### 5. Expertise layout
+
+On desktop, use two columns:
+
+Corporate Offices                 Co-working Spaces
+Retail Stores                     Clinics & Healthcare Facilities
+Fitness Studios & Gyms            Reception & Waiting Areas
+
+Use the site's existing gold/tan accent color for small bullet markers.
+
+Do NOT put the expertise items into individual cards.
+
+### 6. Typography
+
+Use the **same typography treatment as the Residential section you just implemented**.
+
+* Eyebrow → existing small uppercase style
+* Main heading → existing serif font
+* Tagline → existing serif/heading style
+* Description → existing sans-serif body font
+* Our Expertise → existing heading style
+
+Do not introduce new fonts.
+
+### 7. Colors
+
+**DO NOT CHANGE THE BACKGROUND COLOR.**
+
+Keep the existing Services page background exactly as it is.
+
+Use only the site's existing colors:
+
+* existing gold/tan for eyebrow
+* existing gold/tan for bullet markers
+* existing heading color
+* existing body-text color
+
+Do not introduce a new background or color palette.
+
+### 8. Mobile layout
+
+On mobile, do NOT keep the desktop left/right zigzag arrangement.
+
+Stack the Commercial section as:
+
+**EXISTING COMMERCIAL IMAGE**
+↓
+**02 — COMMERCIAL INTERIORS**
+↓
+**Commercial Interiors**
+↓
+**Spaces Designed for Productivity & Impact**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+So even though Commercial is image-right on desktop, the image must appear **on top on mobile**.
+
+### 9. Visual relationship with Residential
+
+Make sure the Commercial section has the **same visual design, spacing, typography, image sizing, and overall styling as the Residential section**.
+
+The only intentional difference should be the direction:
+
+Residential:
+**IMAGE LEFT | CONTENT RIGHT**
+
+Commercial:
+**CONTENT LEFT | IMAGE RIGHT**
+
+This should create the alternating/zigzag effect.
+
+### 10. Do NOT modify anything else
+
+Do NOT change:
+
+* Residential Interiors
+* Hospitality Interiors
+* Architecture & Space Planning
+* Interior Design & 3D Visualization
+* Developer & Builder Solutions
+* Renovation & Makeovers
+* Services page background
+* Navbar
+* Footer
+* Other sections
+* Other images
+* Global CSS unnecessarily
+
+Keep the Residential section exactly as it currently looks.
+
+### 11. Implementation instruction
+
+First inspect the existing Services page/component and identify the exact Commercial Interiors markup and the **existing Commercial image path**.
+
+Modify the existing Commercial section directly.
+
+Do not create duplicate content.
+
+After implementation, verify the preview shows:
+
+**Residential:** IMAGE LEFT → CONTENT RIGHT
+
+**Commercial:** CONTENT LEFT → IMAGE RIGHT
+
+Do not modify the remaining five services yet.
