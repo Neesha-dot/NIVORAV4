@@ -674,6 +674,32 @@ export default function Services() {
                   </div>
                 </FadeIn>
               </article>
+            ) : i === 3 ? (
+              <article key={card.num} className="svc-residential-detail svc-commercial-detail">
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">04 — Architecture &amp; Space Planning</p>
+                    <h2>Architecture &amp; Space Planning</h2>
+                    <h3>Building Strong Foundations for Exceptional Spaces</h3>
+                    <p className="svc-residential-description">
+                      Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[3].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[3].img}
+                      alt="Architecture & Space Planning"
+                      className="svc-residential-image"
+                    />
+                  </div>
+                </FadeIn>
+              </article>
             ) : (
               <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
             )
