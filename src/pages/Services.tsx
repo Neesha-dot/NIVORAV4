@@ -752,6 +752,32 @@ export default function Services() {
                   </div>
                 </FadeIn>
               </article>
+            ) : i === 6 ? (
+              <article key={card.num} className="svc-residential-detail">
+                <FadeIn>
+                  <div className="svc-residential-image-wrap">
+                    <img
+                      src={card.img || SERVICE_DETAILS[6].img}
+                      alt="Renovation & Makeovers"
+                      className="svc-residential-image"
+                    />
+                  </div>
+                </FadeIn>
+                <FadeIn>
+                  <div className="svc-residential-content">
+                    <p className="svc-residential-eyebrow">07 — Renovation &amp; Makeovers</p>
+                    <h2>Renovation &amp; Makeovers</h2>
+                    <h3>Transforming Existing Spaces with Purpose</h3>
+                    <p className="svc-residential-description">
+                      Whether you're updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.
+                    </p>
+                    <p className="svc-residential-label">Our Expertise</p>
+                    <ul className="svc-residential-expertise">
+                      {SERVICE_DETAILS[6].expertise.map(item => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+                </FadeIn>
+              </article>
             ) : (
               <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
             )
