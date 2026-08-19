@@ -1,0 +1,128 @@
+Update the **Services section** of the existing Nivora Interiors website.
+
+### IMPORTANT
+
+* Do NOT redesign the entire website.
+* Do NOT change the navbar, header, footer, colors, fonts, spacing of unrelated sections, or other pages.
+* Keep the existing images/assets already present in the project.
+* Specifically, **reuse the existing Residential Interiors image** that is currently being displayed in the Services section. Do not download or generate a new image.
+* Only modify the layout/content of the **Residential Interiors service section**.
+
+### Desired Layout
+
+Change the current Residential Interiors section into a horizontal two-column layout similar to the provided reference image.
+
+**Desktop layout:**
+
+* Left side: existing Residential Interiors image.
+* Right side: Residential Interiors content.
+* Image and content should occupy approximately 50% / 50% of the available section width.
+* Keep generous whitespace and the premium/luxury interior-design aesthetic.
+* Maintain the existing dark green background used by the Services section.
+* Keep the existing typography style, especially the elegant serif heading style.
+* The section should look clean, spacious, sophisticated, and premium.
+* Do NOT use the current card/grid layout for this Residential section.
+
+### Residential Interiors Content
+
+Use exactly this content:
+
+**Small eyebrow text:**
+FOR HOW YOU LIVE
+
+**Main heading:**
+Residential Interiors
+
+**Subheading / intro heading:**
+Designing Homes That Feel Like You
+
+**Description:**
+Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.
+
+**Section label:**
+Our Expertise
+
+**Expertise list:**
+
+* Apartments & Flats
+* Villas & Bungalows
+* Luxury Residences
+* Modular Kitchens
+* Bedrooms & Living Spaces
+* Custom Storage Solutions
+
+### Visual Structure
+
+The final section should approximately follow this structure:
+
+[ EXISTING RESIDENTIAL IMAGE ]     [ FOR HOW YOU LIVE
+Residential Interiors
+
+```
+                                 Designing Homes That Feel You
+
+                                 Your home should be more than just
+                                 a place to live—it should reflect...
+
+                                 Our Expertise
+
+                                 • Apartments & Flats
+                                 • Villas & Bungalows
+                                 • Luxury Residences
+                                 • Modular Kitchens
+                                 • Bedrooms & Living Spaces
+                                 • Custom Storage Solutions ]
+```
+
+### Image Requirements
+
+* Use the **existing Residential Interiors image already in the project**.
+* Do not replace it.
+* Do not crop it excessively.
+* Give the image a refined rectangular presentation with subtle rounded corners consistent with the existing website design.
+* Maintain good image quality and aspect ratio.
+* The image should visually balance the text content on the right.
+
+### Typography & Styling
+
+* Keep the existing Nivora Interiors visual identity.
+* Use the existing serif font for the main heading.
+* Use the existing small uppercase/gold eyebrow styling.
+* Keep the existing muted gold accent color.
+* Use light/cream text against the dark green background.
+* The "Our Expertise" heading should be visually distinct but not oversized.
+* Display the expertise items in **two columns** on desktop to avoid making the section unnecessarily tall.
+
+### Responsive Design
+
+On mobile/tablet:
+
+* Stack the image above the content.
+* Image should appear first.
+* Content should appear below it.
+* Expertise list can become a single column on small screens.
+* Ensure there is no horizontal scrolling.
+* Preserve comfortable padding and spacing.
+
+### Existing Functionality
+
+* Do not remove existing links/buttons or functionality unless they specifically belong to the old Residential card layout.
+* If there is an existing "Explore Residential Interiors" button/link, retain it below the expertise list and style it consistently with the current website.
+* Keep the section accessible and semantic.
+
+### Do NOT change
+
+* Navbar
+* Hero section
+* Portfolio section
+* About section
+* Testimonials
+* Contact section
+* Footer
+* Existing images
+* Overall color palette
+* Existing website branding
+
+Only update the **Residential Interiors service section layout and content** to match the provided reference image.
+
+After implementing it, check the desktop and mobile views and make sure the image/content alignment, spacing, typography, and responsiveness look polished and consistent with the existing Nivora Interiors website.
