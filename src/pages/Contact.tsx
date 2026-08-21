@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, ArrowRight, Clock, Loader2 } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Loader2 } from 'lucide-react'
 import { submitEnquiry } from '../lib/api'
 
 const SPACE_TYPES = ['Residential', 'Commercial', 'Office', 'Retail', 'Villa/Bungalow', 'Other']
@@ -467,7 +467,7 @@ export default function Contact() {
                       </>
                     ) : (
                       <>
-                        Claim My Free Layout Design <ArrowRight size={14} />
+                        We’ll Get Back to You Within 24 Hours
                       </>
                     )}
                   </motion.button>
