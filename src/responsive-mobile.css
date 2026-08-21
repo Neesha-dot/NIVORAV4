@@ -569,8 +569,7 @@
 
   /* ── FLOATING WHATSAPP BUTTON ───────────────────────────── */
 
-  .whatsapp-pulse,
-  a[aria-label="Chat on WhatsApp"] {
+  .whatsapp-float {
     width: 52px !important;
     height: 52px !important;
     bottom: 20px !important;

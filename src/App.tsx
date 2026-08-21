@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTopButton from './components/BackToTopButton'
+import WhatsAppButton from './components/WhatsAppButton'
 import IntroOverlay from './components/IntroOverlay'
 import ConsultationPopup from './components/ConsultationPopup'
 import Home from './pages/Home'
@@ -124,30 +125,33 @@ function AppInner() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* ── Admin routes (no Navbar/Footer/splash) ── */}
-        <Route path="/adminpannel" element={<AdminLogin />} />
-        <Route
-          path="/adminpannel/dashboard"
-          element={
-            <ProtectedAdminRoute>
-              <AdminDashboard />
-            </ProtectedAdminRoute>
-          }
-        />
-        {/* ── Contact-form records ("excelsheet") ── */}
-        <Route path="/excelsheet" element={<ExcelLogin />} />
-        <Route
-          path="/excelsheet/data"
-          element={
-            <ExcelProtectedRoute>
-              <ExcelDashboard />
-            </ExcelProtectedRoute>
-          }
-        />
-        {/* ── Public site ── */}
-        <Route path="/*" element={<AppInner />} />
-      </Routes>
+      <>
+        <Routes>
+          {/* ── Admin routes (no Navbar/Footer/splash) ── */}
+          <Route path="/adminpannel" element={<AdminLogin />} />
+          <Route
+            path="/adminpannel/dashboard"
+            element={
+              <ProtectedAdminRoute>
+                <AdminDashboard />
+              </ProtectedAdminRoute>
+            }
+          />
+          {/* ── Contact-form records ("excelsheet") ── */}
+          <Route path="/excelsheet" element={<ExcelLogin />} />
+          <Route
+            path="/excelsheet/data"
+            element={
+              <ExcelProtectedRoute>
+                <ExcelDashboard />
+              </ExcelProtectedRoute>
+            }
+          />
+          {/* ── Public site ── */}
+          <Route path="/*" element={<AppInner />} />
+        </Routes>
+        <WhatsAppButton />
+      </>
     </BrowserRouter>
   )
 }
