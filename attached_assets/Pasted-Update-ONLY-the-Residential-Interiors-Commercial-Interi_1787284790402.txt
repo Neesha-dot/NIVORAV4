@@ -1,0 +1,143 @@
+Update **ONLY the Residential Interiors, Commercial Interiors, and Hospitality Interiors sections** on the Services page.
+
+Do NOT generate or replace any images. Do NOT change the existing images.
+
+### 1. Remove numbering
+
+Remove the numbered eyebrow labels from all three sections.
+
+Currently they look like:
+
+`01 — RESIDENTIAL INTERIORS`
+
+`02 — COMMERCIAL INTERIORS`
+
+`03 — HOSPITALITY INTERIORS`
+
+Remove the numbers and the entire numbered eyebrow label.
+
+The service sections should **NOT display 01, 02, or 03 anywhere**.
+
+Keep the existing section headings:
+
+* Residential Interiors
+* Commercial Interiors
+* Hospitality Interiors
+
+Do not replace the service headings.
+
+### 2. Increase the description font size
+
+The description paragraph is currently too small.
+
+Increase the **description/body text font size slightly** so it is easier to read.
+
+For example, if the current desktop description is around `16px`, increase it to approximately `17px–18px`.
+
+Do not make it excessively large.
+
+Keep:
+
+* existing font family
+* existing text color
+* existing line height style
+* existing paragraph width
+
+Only make the text slightly larger and more readable.
+
+### 3. Increase the "Our Expertise" text size
+
+The expertise list text is also currently too small.
+
+Increase the font size of the **expertise list items** slightly.
+
+For example, if currently around `15px–16px`, increase it to approximately `17px–18px`.
+
+Make sure the bullet markers increase proportionally if necessary.
+
+The list should remain clean and elegant.
+
+Do NOT turn the expertise items into cards.
+
+### 4. Increase the "Our Expertise" heading slightly
+
+Increase the **OUR EXPERTISE** heading slightly as well, but keep it subtle.
+
+Do not make it larger than the main service heading.
+
+Keep the existing gold/tan color and uppercase letter spacing.
+
+### 5. Do NOT change the tagline
+
+Keep the tagline exactly as it currently appears.
+
+For Residential:
+
+**Designing Homes That Feel Like You**
+
+Do NOT move the description into the tagline or heading.
+
+The following text must remain the **description paragraph**, not become a heading:
+
+"Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours."
+
+The same structure must remain for Commercial and Hospitality:
+
+**Service heading**
+↓
+**Tagline**
+↓
+**Description**
+↓
+**Our Expertise**
+↓
+**Expertise list**
+
+### 6. Apply the changes consistently
+
+Apply these typography changes ONLY to:
+
+1. Residential Interiors
+2. Commercial Interiors
+3. Hospitality Interiors
+
+Do not modify Architecture & Space Planning, Interior Design & 3D Visualization, Developer & Builder Solutions, or Renovation & Makeovers yet.
+
+### 7. Keep everything else unchanged
+
+Do NOT change:
+
+* Existing images
+* Image positions
+* Image sizes
+* Background color
+* Page layout
+* Navbar
+* Footer
+* Service row structure
+* Colors
+* Global font family
+* Other service sections
+* Existing responsive behavior
+
+Do not make global CSS changes that could affect other pages or sections.
+
+### Final result
+
+For Residential, Commercial, and Hospitality, the content should look like:
+
+**Residential Interiors**
+
+*Designing Homes That Feel Like You*
+
+Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.
+
+**OUR EXPERTISE**
+
+• Apartments & Flats          • Villas & Bungalows
+• Luxury Residences           • Modular Kitchens
+• Bedrooms & Living Spaces    • Custom Storage Solutions
+
+Make the description and expertise text **slightly larger and more readable than they are currently**, while preserving the existing premium design.
+
+Most importantly: **remove the 01/02/03 numbering and do not change anything else.**
