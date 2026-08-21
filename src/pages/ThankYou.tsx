@@ -32,6 +32,14 @@ const steps = [
   'You receive a tailored design brief and next steps — at no cost.',
 ]
 
+const WHATSAPP_MESSAGE = `Hi NIVORA Interiors!
+
+I’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.
+
+Looking forward to connecting!`
+
+const WHATSAPP_HREF = `https://wa.me/917276687805?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+
 export default function ThankYou() {
   /* Timing: checkmark(0) → label(0.2) → h1-line1(0.5) → h1-line2(0.7)
              → desc(0.85) → box(1.05) → steps(1.2, 1.3, 1.4, 1.5) → btns(1.65) */
@@ -160,7 +168,7 @@ export default function ThankYou() {
         {/* WhatsApp nudge */}
         <motion.div {...fadeIn(1.8)} className="mt-12">
           <a
-            href="https://wa.me/917276687805?text=Hi%20Shweta%2C%20I%20just%20submitted%20an%20enquiry%20on%20your%20website%20and%20would%20love%20to%20chat."
+            href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-light transition-colors duration-300 hover:text-[#a18661]"
