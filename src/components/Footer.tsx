@@ -556,7 +556,7 @@ export default function Footer() {
             color: 'rgba(245,242,237,0.48)',
             margin: 0,
           }}>
-            © 2025 Nivora Interiors. All rights reserved.
+                  © 2026 Nivora Interiors. All rights reserved.
           </p>
           <p style={{
             fontFamily: "'Jost', sans-serif",
