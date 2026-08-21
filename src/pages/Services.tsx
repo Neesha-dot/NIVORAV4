@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
 import FadeIn from '../components/FadeIn'
 import ProcessSection from '../components/ProcessSection'
 import { useSiteSettings } from '../hooks/useSiteSettings'
@@ -304,9 +305,14 @@ function ServiceDetailSection({
   index: number
   image: string
 }) {
+  const imageOnLeft = index % 2 === 0
+
   return (
     <article className={`svc-detail ${index % 2 ? 'svc-detail-reverse' : ''}`}>
-      <FadeIn>
+      <ServiceReveal
+        className="svc-detail-image-reveal"
+        direction={imageOnLeft ? 'left' : 'right'}
+      >
         <div className="svc-detail-image-wrap">
           <img
             src={image}
@@ -315,21 +321,82 @@ function ServiceDetailSection({
             loading={index === 0 ? 'eager' : 'lazy'}
           />
         </div>
-      </FadeIn>
-      <FadeIn>
+      </ServiceReveal>
+      <ServiceReveal
+        className="svc-detail-content-reveal"
+        direction="up"
+        delay={0.12}
+      >
         <div className="svc-detail-content">
-          <p className="svc-detail-eyebrow">{service.eyebrow}</p>
-          <h2>{service.title}</h2>
-          <h3>{service.intro}</h3>
-          <p className="svc-detail-description">{service.desc}</p>
-          <p className="svc-detail-expertise-label">Our Expertise</p>
+          <ServiceReveal delay={0}>
+            <p className="svc-detail-eyebrow">{service.eyebrow}</p>
+          </ServiceReveal>
+          <ServiceReveal delay={0.06}>
+            <h2>{service.title}</h2>
+          </ServiceReveal>
+          <ServiceReveal delay={0.12}>
+            <h3>{service.intro}</h3>
+          </ServiceReveal>
+          <ServiceReveal delay={0.18}>
+            <p className="svc-detail-description">{service.desc}</p>
+          </ServiceReveal>
+          <ServiceReveal delay={0.24}>
+            <p className="svc-detail-expertise-label">Our Expertise</p>
+          </ServiceReveal>
           <ul className="svc-detail-expertise">
-            {service.expertise.map(item => <li key={item}>{item}</li>)}
+            {service.expertise.map((item, itemIndex) => (
+              <li key={item}>
+                <ServiceReveal delay={0.3 + itemIndex * 0.06}>{item}</ServiceReveal>
+              </li>
+            ))}
           </ul>
         </div>
-      </FadeIn>
-      <span className="svc-detail-number">{service.num}</span>
+      </ServiceReveal>
     </article>
+  )
+}
+
+function ServiceReveal({
+  children,
+  delay = 0,
+  direction = 'up',
+  className = '',
+}: {
+  children: React.ReactNode
+  delay?: number
+  direction?: 'up' | 'left' | 'right'
+  className?: string
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: false, margin: '-60px' })
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches
+  )
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 640px)')
+    const update = () => setIsMobile(mediaQuery.matches)
+    update()
+    mediaQuery.addEventListener('change', update)
+    return () => mediaQuery.removeEventListener('change', update)
+  }, [])
+
+  const desktopOffset =
+    direction === 'left' ? { x: -36, y: 0 }
+      : direction === 'right' ? { x: 36, y: 0 }
+        : { x: 0, y: 24 }
+  const initialOffset = isMobile ? { x: 0, y: 24 } : desktopOffset
+
+  return (
+    <motion.div
+      ref={ref}
+      className={`svc-reveal ${className}`}
+      initial={{ opacity: 0, ...initialOffset }}
+      animate={inView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...initialOffset }}
+      transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      {children}
+    </motion.div>
   )
 }
 
@@ -544,6 +611,159 @@ export default function Services() {
         .svc-readable-detail .svc-residential-expertise li {
           font-size: 17px;
         }
+
+        /* Shared seven-section editorial layout. The grid row is sized by the
+           content column; the image fills that row and crops with object-fit. */
+        .svc-detail {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          align-items: stretch;
+          gap: clamp(2.5rem, 6vw, 7rem);
+          padding: 2rem 0 3.5rem;
+        }
+        .svc-detail > .svc-detail-image-reveal {
+          grid-column: 1;
+          grid-row: 1;
+          min-width: 0;
+        }
+        .svc-detail > .svc-detail-content-reveal {
+          grid-column: 2;
+          grid-row: 1;
+          min-width: 0;
+        }
+        .svc-detail-reverse > .svc-detail-image-reveal {
+          grid-column: 2;
+        }
+        .svc-detail-reverse > .svc-detail-content-reveal {
+          grid-column: 1;
+        }
+        .svc-detail-image-reveal,
+        .svc-detail-content-reveal,
+        .svc-detail-image-wrap,
+        .svc-detail-content {
+          height: 100%;
+        }
+        .svc-detail-image-wrap {
+          overflow: hidden;
+          border-radius: 18px;
+          box-shadow: 0 14px 40px rgba(20,18,14,0.12);
+        }
+        .svc-detail-image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+        .svc-detail-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 1rem 0;
+        }
+        .svc-detail-eyebrow,
+        .svc-detail-expertise-label {
+          color: #C9A96E;
+          font-family: 'Jost', sans-serif;
+          font-size: 10px;
+          font-weight: 400;
+          letter-spacing: 0.26em;
+          line-height: 1.5;
+          text-transform: uppercase;
+        }
+        .svc-detail-eyebrow {
+          margin-bottom: 1.2rem;
+        }
+        .svc-detail h2 {
+          color: #1C2818;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(2.15rem, 4vw, 3.5rem);
+          font-weight: 400;
+          line-height: 1.05;
+          margin-bottom: 1.35rem;
+        }
+        .svc-detail h3 {
+          color: #33452F;
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+          font-style: italic;
+          font-weight: 400;
+          line-height: 1.15;
+          margin-bottom: 1.25rem;
+        }
+        .svc-detail-description {
+          color: rgba(28,40,24,0.62);
+          font-family: 'Jost', sans-serif;
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 1.85;
+          margin-bottom: 2rem;
+          max-width: 520px;
+        }
+        .svc-detail-expertise-label {
+          font-size: 12px;
+          margin-bottom: 1rem;
+        }
+        .svc-detail-expertise {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.8rem 1.5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .svc-detail-expertise li {
+          color: rgba(28,40,24,0.7);
+          font-family: 'Jost', sans-serif;
+          font-size: 17px;
+          font-weight: 300;
+          line-height: 1.45;
+          padding-left: 1rem;
+          position: relative;
+        }
+        .svc-detail-expertise li::before {
+          background: #C9A96E;
+          border-radius: 50%;
+          content: '';
+          height: 5px;
+          left: 0;
+          position: absolute;
+          top: 0.55em;
+          width: 5px;
+        }
+        @media (max-width: 640px) {
+          .svc-detail,
+          .svc-detail-reverse {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 2rem;
+            padding: 0 0 2rem;
+          }
+          .svc-detail > .svc-detail-image-reveal,
+          .svc-detail > .svc-detail-content-reveal {
+            order: initial;
+            height: auto;
+          }
+          .svc-detail-image-wrap {
+            height: auto;
+            aspect-ratio: 1.18 / 1;
+          }
+          .svc-detail-image {
+            height: 100%;
+            min-height: 0;
+          }
+          .svc-detail-content {
+            height: auto;
+            padding: 0 0.25rem;
+          }
+        }
+        @media (max-width: 460px) {
+          .svc-detail-expertise {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
 
       {/* Page header */}
@@ -605,188 +825,12 @@ export default function Services() {
       }}>
         <div className="svc-grid-pm">
           {serviceCards.map((card, i) => (
-            i === 0 ? (
-              <article key={card.num} className="svc-residential-detail svc-readable-detail">
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[0].img}
-                      alt="Residential Interiors"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <h2>Residential Interiors</h2>
-                    <h3>Designing Homes That Feel Like You</h3>
-                    <p className="svc-residential-description">
-                      Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you're moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[0].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 1 ? (
-              <article key={card.num} className="svc-residential-detail svc-commercial-detail svc-readable-detail">
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <h2>Commercial Interiors</h2>
-                    <h3>Spaces Designed for Productivity &amp; Impact</h3>
-                    <p className="svc-residential-description">
-                      A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[1].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[1].img}
-                      alt="Commercial Interiors"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 2 ? (
-              <article key={card.num} className="svc-residential-detail svc-readable-detail">
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[2].img}
-                      alt="Hospitality Interiors"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <h2>Hospitality Interiors</h2>
-                    <h3>Creating Experiences Through Design</h3>
-                    <p className="svc-residential-description">
-                      In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[2].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 3 ? (
-              <article key={card.num} className="svc-residential-detail svc-commercial-detail">
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">04 — Architecture &amp; Space Planning</p>
-                    <h2>Architecture &amp; Space Planning</h2>
-                    <h3>Building Strong Foundations for Exceptional Spaces</h3>
-                    <p className="svc-residential-description">
-                      Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[3].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[3].img}
-                      alt="Architecture & Space Planning"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 4 ? (
-              <article key={card.num} className="svc-residential-detail">
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[4].img}
-                      alt="Interior Design & 3D Visualization"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">05 — Interior Design &amp; 3D Visualization</p>
-                    <h2>Interior Design &amp; 3D Visualization</h2>
-                    <h3>Bringing Ideas to Life Before Execution</h3>
-                    <p className="svc-residential-description">
-                      Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[4].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 5 ? (
-              <article key={card.num} className="svc-residential-detail svc-commercial-detail">
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">06 — Developer &amp; Builder Solutions</p>
-                    <h2>Developer &amp; Builder Solutions</h2>
-                    <h3>Enhancing Properties to Maximize Market Appeal</h3>
-                    <p className="svc-residential-description">
-                      We collaborate with developers and builders to create thoughtfully designed spaces that elevate property value and attract potential buyers. From show apartments to common amenities, every space is crafted to leave a lasting impression.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[5].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[5].img}
-                      alt="Developer & Builder Solutions"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-              </article>
-            ) : i === 6 ? (
-              <article key={card.num} className="svc-residential-detail">
-                <FadeIn>
-                  <div className="svc-residential-image-wrap">
-                    <img
-                      src={card.img || SERVICE_DETAILS[6].img}
-                      alt="Renovation & Makeovers"
-                      className="svc-residential-image"
-                    />
-                  </div>
-                </FadeIn>
-                <FadeIn>
-                  <div className="svc-residential-content">
-                    <p className="svc-residential-eyebrow">07 — Renovation &amp; Makeovers</p>
-                    <h2>Renovation &amp; Makeovers</h2>
-                    <h3>Transforming Existing Spaces with Purpose</h3>
-                    <p className="svc-residential-description">
-                      Whether you're updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.
-                    </p>
-                    <p className="svc-residential-label">Our Expertise</p>
-                    <ul className="svc-residential-expertise">
-                      {SERVICE_DETAILS[6].expertise.map(item => <li key={item}>{item}</li>)}
-                    </ul>
-                  </div>
-                </FadeIn>
-              </article>
-            ) : (
-              <ServiceCard key={card.num} card={card} index={i} onCardClick={scrollToCta} />
-            )
+            <ServiceDetailSection
+              key={card.num}
+              service={SERVICE_DETAILS[i]}
+              index={i}
+              image={card.img || SERVICE_DETAILS[i].img}
+            />
           ))}
         </div>
       </section>

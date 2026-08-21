@@ -1,0 +1,31 @@
+"Please make the following improvements to the Services page zigzag layout (all 7 service sections), using the 'Architecture & Space Planning' section as the reference/consistency benchmark:
+
+1. Font size consistency:
+I've noticed the heading font size is inconsistent across sections — 'Architecture & Space Planning' heading appears slightly smaller compared to 'Hospitality Interiors' heading. Please check the font sizes (heading, tagline, description, bullet points) across all 7 sections and make them exactly consistent — same font-size, line-height, and weight for each corresponding text element, regardless of which section it is.
+
+2. Image and content height must match (without changing the images themselves):
+Do NOT replace or change any of the current images. Instead, fix the layout so image height and content column height always match evenly:
+
+Use object-fit: cover on each image so it fills the exact height of the content column on its side, cropping elegantly rather than leaving gaps or stretching
+When content is shorter than the image's natural height, crop the image down (via object-fit/height constraint) so both sides align as a clean, evenly matched pair
+Apply this consistently across all 7 sections
+
+3. Add scroll-triggered animations — both desktop and mobile:
+Please add smooth entrance animations to each of the 7 service sections as the user scrolls through the page, matching the site's existing animation quality (similar to the 'Our Process' section on this same Services page, which uses useInView for scroll-triggered fade/slide effects).
+
+For each section:
+
+The image should fade in with a subtle slide (from left if image is on the left, from right if image is on the right)
+The content (eyebrow label, heading, tagline, description, bullet points, in that stagger order) should fade in with a slight upward motion, staggered slightly after the image
+Bullet points in 'Our Expertise' can stagger in one-by-one for a polished effect
+Animations should re-trigger every time the section scrolls into view (not just once), matching the behavior we already fixed on 'Our Process'
+
+On mobile, since sections stack vertically (image on top, content below), use fade + upward motion (y-axis) only — avoid horizontal (x-axis) slide animations on mobile since the site has overflow-x: hidden which clips horizontal animations, as we discovered before.
+
+4. Final check:
+Please confirm after implementation that:
+
+Font sizes are identical across all 7 sections
+Image and content heights match evenly across all sections, images themselves unchanged
+Animations work smoothly on both desktop and mobile without any clipping or layout shift
+Do not change the existing zigzag left-right alternating pattern, colors, content text, or images — only fix font consistency, height matching, and add animations"
