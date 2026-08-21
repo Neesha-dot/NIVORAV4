@@ -61,7 +61,7 @@ const FALLBACK_SERVICE_CARDS = [
 const SERVICE_DETAILS = [
   {
     num: '01',
-    eyebrow: 'FOR HOW YOU LIVE',
+    eyebrow: '01 — RESIDENTIAL INTERIORS',
     title: 'Residential Interiors',
     intro: 'Designing Homes That Feel Like You',
     desc: 'Your home should be more than just a place to live—it should reflect your personality, lifestyle, and aspirations. Whether you’re moving into a new apartment, building your dream villa, renovating an existing home, or creating a weekend retreat, we design spaces that are functional, timeless, and uniquely yours.',
@@ -70,7 +70,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '02',
-    eyebrow: 'BUILT FOR BUSINESS',
+    eyebrow: '02 — COMMERCIAL INTERIORS',
     title: 'Commercial Interiors',
     intro: 'Spaces Designed for Productivity & Impact',
     desc: 'A well-designed workspace inspires creativity, improves efficiency, and leaves a lasting impression on clients and visitors. From corporate offices and co-working spaces to retail stores, clinics, and fitness studios, we create environments that balance functionality, comfort, and brand identity.',
@@ -79,7 +79,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '03',
-    eyebrow: 'DESIGNED FOR EXPERIENCES',
+    eyebrow: '03 — HOSPITALITY INTERIORS',
     title: 'Hospitality Interiors',
     intro: 'Creating Experiences Through Design',
     desc: 'In hospitality, every detail contributes to the guest experience. We design inviting and memorable environments that combine aesthetics, comfort, and functionality, ensuring every visitor feels welcomed and inspired.',
@@ -88,7 +88,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '04',
-    eyebrow: 'PLANNED WITH PURPOSE',
+    eyebrow: '04 — ARCHITECTURE & SPACE PLANNING',
     title: 'Architecture & Space Planning',
     intro: 'Building Strong Foundations for Exceptional Spaces',
     desc: 'Great design begins with thoughtful planning. Our architectural and space planning services focus on creating efficient layouts, striking elevations, and well-balanced spaces that maximize both aesthetics and functionality.',
@@ -97,7 +97,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '05',
-    eyebrow: 'VISUALIZE BEFORE EXECUTION',
+    eyebrow: '05 — INTERIOR DESIGN & 3D VISUALIZATION',
     title: 'Interior Design & 3D Visualization',
     intro: 'Bringing Ideas to Life Before Execution',
     desc: 'Visualize your future space with confidence through detailed drawings and realistic 3D renderings. Our design process helps you explore layouts, materials, finishes, and design concepts before construction begins.',
@@ -106,7 +106,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '06',
-    eyebrow: 'DESIGNED TO ADD VALUE',
+    eyebrow: '06 — DEVELOPER & BUILDER SOLUTIONS',
     title: 'Developer & Builder Solutions',
     intro: 'Enhancing Properties to Maximize Market Appeal',
     desc: 'We collaborate with developers and builders to create thoughtfully designed spaces that elevate property value and attract potential buyers. From show apartments to common amenities, every space is crafted to leave a lasting impression.',
@@ -115,7 +115,7 @@ const SERVICE_DETAILS = [
   },
   {
     num: '07',
-    eyebrow: 'REIMAGINE YOUR SPACE',
+    eyebrow: '07 — RENOVATION & MAKEOVERS',
     title: 'Renovation & Makeovers',
     intro: 'Transforming Existing Spaces with Purpose',
     desc: 'Whether you’re updating a home, refreshing a workplace, or modernizing an outdated interior, our renovation services breathe new life into existing spaces while preserving what matters most.',
@@ -645,15 +645,18 @@ export default function Services() {
           height: 100%;
         }
         .svc-detail-image-wrap {
+          position: relative;
           overflow: hidden;
           border-radius: 18px;
           box-shadow: 0 14px 40px rgba(20,18,14,0.12);
+          min-height: 0;
         }
         .svc-detail-image {
+          position: absolute;
+          inset: 0;
           display: block;
           width: 100%;
           height: 100%;
-          min-height: 100%;
           object-fit: cover;
         }
         .svc-detail-content {
@@ -747,10 +750,13 @@ export default function Services() {
             height: auto;
           }
           .svc-detail-image-wrap {
+            position: relative;
             height: auto;
             aspect-ratio: 1.18 / 1;
           }
           .svc-detail-image {
+            position: static;
+            inset: auto;
             height: 100%;
             min-height: 0;
           }
