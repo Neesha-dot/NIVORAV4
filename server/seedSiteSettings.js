@@ -35,10 +35,10 @@ const LOCAL_FILES = {
   logo: path.join(ROOT, 'src/assets/images/nivora-logo.png'),
   footerLogo: path.join(ROOT, 'public/nivora-footer-logo.png'),
   serviceCards: [
-    path.join(ROOT, 'public/living-room-design.jpg'),
-    path.join(ROOT, 'public/modular-kitchen.jpg'),
-    path.join(ROOT, 'public/bedroom-interiors.jpg'),
-    path.join(ROOT, 'public/dining-entertainment.jpg'),
+    path.join(ROOT, 'attached_assets/WhatsApp_Image_2026-08-20_at_13.25.13_(2)_1787286113831.jpeg'),
+    path.join(ROOT, 'attached_assets/WhatsApp_Image_2026-08-20_at_13.25.13_(1)_1787286122385.jpeg'),
+    path.join(ROOT, 'attached_assets/WhatsApp_Image_2026-08-20_at_13.25.13_1787286131387.jpeg'),
+    path.join(ROOT, 'attached_assets/WhatsApp_Image_2026-08-20_at_13.25.12_1787286138445.jpeg'),
   ],
   homePortfolio: [
     path.join(ROOT, 'attached_assets/3_(1)_1781792140739.jpg'),
@@ -54,7 +54,7 @@ const SERVICE_CARD_META = [
   { title: 'Living Room Design', desc: 'Sophisticated and welcoming living spaces designed for comfort, conversation, and everyday luxury.' },
   { title: 'Modular Kitchen', desc: 'Smart, elegant kitchens with seamless storage solutions, premium finishes, and functional layouts.' },
   { title: 'Bedroom Interiors', desc: 'Calm and luxurious retreats crafted with warm textures, custom furniture, and ambient lighting.' },
-  { title: 'Dining & Entertainment', desc: 'Stylish dining areas and entertainment spaces designed to bring family and guests together.' },
+  { title: 'Bathroom Interiors', desc: 'Serene, spa-inspired bathrooms designed with premium fittings, elegant tiling, and thoughtful layouts for everyday indulgence.' },
 ]
 
 const HOME_PORTFOLIO_META = [

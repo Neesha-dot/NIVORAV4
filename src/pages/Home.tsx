@@ -2455,10 +2455,10 @@ function MobileServicesSection() {
 }
 
 const DEFAULT_SERVICE_CARDS = [
-  { img: '/living-room-design.jpg', title: 'Living Room Design', desc: 'Sophisticated and welcoming living spaces designed for comfort, conversation, and everyday luxury.' },
-  { img: '/modular-kitchen.jpg', title: 'Modular Kitchen', desc: 'Smart, elegant kitchens with seamless storage solutions, premium finishes, and functional layouts.' },
-  { img: '/bedroom-interiors.jpg', title: 'Bedroom Interiors', desc: 'Calm and luxurious retreats crafted with warm textures, custom furniture, and ambient lighting.' },
-  { img: '/dining-entertainment.jpg', title: 'Dining & Entertainment', desc: 'Stylish dining areas and entertainment spaces designed to bring family and guests together.' },
+  { img: 'https://res.cloudinary.com/tgmyheme/image/upload/v1787286193/nivora/home/our-expertise/living-room-design.jpg', title: 'Living Room Design', desc: 'Sophisticated and welcoming living spaces designed for comfort, conversation, and everyday luxury.' },
+  { img: 'https://res.cloudinary.com/tgmyheme/image/upload/v1787286195/nivora/home/our-expertise/modular-kitchen.jpg', title: 'Modular Kitchen', desc: 'Smart, elegant kitchens with seamless storage solutions, premium finishes, and functional layouts.' },
+  { img: 'https://res.cloudinary.com/tgmyheme/image/upload/v1787286197/nivora/home/our-expertise/bedroom-interiors.jpg', title: 'Bedroom Interiors', desc: 'Calm and luxurious retreats crafted with warm textures, custom furniture, and ambient lighting.' },
+  { img: 'https://res.cloudinary.com/tgmyheme/image/upload/v1787286199/nivora/home/our-expertise/bathroom-interiors.jpg', title: 'Bathroom Interiors', desc: 'Serene, spa-inspired bathrooms designed with premium fittings, elegant tiling, and thoughtful layouts for everyday indulgence.' },
 ]
 
 function InstagramFeed({ posts }: { posts: Array<{ image: string; url: string }> }) {
