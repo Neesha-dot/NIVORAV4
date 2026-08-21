@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import nodemailer from 'nodemailer'
 import { Enquiry } from '../models/Enquiry.js'
+import { connectDB } from '../db.js'
 
 const router = Router()
 
@@ -73,6 +74,10 @@ router.post('/', async (req, res) => {
   // is misconfigured or fails below.
   let enquiryDoc
   try {
+    // The API starts listening before the background database connection is
+    // ready. Explicitly await it here so Mongoose never buffers a submission
+    // until it times out while the connection is still being established.
+    await connectDB()
     enquiryDoc = await Enquiry.create({
       fullName, phone, email, spaceType, location,
       projectType, budget, referral, requirements, source,

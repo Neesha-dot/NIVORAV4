@@ -1,0 +1,35 @@
+The Contact form is still showing:
+
+**“Failed to save your enquiry. Please try again later.”**
+
+The **MongoDB URI has already been provided/configured**, so do not ask me to provide it again and do not replace it with a hardcoded URI.
+
+Please thoroughly debug and fix the MongoDB connection and Contact form submission flow.
+
+### Check the following
+
+1. Verify that the application is actually reading the MongoDB URI from the correct environment variable.
+2. Check that the environment variable name used by the backend exactly matches the configured secret.
+3. Verify the MongoDB connection is established successfully when the server starts.
+4. Check the server/API logs for the exact error occurring during form submission.
+5. Verify the Contact form is sending the correct request to the correct backend/API endpoint.
+6. Verify the request payload field names match what the backend expects.
+7. Verify the MongoDB database and collection/model are configured correctly.
+8. Check for Mongoose schema/model errors, validation errors, connection errors, or duplicate model issues.
+9. Make sure the API properly awaits the MongoDB connection before attempting to save the enquiry.
+10. Make sure errors are logged on the server so the actual cause can be identified instead of only returning the generic failure message.
+11. Confirm the API returns an appropriate success response after the enquiry is successfully saved.
+12. Test the form end-to-end with realistic test data and confirm the new enquiry actually appears in MongoDB.
+
+### Important
+
+* **Do not expose the MongoDB URI, username, password, or any secrets in frontend code, browser responses, or logs.**
+* Use the existing environment variable/secret configuration.
+* Do not bypass MongoDB or replace the database with temporary/local storage.
+* Do not simply change the error message; fix the underlying problem.
+* Preserve the existing Contact page design and styling.
+* Keep the button text as **“WE’LL GET BACK TO YOU WITHIN 24 HOURS”**.
+* Do not make unrelated changes.
+
+After fixing it, test a complete submission and verify that:
+**Contact form → API → MongoDB → successful response → success message** all work correctly.
