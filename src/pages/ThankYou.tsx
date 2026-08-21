@@ -94,7 +94,7 @@ export default function ThankYou() {
           className="font-light leading-relaxed max-w-md mx-auto mb-10"
           style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300, fontSize: 14, color: '#5c5c5c' }}
         >
-          Thank you for reaching out to NIVORA. We've received your enquiry and will be in touch within 24 hours to schedule your free consultation.
+          Thank you for reaching out to NIVORA. We’ll get back to you within 24 hours.
         </motion.p>
 
         {/* What Happens Next box */}

@@ -342,7 +342,7 @@ export default function ConsultationPopup({ splashDone }: Props) {
                   Thank you, {firstName}!
                 </p>
                 <p style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: 14, color: '#6b6258', margin: '0 0 24px', lineHeight: 1.6 }}>
-                  We'll reach out to you within 24 hours.
+                  We’ll get back to you within 24 hours.
                 </p>
                 <button className="cpopup-btn-outline" onClick={close}>
                   Close
