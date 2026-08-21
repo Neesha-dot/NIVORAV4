@@ -3,32 +3,41 @@ import { motion, AnimatePresence } from 'framer-motion'
 import nivoraLogo from '../assets/images/nivora-logo.png'
 
 function useTransparentLogo(src: string) {
-  const [logoSrc, setLogoSrc] = useState<string | null>(null)
+  // Render the imported asset immediately. Canvas processing is only a visual
+  // enhancement; if it fails, the splash must still be able to complete.
+  const [logoSrc, setLogoSrc] = useState<string>(src)
 
   useEffect(() => {
     const img = new Image()
     img.crossOrigin = 'anonymous'
     img.onload = () => {
-      const canvas = document.createElement('canvas')
-      canvas.width = img.naturalWidth
-      canvas.height = img.naturalHeight
-      const ctx = canvas.getContext('2d')!
-      ctx.drawImage(img, 0, 0)
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
-      const data = imageData.data
-      for (let i = 0; i < data.length; i += 4) {
-        const r = data[i]
-        const g = data[i + 1]
-        const b = data[i + 2]
-        const isNeutral = Math.abs(r - g) < 28 && Math.abs(g - b) < 28
-        const isBright = r > 170 && g > 160 && b > 150
-        if (isNeutral && isBright) {
-          data[i + 3] = 0
+      try {
+        const canvas = document.createElement('canvas')
+        canvas.width = img.naturalWidth
+        canvas.height = img.naturalHeight
+        const ctx = canvas.getContext('2d')
+        if (!ctx) return
+
+        ctx.drawImage(img, 0, 0)
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+        const data = imageData.data
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i]
+          const g = data[i + 1]
+          const b = data[i + 2]
+          const isNeutral = Math.abs(r - g) < 28 && Math.abs(g - b) < 28
+          const isBright = r > 170 && g > 160 && b > 150
+          if (isNeutral && isBright) {
+            data[i + 3] = 0
+          }
         }
+        ctx.putImageData(imageData, 0, 0)
+        setLogoSrc(canvas.toDataURL('image/png'))
+      } catch {
+        // Keep the original logo when canvas access is unavailable.
       }
-      ctx.putImageData(imageData, 0, 0)
-      setLogoSrc(canvas.toDataURL('image/png'))
     }
+    img.onerror = () => setLogoSrc(src)
     img.src = src
   }, [src])
 
@@ -114,8 +123,7 @@ export default function IntroOverlay({ onExitComplete }: { onExitComplete?: () =
             }}
           >
             <AnimatePresence>
-              {logoSrc && (
-                <motion.div
+              <motion.div
                   key="logo"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -160,8 +168,7 @@ export default function IntroOverlay({ onExitComplete }: { onExitComplete?: () =
                       filter: 'drop-shadow(0 0 20px rgba(201,166,107,0.28))',
                     }}
                   />
-                </motion.div>
-              )}
+              </motion.div>
             </AnimatePresence>
           </motion.div>
         )}
