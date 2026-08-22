@@ -1,0 +1,135 @@
+The Admin Panel login is currently failing even when I enter the correct username and password.
+
+Please debug the COMPLETE authentication flow and fix the issue without changing the intended admin credentials.
+
+### 1. Find the authentication implementation
+
+Search the entire project for:
+
+* Admin login page/component
+* username/password fields
+* login API/route
+* authentication functions
+* admin credentials
+* database/admin user table
+* password hashing/comparison
+* session/token/JWT handling
+* environment variables related to admin authentication
+* redirects after login
+* `401`, `403`, `Unauthorized`, `Invalid credentials`
+
+Identify exactly where the login is failing.
+
+### 2. Check the frontend
+
+Verify that:
+
+* Username input is correctly sent to the backend.
+* Password input is correctly sent to the backend.
+* The request uses the correct API endpoint.
+* The request method is correct.
+* The JSON/body field names match what the backend expects.
+* There is no accidental whitespace around username/password.
+* The login button actually triggers the correct authentication function.
+* The frontend is not displaying a generic "invalid credentials" message when the real problem is an API/server error.
+
+### 3. Check the backend
+
+Verify that:
+
+* The login API/route exists and is reachable.
+* The username is being received correctly.
+* The password is being received correctly.
+* The admin user actually exists.
+* Password comparison is implemented correctly.
+* If the stored password is hashed, use the correct password-hashing comparison method.
+* Do NOT compare a plaintext password directly against a hashed password.
+* If authentication uses environment variables, verify those variables are actually available to the running application.
+* Check for accidental differences in variable names.
+
+### 4. Check the database
+
+If admin credentials are stored in a database:
+
+* Verify the admin user exists.
+* Verify the username/email is correct.
+* Verify the password hash exists.
+* Verify the application is connected to the correct database.
+* Make sure the development and production databases are not being confused.
+* Do not delete or reset existing data unless necessary.
+
+### 5. Check environment variables
+
+If the project uses something like:
+
+ADMIN_USERNAME
+ADMIN_PASSWORD
+ADMIN_EMAIL
+ADMIN_PASSWORD_HASH
+JWT_SECRET
+SESSION_SECRET
+
+verify that the application is reading the correct variables.
+
+IMPORTANT:
+Do NOT expose or print the actual password or secret values in the browser console, logs, or UI.
+
+You may log safe diagnostic information such as:
+
+"ADMIN_USERNAME exists: true"
+"ADMIN_PASSWORD exists: true"
+"Database connection: successful"
+
+but NEVER print the actual password or secret.
+
+### 6. Check the browser Network request
+
+Use the browser Network tab and inspect the login request.
+
+Verify:
+
+Frontend:
+→ Login button
+→ API request
+→ Correct endpoint
+→ Correct request body
+→ Backend response
+→ Authentication/session creation
+→ Admin dashboard redirect
+
+If the response is 401/403, identify why.
+
+If the response is 500, fix the backend error.
+
+If the response is 200 but the page does not redirect, fix the frontend authentication/session handling.
+
+### 7. Do NOT create a fake bypass
+
+Do NOT:
+
+* hardcode a new password in the frontend
+* remove authentication
+* automatically log the admin in
+* bypass the login
+* store the password in localStorage
+* expose credentials in client-side JavaScript
+
+The final solution must use proper authentication.
+
+### 8. After debugging
+
+Tell me:
+
+1. What was causing the login failure.
+2. Which file/function was responsible.
+3. What you changed.
+4. Whether the existing admin credentials now work.
+
+Then test the complete flow:
+
+Admin Login
+→ Correct credentials
+→ Successful authentication
+→ Admin Dashboard
+
+Do not simply tell me "fixed" without actually testing the authentication flow.
