@@ -98,6 +98,11 @@
     padding-bottom: 140px;
   }
 
+  /* Slightly richer quote overlay on desktop only; mobile keeps its existing styling. */
+  .philosophy-quote-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.47)) !important;
+  }
+
   /* Text block: generous internal spacing on desktop */
   .philosophy-text-block {
     padding-right: 2rem;

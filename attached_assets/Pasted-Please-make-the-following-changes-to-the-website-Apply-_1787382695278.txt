@@ -1,0 +1,70 @@
+Please make the following changes to the website. **Apply Change 1 first, then Change 2.**
+
+## CHANGE 1 — Update the Contact Form Thank-You Page
+
+After a user submits the **Contact/Enquiry form**, the current Thank-You/Success page appears with the heading:
+
+**"Success! Your Vision
+Is in Good Hands."**
+
+Keep the heading exactly as it is.
+
+### 1A. Replace the subtext
+
+Currently it says:
+
+> Hi NIVORA Interiors! I'd love to discuss my interior project with your team. I've just submitted an enquiry through your website and would like to know more about how we can work together. Looking forward to connecting!
+
+Replace it completely with:
+
+> Thank you for reaching out to NIVORA. We'll get back to you within 24 hours.
+
+Keep the existing typography, alignment, spacing, font size, and overall styling unless a minor adjustment is necessary to accommodate the shorter text.
+
+### 1B. Update the "WHAT HAPPENS NEXT" box
+
+In the **WHAT HAPPENS NEXT** section, keep points 01, 03, and 04 exactly as they are.
+
+Only replace **Point 02**.
+
+Current Point 02:
+
+> Shweta will personally reach out to schedule your consultation.
+
+Replace it with:
+
+> Designer will reach out to schedule a free 30 minute consultation.
+
+Do not change the numbering or styling.
+
+---
+
+## CHANGE 2 — Darken the Quote Box in "Our Philosophy" Section
+
+In the **"Our Philosophy"** section, there is a testimonial/quote box positioned at the **bottom-left corner of the right-side image**.
+
+Make the **black/dark gradient area of this box slightly darker**, but **ONLY on desktop view**.
+
+### Required change:
+
+* Locate the quote/testimonial box overlaying the bottom-left area of the right-side image.
+* Make its existing black/dark gradient **slightly darker and richer**.
+* Keep the existing gradient effect; do not make it completely black.
+* Keep the current blur, shadow, transparency, positioning, dimensions, typography, and overall design unchanged.
+* The result should look subtle, elegant, and premium, matching the existing luxury interior-design aesthetic.
+
+### Responsive requirement:
+
+* Apply the darker gradient **ONLY on desktop screens** using an appropriate CSS media query, for example `min-width: 1024px`.
+* **Do NOT change the appearance of this quote box on mobile or tablet.**
+* Do not modify any other section of the website.
+
+### Important implementation instructions:
+
+* First inspect the existing code and identify the exact component/CSS responsible for the Contact Form Thank-You page.
+* Then update the text exactly as specified above.
+* After that, locate the Our Philosophy quote box and modify only its desktop gradient styling.
+* Do not create duplicate components.
+* Do not change the website's existing layout, navigation, fonts, colors, animations, responsiveness, or other content.
+* Preserve all existing functionality.
+* Make the smallest possible code changes necessary.

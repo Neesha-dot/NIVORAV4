@@ -28,7 +28,7 @@ const LABEL: React.CSSProperties = {
 
 const steps = [
   'We review your enquiry and match you with the right design approach.',
-  'Shweta will personally reach out to schedule your consultation.',
+  'Designer will reach out to schedule a free 30 minute consultation.',
   'We begin understanding your space, lifestyle, and vision.',
   'You receive a tailored design brief and next steps.',
 ]
@@ -95,7 +95,7 @@ export default function ThankYou() {
           className="font-light leading-relaxed max-w-md mx-auto mb-10"
           style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300, fontSize: 14, color: '#5c5c5c' }}
         >
-          Hi NIVORA Interiors! I'd love to discuss my interior project with your team. I've just submitted an enquiry through your website and would like to know more about how we can work together. Looking forward to connecting!
+          Thank you for reaching out to NIVORA. We'll get back to you within 24 hours.
         </motion.p>
 
         {/* What Happens Next box */}
