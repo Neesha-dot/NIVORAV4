@@ -1,16 +1,4 @@
-const WHATSAPP_MESSAGE = `Hi NIVORA Interiors! 👋
-
-I’m interested in your interior design services and would like to discuss my project.
-
-📍 Project Location:
-🏠 Property Type:
-📐 Approx. Area:
-💰 Budget:
-📅 Expected Start Date:
-
-I came across NIVORA Interiors through your website and would love to know more about your services.`
-
-const WHATSAPP_HREF = `https://wa.me/917276687805?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+import { WHATSAPP_HREF } from '../lib/whatsapp'
 
 export default function WhatsAppButton() {
   return (

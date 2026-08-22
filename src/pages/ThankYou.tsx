@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight } from 'lucide-react'
+import { WHATSAPP_HREF } from '../lib/whatsapp'
 
 /* ─── Animation helpers ─────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -31,20 +32,6 @@ const steps = [
   'We begin understanding your space, lifestyle, and vision.',
   'You receive a tailored design brief and next steps — at no cost.',
 ]
-
-const WHATSAPP_MESSAGE = `Hi NIVORA Interiors! 👋
-
-I’m interested in your interior design services and would like to discuss my project.
-
-📍 Project Location:
-🏠 Property Type:
-📐 Approx. Area:
-💰 Budget:
-📅 Expected Start Date:
-
-I came across NIVORA Interiors through your website and would love to know more about your services.`
-
-const WHATSAPP_HREF = `https://wa.me/917276687805?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
 export default function ThankYou() {
   /* Timing: checkmark(0) → label(0.2) → h1-line1(0.5) → h1-line2(0.7)
