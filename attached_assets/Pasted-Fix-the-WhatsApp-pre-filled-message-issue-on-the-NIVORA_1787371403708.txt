@@ -1,0 +1,83 @@
+Fix the WhatsApp pre-filled message issue on the NIVORA Interiors website.
+
+IMPORTANT: The current WhatsApp message shows `�` instead of emojis:
+
+Hi NIVORA Interiors! �
+
+� Project Location:
+� Property Type:
+� Approx. Area:
+� Budget:
+� Expected Start Date:
+
+This means the emoji characters are being corrupted somewhere in the website source, database, CMS, build process, or URL generation BEFORE WhatsApp receives the message.
+
+Do not simply change the WhatsApp URL encoding. Diagnose and fix the root cause.
+
+Use this exact final message:
+
+Hi NIVORA Interiors! 👋
+
+I’m interested in your interior design services and would like to discuss my project.
+
+📍 Project Location:
+🏠 Property Type:
+📐 Approx. Area:
+💰 Budget:
+📅 Expected Start Date:
+
+I came across NIVORA Interiors through your website and would love to know more about your services.
+
+Requirements:
+
+1. Make sure every relevant HTML, JS, JSX, TSX, JSON, PHP, database, CMS, and source file is saved and served as UTF-8.
+
+2. Check the actual message string in the source code. It must contain the real Unicode emojis:
+   👋 📍 🏠 📐 💰 📅
+
+   It must NOT contain:
+   �
+   �
+   \uFFFD
+   or already-corrupted emoji characters.
+
+3. Do not copy the currently corrupted WhatsApp message and attempt to encode it. Replace the corrupted source string with the correct Unicode string.
+
+4. Generate the WhatsApp URL dynamically from the correct message using:
+   encodeURIComponent(message)
+
+5. Use a standard WhatsApp URL such as:
+   https://wa.me/PHONE_NUMBER?text=ENCODED_MESSAGE
+
+6. Do not manually encode individual emojis. Let UTF-8 + encodeURIComponent() handle the entire message.
+
+7. Check whether any CMS, database, API, server response, HTML meta charset, PHP response header, or build/minification process is converting Unicode characters incorrectly.
+
+8. Ensure the page contains: <meta charset="UTF-8">
+
+9. If the message is coming from a database or API, make sure the database connection, database/table/column encoding, API response, and HTTP response all support UTF-8/utf8mb4.
+
+10. If the website is using JavaScript, use a Unicode-safe string directly in the source and generate the WhatsApp URL only after the string is created.
+
+11. Do not use the replacement character `�` anywhere in the final message.
+
+12. Test the generated WhatsApp URL by decoding its `text` parameter before opening WhatsApp. The decoded result must contain the actual characters:
+    👋 📍 🏠 📐 💰 📅
+
+13. Test on desktop and mobile, especially Android WhatsApp and iPhone WhatsApp.
+
+The final WhatsApp message must display exactly like this:
+
+Hi NIVORA Interiors! 👋
+
+I’m interested in your interior design services and would like to discuss my project.
+
+📍 Project Location:
+🏠 Property Type:
+📐 Approx. Area:
+💰 Budget:
+📅 Expected Start Date:
+
+I came across NIVORA Interiors through your website and would love to know more about your services.
+
+Do not send the WhatsApp message automatically. Only open WhatsApp with the correctly populated message field.
