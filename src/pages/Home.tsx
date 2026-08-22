@@ -2943,7 +2943,7 @@ export default function Home({ splashDone }: { splashDone: boolean }) {
               }}>
                 <img
                   ref={philosophyImgRef}
-                  src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=700&q=85"
+                  src="https://res.cloudinary.com/tgmyheme/image/upload/v1787377116/nivora/home/our-philosophy/philosophy-bedroom.jpg"
                   alt="NIVORA Studio — editorial"
                   className="philosophy-photo"
                   style={{
