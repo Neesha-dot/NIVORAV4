@@ -1,0 +1,186 @@
+The WhatsApp predefined message STILL displays `�` instead of emojis.
+
+I have already tried:
+
+* encodeURIComponent()
+* UTF-8 encoding
+* String.fromCodePoint()
+* replacing the emojis in the message
+
+But WhatsApp STILL opens with:
+
+Hi NIVORA Interiors! �
+
+I’m interested in your interior design services and would like to discuss my project.
+
+� Project Location:
+
+� Property Type:
+
+� Approx. Area:
+
+� Budget:
+
+� Expected Start Date:
+
+I came across NIVORA Interiors through your website and would love to know more about your services.
+
+### STOP making small changes to the existing code.
+
+I want you to debug the COMPLETE data flow.
+
+### STEP 1 — Find the exact source
+
+Search the ENTIRE project for:
+
+* "Hi NIVORA Interiors"
+* "Project Location"
+* "Property Type"
+* "Approx. Area"
+* "Expected Start Date"
+* "wa.me"
+* "whatsapp"
+* "encodeURIComponent"
+* "�"
+
+Identify EVERY place where this predefined WhatsApp message is created, stored, modified, encoded, or passed.
+
+### STEP 2 — Remove the old implementation
+
+Delete the existing predefined-message implementation completely.
+
+There must NOT be any hardcoded `�` character anywhere in the WhatsApp message.
+
+Do not keep the old message and modify it.
+
+Create ONE new message-generation function.
+
+### STEP 3 — Generate emojis ONLY from Unicode code points
+
+Use this exact implementation:
+
+const emoji = {
+wave: String.fromCodePoint(0x1F44B),
+location: String.fromCodePoint(0x1F4CD),
+house: String.fromCodePoint(0x1F3E0),
+ruler: String.fromCodePoint(0x1F4D0),
+money: String.fromCodePoint(0x1F4B0),
+calendar: String.fromCodePoint(0x1F4C5)
+};
+
+const message =
+"Hi NIVORA Interiors! " + emoji.wave + "\n\n" +
+"I’m interested in your interior design services and would like to discuss my project.\n\n" +
+emoji.location + " Project Location:\n" +
+emoji.house + " Property Type:\n" +
+emoji.ruler + " Approx. Area:\n" +
+emoji.money + " Budget:\n" +
+emoji.calendar + " Expected Start Date:\n\n" +
+"I came across NIVORA Interiors through your website and would love to know more about your services.";
+
+### STEP 4 — Generate WhatsApp URL
+
+Use ONLY:
+
+const whatsappUrl =
+"https://wa.me/PHONE_NUMBER?text=" + encodeURIComponent(message);
+
+Then open that URL.
+
+Do NOT:
+
+* manually encode emoji bytes
+* use HTML entities
+* use `%F0%9F...`
+* use `decodeURIComponent()`
+* double encode
+* store the message in an environment variable
+* store the message in a database
+* pass the message through a backend API
+* convert it to ASCII
+* convert it to Latin-1
+* use Buffer conversions
+* use btoa()
+* use atob()
+
+The message should be created directly in the browser using JavaScript.
+
+### STEP 5 — IMPORTANT DEBUG TEST
+
+Before opening WhatsApp, temporarily add:
+
+console.log(message);
+console.log([...message]);
+console.log(encodeURIComponent(message));
+
+The browser console MUST show the actual emojis:
+
+👋
+📍
+🏠
+📐
+💰
+📅
+
+It must NOT show `�`.
+
+Also run:
+
+console.log(String.fromCodePoint(0x1F44B));
+console.log(String.fromCodePoint(0x1F4CD));
+console.log(String.fromCodePoint(0x1F3E0));
+console.log(String.fromCodePoint(0x1F4D0));
+console.log(String.fromCodePoint(0x1F4B0));
+console.log(String.fromCodePoint(0x1F4C5));
+
+If these console logs show the correct emojis but the WhatsApp message shows `�`, then the corruption is happening AFTER message generation. Trace the exact generated URL and identify where it changes.
+
+### STEP 6 — Check the generated URL
+
+The generated URL should contain percent-encoded UTF-8 emoji bytes.
+
+Do NOT manually modify those encoded values.
+
+The browser should generate them automatically through:
+
+encodeURIComponent(message)
+
+### STEP 7 — Check for a second implementation
+
+There may be another WhatsApp button/component/function overriding the corrected message.
+
+Search the entire project and make sure there is only ONE implementation responsible for this predefined WhatsApp message.
+
+Check:
+
+* React components
+* utility functions
+* constants
+* JSON files
+* HTML
+* JavaScript
+* TypeScript
+* backend/API routes
+* environment variables
+* CMS/configuration
+* WhatsApp button components
+
+### STEP 8 — Final test
+
+Click the actual "WhatsApp" button on the website.
+
+WhatsApp must open with EXACTLY:
+
+Hi NIVORA Interiors! 👋
+
+I’m interested in your interior design services and would like to discuss my project.
+
+📍 Project Location:
+🏠 Property Type:
+📐 Approx. Area:
+💰 Budget:
+📅 Expected Start Date:
+
+I came across NIVORA Interiors through your website and would love to know more about your services.
+
+Do not tell me that the fix is complete until you have traced where the `�` character is coming from and verified the actual generated message.
