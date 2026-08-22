@@ -12,4 +12,6 @@ I’m interested in your interior design services and would like to discuss my p
 
 I came across NIVORA Interiors through your website and would love to know more about your services.`
 
-export const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+export function getWhatsAppHref() {
+  return `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+}
