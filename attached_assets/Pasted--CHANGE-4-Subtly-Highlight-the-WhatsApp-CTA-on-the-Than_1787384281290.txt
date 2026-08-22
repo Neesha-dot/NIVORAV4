@@ -1,0 +1,61 @@
+## CHANGE 4 — Subtly Highlight the WhatsApp CTA on the Thank-You Page
+
+On the **Contact Form Thank-You/Success page**, there is a bottom text link:
+
+**"Prefer to chat right now? Message us on WhatsApp →"**
+
+Currently this text is very light grey and can be easily missed.
+
+Please make this CTA **slightly more noticeable while keeping the premium, elegant, minimal NIVORA Interiors design**.
+
+### Design changes:
+
+* Keep the complete text and wording exactly the same:
+  **"Prefer to chat right now? Message us on WhatsApp →"**
+* Make the main text slightly darker than its current light-grey color so it is easier to read.
+* Highlight **"WhatsApp"** using the existing NIVORA gold/accent color used elsewhere on the website.
+* Make the **arrow (→)** the same gold/accent color.
+* Keep the CTA subtle and elegant — **do NOT use a bright green WhatsApp color**.
+* Do NOT add a large button or colored background.
+* Keep the existing typography and overall layout.
+* Add a subtle hover effect:
+
+  * On hover, the gold WhatsApp text/arrow can become slightly darker or brighter.
+  * Optionally add a very subtle underline on hover.
+  * Keep the transition smooth and minimal.
+
+### Important — DO NOT CHANGE HOME PAGE WHATSAPP
+
+The Home page has its own WhatsApp icon/button and its own WhatsApp message.
+
+**Do NOT modify the Home page WhatsApp icon, message, URL, styling, or behavior.**
+
+This styling change must apply **ONLY** to the WhatsApp CTA on the **Contact Form Thank-You/Success page**.
+
+Also preserve the WhatsApp message that was previously configured for this Thank-You page:
+
+> Hi NIVORA Interiors!
+
+> I’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.
+
+> Looking forward to connecting!
+
+### Implementation:
+
+* Inspect the existing Thank-You page component and its CSS.
+* Modify only the styles for this specific Thank-You page WhatsApp CTA.
+* Do not create a global WhatsApp style that could affect other WhatsApp buttons.
+* Use the existing NIVORA gold/accent color from the website rather than introducing a new color.
+* Keep the CTA in the same position at the bottom of the page.
+* Do not change any other page, section, text, functionality, or responsive behavior.
+
+### Final expected appearance:
+
+**Prefer to chat right now? Message us on** **WhatsApp →**
+
+Where:
+
+* "Prefer to chat right now? Message us on" = slightly darker neutral text
+* "WhatsApp →" = NIVORA gold/accent color
+* No green button/background
+* Clean, subtle, premium appearance

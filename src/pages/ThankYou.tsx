@@ -159,14 +159,32 @@ export default function ThankYou() {
 
         {/* WhatsApp nudge */}
         <motion.div {...fadeIn(1.8)} className="mt-12">
+          <style>{`
+            .thankyou-whatsapp-cta {
+              color: #6f6b64;
+              text-decoration: none;
+            }
+            .thankyou-whatsapp-cta .thankyou-whatsapp-accent {
+              color: #a18661;
+              transition: color 0.3s ease;
+            }
+            .thankyou-whatsapp-cta:hover .thankyou-whatsapp-accent {
+              color: #8a7050;
+            }
+            .thankyou-whatsapp-cta:hover {
+              text-decoration: underline;
+              text-decoration-color: rgba(161, 134, 97, 0.45);
+              text-underline-offset: 4px;
+            }
+          `}</style>
           <a
             href={`https://api.whatsapp.com/send?phone=917276687805&text=${encodeURIComponent("Hi NIVORA Interiors!\n\nI’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.\n\nLooking forward to connecting!")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-light transition-colors duration-300 hover:text-[#a18661]"
-            style={{ color: '#9c9c9c', fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+            className="thankyou-whatsapp-cta text-sm font-light transition-colors duration-300"
+            style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
           >
-            Prefer to chat right now? Message us on WhatsApp →
+            Prefer to chat right now? Message us on <span className="thankyou-whatsapp-accent">WhatsApp →</span>
           </a>
         </motion.div>
 
