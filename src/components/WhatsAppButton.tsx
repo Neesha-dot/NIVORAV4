@@ -1,9 +1,9 @@
-import { getWhatsAppHref } from '../lib/whatsapp'
+import { WHATSAPP_HREF } from '../lib/whatsapp'
 
 export default function WhatsAppButton() {
   return (
     <a
-      href={getWhatsAppHref()}
+      href={WHATSAPP_HREF}
       target="_blank"
       rel="noopener noreferrer"
       title="Chat with us on WhatsApp"

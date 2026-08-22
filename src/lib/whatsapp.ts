@@ -1,25 +1,3 @@
 const WHATSAPP_PHONE_NUMBER = '917276687805'
 
-const wave = String.fromCodePoint(0x1F44B)
-const pin = String.fromCodePoint(0x1F4CD)
-const house = String.fromCodePoint(0x1F3E0)
-const ruler = String.fromCodePoint(0x1F4D0)
-const money = String.fromCodePoint(0x1F4B0)
-const calendar = String.fromCodePoint(0x1F4C5)
-
-export const WHATSAPP_MESSAGE =
-  `Hi NIVORA Interiors! ${wave}
-
-I’m interested in your interior design services and would like to discuss my project.
-
-${pin} Project Location:
-${house} Property Type:
-${ruler} Approx. Area:
-${money} Budget:
-${calendar} Expected Start Date:
-
-I came across NIVORA Interiors through your website and would love to know more about your services.`
-
-export function getWhatsAppHref() {
-  return `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
-}
+export const WHATSAPP_HREF = 'https://wa.me/917276687805?text=Hi%20NIVORA%20Interiors%21%20%F0%9F%91%8B%0A%0AI%E2%80%99m%20interested%20in%20your%20interior%20design%20services%20and%20would%20like%20to%20discuss%20my%20project.%0A%0A%F0%9F%93%8D%20Project%20Location%3A%0A%F0%9F%8F%A0%20Property%20Type%3A%0A%F0%9F%93%90%20Approx.%20Area%3A%0A%F0%9F%92%B0%20Budget%3A%0A%F0%9F%93%85%20Expected%20Start%20Date%3A%0A%0AI%20came%20across%20NIVORA%20Interiors%20through%20your%20website%20and%20would%20love%20to%20know%20more%20about%20your%20services.'
