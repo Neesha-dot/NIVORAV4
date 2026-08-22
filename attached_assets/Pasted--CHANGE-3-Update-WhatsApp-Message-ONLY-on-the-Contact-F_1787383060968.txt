@@ -1,0 +1,51 @@
+## CHANGE 3 — Update WhatsApp Message ONLY on the Contact Form Thank-You Page
+
+There is a **"Prefer to chat right now? Message us on WhatsApp →"** link at the bottom of the **Contact Form Thank-You/Success page**.
+
+When the user clicks this specific WhatsApp link **from the Contact Form Thank-You page**, it opens WhatsApp and automatically pre-fills a message.
+
+### Replace ONLY this Thank-You page WhatsApp message with:
+
+Hi NIVORA Interiors!
+
+I’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.
+
+Looking forward to connecting!
+
+### VERY IMPORTANT — DO NOT CHANGE THE HOME PAGE WHATSAPP
+
+The website also has a **WhatsApp icon/button on the Home page**.
+
+The Home page WhatsApp icon currently opens WhatsApp with its own separate/predefined message.
+
+**DO NOT MODIFY, REPLACE, OR AFFECT that Home page WhatsApp message in any way.**
+
+The new message above must be applied **ONLY** when:
+
+1. The user fills and submits the Contact/Enquiry form.
+2. The Thank-You/Success page appears.
+3. The user clicks **"Prefer to chat right now? Message us on WhatsApp →"** on that Thank-You page.
+
+### Implementation requirements:
+
+* Locate the WhatsApp link/button specifically used by the **Contact Form Thank-You/Success page**.
+* Change only its WhatsApp URL/message parameter (the pre-filled message).
+* Keep the same WhatsApp phone number.
+* Keep the same visual design, text, position, styling, and behavior.
+* Do not change the Home page WhatsApp icon or its message.
+* Do not change WhatsApp links/buttons anywhere else on the website.
+* Do not create a global WhatsApp message variable that could accidentally affect the Home page.
+* If the WhatsApp link currently uses a shared component, make sure the Thank-You page can have its own message without changing the Home page's existing message.
+* Preserve all existing functionality.
+
+### Final verification:
+
+After making the change, verify these two flows separately:
+
+**Flow 1 — Home Page:**
+Home Page → WhatsApp icon → Existing Home Page WhatsApp message should remain **exactly unchanged**.
+
+**Flow 2 — Contact Form:**
+Contact Form → Submit → Thank-You Page → "Prefer to chat right now? Message us on WhatsApp →" → WhatsApp should open with the **new NIVORA Interiors message specified above**.
+
+Only Flow 2 should be changed.

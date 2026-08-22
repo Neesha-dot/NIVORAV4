@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CheckCircle, ArrowRight } from 'lucide-react'
-import { WHATSAPP_HREF } from '../lib/whatsapp'
 
 /* ─── Animation helpers ─────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -161,7 +160,7 @@ export default function ThankYou() {
         {/* WhatsApp nudge */}
         <motion.div {...fadeIn(1.8)} className="mt-12">
           <a
-            href={WHATSAPP_HREF}
+            href={`https://api.whatsapp.com/send?phone=917276687805&text=${encodeURIComponent("Hi NIVORA Interiors!\n\nI’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.\n\nLooking forward to connecting!")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-light transition-colors duration-300 hover:text-[#a18661]"
