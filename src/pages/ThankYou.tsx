@@ -32,11 +32,17 @@ const steps = [
   'You receive a tailored design brief and next steps — at no cost.',
 ]
 
-const WHATSAPP_MESSAGE = `Hi NIVORA Interiors!
+const WHATSAPP_MESSAGE = `Hi NIVORA Interiors! 👋
 
-I’d love to discuss my interior project with your team. I’ve just submitted an enquiry through your website and would like to know more about how we can work together.
+I’m interested in your interior design services and would like to discuss my project.
 
-Looking forward to connecting!`
+📍 Project Location:
+🏠 Property Type:
+📐 Approx. Area:
+💰 Budget:
+📅 Expected Start Date:
+
+I came across NIVORA Interiors through your website and would love to know more about your services.`
 
 const WHATSAPP_HREF = `https://wa.me/917276687805?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
